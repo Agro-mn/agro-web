@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Row, Col, List, Splitter, Divider, Flex, Affix } from 'antd';
+import React, { useEffect } from 'react';
+import { Card, Row, Col, List, Flex, Affix } from 'antd';
 import testIcon from '../../img/testIcon.svg';
 
 const WeatherApp = () => {
   // const [city, setCity] = useState('Ulaanbaatar'); // Default city
-  const [weather, setWeather] = useState([]);
+  // const [weather, setWeather] = useState([]);
 
   // const fetchWeather = async () => {
   //   const API_KEY = '5f6db829e4b3bf40ac6a53ef1b352f5d'; //8tVPT35LPhpIa57   5f6db829e4b3bf40ac6a53ef1b352f5d
@@ -41,7 +41,7 @@ const WeatherApp = () => {
   ]
   useEffect(() => {
     // fetchWeather();
-    setWeather(testData);
+    // setWeather(testData);
   }, []);
 
   return (
@@ -84,7 +84,7 @@ const WeatherApp = () => {
               grid={{
                 gutter: 24,
               }}
-              dataSource={weather}
+              dataSource={testData}
               renderItem={item => (
                 <List.Item>
                   <Card
