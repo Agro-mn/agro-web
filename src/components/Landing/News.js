@@ -2,21 +2,7 @@ import React, { useEffect } from 'react';
 import { Card, Row, Col, List, Flex, Affix } from 'antd';
 import testIcon from '../../img/testIcon.svg';
 
-const WeatherApp = () => {
-  // const [city, setCity] = useState('Ulaanbaatar'); // Default city
-  // const [weather, setWeather] = useState([]);
-
-  // const fetchWeather = async () => {
-  //   const API_KEY = '5f6db829e4b3bf40ac6a53ef1b352f5d'; //8tVPT35LPhpIa57   5f6db829e4b3bf40ac6a53ef1b352f5d
-  //   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
-
-  //   try {
-  //     const response = await axios.get(url);
-  //     setWeather(response.data);
-  //   } catch (error) {
-  //     console.error('Error fetching weather data:', error);
-  //   }
-  // };
+const News = () => {
   const testData = [
     { title: 'medee 1', description: "medee medee medee medee" },
     { title: 'medee 1', description: "medee medee medee medee" },
@@ -40,20 +26,12 @@ const WeatherApp = () => {
     { title: 'medee 1', description: "Мах, Сүү, Сүүн бүтээгдэхүүн" },
   ]
   useEffect(() => {
-    // fetchWeather();
-    // setWeather(testData);
   }, []);
 
   return (
     <Row >
       <Col span={24}>
-        <Affix>
-          <Row style={{ width: '100%', height: '5rem', background: 'rgb(92 177 138)' }}>
-            <Col span={8}>Hailt</Col>
-            <Col span={8}>Hailt</Col>
-            <Col span={8}>Hailt</Col>
-          </Row>
-        </Affix>
+
       </Col>
       <Col span={24}>
         <Row style={{ padding: '1rem 4rem' }}>
@@ -104,4 +82,4 @@ const WeatherApp = () => {
   );
 };
 
-export default WeatherApp;
+export default News;

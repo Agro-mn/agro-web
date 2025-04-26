@@ -1,16 +1,98 @@
-import { Col, Row } from 'antd';
-import logo from '../../img/logo1.png';
+import { Button, Col, Flex, Menu, Modal, Row } from 'antd';
+import { useEffect, useState } from 'react';
+import { AlertOutlined, UserOutlined } from '@ant-design/icons';
+import LoginForm from './LoginForm';
+import LogoName from './LogoName';
+import { useNavigate } from "react-router-dom";
 
-function TopHeader() {
+function TopHeader({ onChangeLogin }) {
+  const navigate = useNavigate();
+  const [current, setCurrent] = useState();
+
+  const onClick = e => {
+    setCurrent(e.key);
+    navigate(e.key == 'home' ? '/' : e.key)
+  };
+  const items = [
+    {
+      label: 'Нүүр',
+      key: 'home',
+      // icon: <AppstoreOutlined />,
+    },
+    {
+      label: 'Цаг агаар',
+      key: 'weather',
+      // icon: <MailOutlined />,
+    },
+
+    {
+      label: 'Мэдээ мэдээлэл',
+      key: 'news',
+      // icon: <AppstoreOutlined />,
+    },
+
+    {
+      label: 'Холбоо барих',
+      key: 'cantact',
+      // icon: <AppstoreOutlined />,
+    },
+  ]
+
+  const [loggedUser, setLoggedUser] = useState();
+
+  useEffect(() => {
+    setLoggedUser(localStorage.getItem('loggedUser'));
+  })
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <Row style={{ width: '100%', height: '5rem', background: '#214635' }}>
-      <Col xs={24} sm={12} md={8} lg={6} xl={4} xxl={4} style={{ textAlign: 'center' }}>
-        <img src={logo} style={{ height: '5rem' }} alt='logo' />
+    <Row
+      style={{
+        height: '5rem',
+        backgroundColor: 'Background',
+        borderBottom: "1px solid rgb(209 205 205)", // Adds a bottom border
+      }}
+    >
+      <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4} >
+        <LogoName />
       </Col>
-      <Col xs={24} sm={12} md={8} lg={9} xl={10} xxl={10}>
+      <Col xs={24} sm={12} md={12} lg={12} xl={12} xxl={12} >
+        <Flex align='center' style={{ height: '100%' }}>
+          <Menu
+            style={{ borderBottom: '0px', fontWeight: 'bold' }}
+            onClick={onClick}
+            selectedKeys={[current]}
+            mode="horizontal"
+            items={items} />
+        </Flex>
       </Col>
-      <Col xs={24} sm={24} md={8} lg={9} xl={10} xxl={10}>
+      <Col xs={24} sm={12} md={12} lg={8} xl={8} xxl={8}>
+        <Flex align='center' justify='right' gap='middle' style={{ height: '100%', marginRight: '1rem' }}>
+          {loggedUser && <Button type='text' icon={<AlertOutlined />} >Мэдэгдэл</Button>}
+          <Button type='text'>MN</Button>
+          <Button icon={<UserOutlined />} onClick={() => { showModal(); }}>{loggedUser ?? 'Нэвтрэх'}</Button>
+        </Flex>
       </Col>
+      <Modal
+        width={'30%'}
+        title="Нэвтрэх"
+        open={isModalOpen}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <LoginForm onChangeLogin={() => {
+          handleCancel();
+          setLoggedUser(localStorage.getItem('loggedUser'));
+          onChangeLogin();
+        }} />
+      </Modal>
     </Row>
   );
 }

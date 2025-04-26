@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './main/App';
 import reportWebVitals from './main/reportWebVitals';
-import { ConfigProvider } from 'antd';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <ConfigProvider>
-    <App />
-  </ConfigProvider>
+  <App />
 );
 
 // If you want to start measuring performance in your app, pass a function
