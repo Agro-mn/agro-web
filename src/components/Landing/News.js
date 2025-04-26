@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Card, Row, Col, List, Flex, Affix } from 'antd';
+import { Card, Row, Col, List, Flex } from 'antd';
 import testIcon from '../../img/testIcon.svg';
 
 const News = () => {

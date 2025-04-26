@@ -10,7 +10,7 @@ function MainLayout() {
 
   useEffect(() => {
     setLoggedUser(localStorage.getItem('loggedUser'));
-  })
+  }, [])
 
   return (
     <BrowserRouter>

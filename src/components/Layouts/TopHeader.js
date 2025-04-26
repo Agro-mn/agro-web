@@ -42,7 +42,7 @@ function TopHeader({ onChangeLogin }) {
 
   useEffect(() => {
     setLoggedUser(localStorage.getItem('loggedUser'));
-  })
+  }, [])
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
