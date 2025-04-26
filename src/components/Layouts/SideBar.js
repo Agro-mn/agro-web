@@ -1,6 +1,4 @@
-import { Col, Row } from 'antd';
-import logo from '../../img/logo1.png';
-import LogoName from './LogoName';
+import { Row } from 'antd';
 
 function SideBar() {
   return (

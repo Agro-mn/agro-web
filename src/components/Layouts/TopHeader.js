@@ -11,7 +11,7 @@ function TopHeader({ onChangeLogin }) {
 
   const onClick = e => {
     setCurrent(e.key);
-    navigate(e.key == 'home' ? '/' : e.key)
+    navigate(e.key === 'home' ? '/' : e.key)
   };
   const items = [
     {

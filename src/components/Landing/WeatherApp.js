@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Card, Row, Col, List, Divider, Flex } from 'antd';
+import { Card, Row, Col, Divider, Flex } from 'antd';
 import minCloud from '../../img/minCloud.png';
 import minCloudNigth from '../../img/minCloudNigth.png';
 import testIcon from '../../img/testIcon.svg';
