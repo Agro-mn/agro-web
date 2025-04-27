@@ -3,36 +3,36 @@ import MainLayout from '../components/MainLayout';
 import { ConfigProvider } from 'antd';
 
 function App() {
-  // const data = {
-  //   borderRadius: 6,
-  //   colorPrimary: 'red',
-  //   Button: {
-  //     colorPrimary: 'red',
-  //   },
-  //   Menu: {
-  //     itemSelectedBg: 'red',
-  //     itemSelectedColor: 'yellow',
-  //   },
-  // };
+  const themeData = {
+    colorPrimary: '#00b96b',
+    algorithm: true // Enable algorithm
+  };
   return (
     <ConfigProvider
-    // theme={{
-    //   // token: {
-    //   //   colorPrimary: data.colorPrimary,
-    //   //   borderRadius: data.borderRadius,
-    //   // },
-    //   components: {
-    //     // Button: {
-    //     //   colorPrimary: data.Button?.colorPrimary,
-    //     //   algorithm: data.Button?.algorithm,
-    //     // },
-    //     Menu: {
-    //       // itemSelectedBg: data.Menu?.itemSelectedBg ?? "yellow", // Background for selected item
-    //       // itemSelectedColor: data.Menu?.itemSelectedColor ?? data.colorPrimary, // Text color for selected item
-    //       itemBorder: "none",
-    //     },
-    //   },
-    // }}
+      theme={{
+        components: {
+          Button: {
+            colorPrimary: themeData.colorPrimary,
+            algorithm: themeData.algorithm,
+          },
+          Input: {
+            colorPrimary: themeData.colorPrimary,
+            algorithm: themeData.algorithm,
+          },
+          Menu: {
+            colorPrimary: themeData.colorPrimary,
+            algorithm: themeData.algorithm,
+          },
+          Checkbox: {
+            colorPrimary: themeData.colorPrimary,
+            algorithm: themeData.algorithm,
+          },
+          Form: {
+            colorPrimary: themeData.colorPrimary,
+            algorithm: themeData.algorithm,
+          },
+        },
+      }}
     >
       <MainLayout />
     </ConfigProvider>

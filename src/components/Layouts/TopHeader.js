@@ -64,14 +64,16 @@ function TopHeader({ onChangeLogin }) {
         <LogoName />
       </Col>
       <Col xs={24} sm={12} md={12} lg={12} xl={12} xxl={12} >
-        <Flex align='center' style={{ height: '100%' }}>
-          <Menu
-            style={{ borderBottom: '0px', fontWeight: 'bold' }}
-            onClick={onClick}
-            selectedKeys={[current]}
-            mode="horizontal"
-            items={items} />
-        </Flex>
+        {!loggedUser &&
+          <Flex align='center' style={{ height: '100%' }}>
+            <Menu
+              style={{ borderBottom: '0px', fontWeight: 'bold' }}
+              onClick={onClick}
+              selectedKeys={[current]}
+              mode="horizontal"
+              items={items} />
+          </Flex>
+        }
       </Col>
       <Col xs={24} sm={12} md={12} lg={8} xl={8} xxl={8}>
         <Flex align='center' justify='right' gap='middle' style={{ height: '100%', marginRight: '1rem' }}>
