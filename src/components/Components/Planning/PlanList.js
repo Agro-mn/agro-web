@@ -59,10 +59,7 @@ const PlanList = () => (
       title="Action"
       key="action"
       render={(_, record) => (
-        <Space size="middle">
-          <a>Invite {record.lastName}</a>
-          <a>Delete</a>
-        </Space>
+        <Space size="middle">{record.lastName}</Space>
       )}
     />
   </Table>

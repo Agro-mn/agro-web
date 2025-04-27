@@ -1,23 +1,6 @@
 import React from 'react';
 import { Table } from 'antd';
-import { createStyles } from 'antd-style';
-const useStyle = createStyles(({ css, token }) => {
-  const { antCls } = token;
-  return {
-    customTable: css`
-      ${antCls}-table {
-        ${antCls}-table-container {
-          ${antCls}-table-body,
-          ${antCls}-table-content {
-            scrollbar-width: thin;
-            scrollbar-color: #eaeaea transparent;
-            scrollbar-gutter: stable;
-          }
-        }
-      }
-    `,
-  };
-});
+
 const columns = [
   {
     title: 'Name',
@@ -113,10 +96,8 @@ const dataSource = Array.from({ length: 100 }).map((_, i) => ({
   gender: 'M',
 }));
 const Report = () => {
-  const { styles } = useStyle();
   return (
     <Table
-      className={styles.customTable}
       columns={columns}
       dataSource={dataSource}
       bordered
