@@ -1,9 +1,7 @@
-import { Affix, Col, Row } from 'antd';
-import TopHeader from './Layouts/TopHeader';
-import { BrowserRouter } from "react-router-dom";
-import SideBar from './Layouts/SideBar';
+import { Col, Row } from 'antd';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import MainContent from './Layouts/MainContent';
+import LandingPage from './Landing/LandingPage'
 
 function MainLayout() {
   const [loggedUser, setLoggedUser] = useState();
@@ -14,34 +12,30 @@ function MainLayout() {
 
   return (
     <BrowserRouter>
-      <Row >
-        <Col span={24}>
-          <Affix style={{ backgroundColor: 'Background' }}>
-            <TopHeader onChangeLogin={() => {
-              setLoggedUser(localStorage.getItem("loggedUser"))
-            }} />
-          </Affix>
+      <Row>
+        <Col span={24} style={{ backgroundColor: 'ButtonShadow', minHeight: 'calc(100vh - 8rem)', padding: '2rem' }}>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+
+            <Route path="/org" element={"<WeatherPage />"} />
+            <Route path="/org/news" element={"<WeatherPage />"} />
+            <Route path="/org/news1" element={"<WeatherPage />"} />
+            <Route path="/org/news2" element={"<WeatherPage />"} />
+
+            <Route path="/org1" element={"<WeatherPage />"} />
+            <Route path="/org1/news" element={"<WeatherPage />"} />
+            <Route path="/org1/news1" element={"<WeatherPage />"} />
+            <Route path="/org1/news2" element={"<WeatherPage />"} />
+
+            {/* wd;wljd */}
+            <Route path="/dashboard" element={"<Dashboard />"} />
+            <Route path="/planning" element={"<PlanList />"} />
+            <Route path="/performance" element={"<PerformanceList />"} />
+            <Route path="/report" element={"<Report />"} />
+          </Routes>
         </Col>
-        <Col span={24} >
-          <Row>
-            {loggedUser &&
-              <Col xs={10} sm={10} md={10} lg={4} xl={4} xxl={4}>
-                <Affix style={{ backgroundColor: 'Background' }} offsetTop={80}>
-                  <SideBar />
-                </Affix>
-              </Col>
-            }
-            {loggedUser &&
-              <Col xs={14} sm={14} md={14} lg={20} xl={20} xxl={20}>
-                <MainContent />
-              </Col>
-            }
-            {!loggedUser &&
-              <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-                <MainContent />
-              </Col>
-            }
-          </Row>
+        <Col span={24} style={{ backgroundColor: 'rgb(140 201 164)', minHeight: '4rem' }}>
+          footer
         </Col>
       </Row>
     </BrowserRouter>

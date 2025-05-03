@@ -1,17 +1,58 @@
-import { Col, Row } from 'antd';
+import { Col, Row, Affix } from 'antd';
 import WeatherApp from './WeatherApp';
 import News from './News';
+import TopHeader from './Layouts/TopHeader';
+import SideBar from './Layouts/SideBar';
+import { useState } from 'react';
 
 function LandingPage() {
+  const [loggedUser, setLoggedUser] = useState();
   return (
-    <Row>
-      <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-        <WeatherApp />
+    <Row >
+      <Col span={24}>
+        <Affix style={{ backgroundColor: 'Background' }}>
+          <TopHeader onChangeLogin={() => {
+            setLoggedUser(localStorage.getItem("loggedUser"))
+          }} />
+        </Affix>
       </Col>
-      <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-        <News />
+      <Col span={24} >
+        <Row>
+          {loggedUser &&
+            <Col xs={10} sm={10} md={10} lg={4} xl={4} xxl={4}>
+              <Affix style={{ backgroundColor: 'Background' }} offsetTop={80}>
+                <SideBar />
+              </Affix>
+            </Col>
+          }
+          {loggedUser &&
+            <Col xs={14} sm={14} md={14} lg={20} xl={20} xxl={20}>
+              <Row>
+                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+                  <WeatherApp />
+                </Col>
+                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+                  <News />
+                </Col>
+              </Row>
+            </Col>
+          }
+          {!loggedUser &&
+            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+              <Row>
+                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+                  <WeatherApp />
+                </Col>
+                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+                  <News />
+                </Col>
+              </Row>
+            </Col>
+          }
+        </Row>
       </Col>
     </Row>
+
   );
 }
 

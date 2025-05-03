@@ -2,7 +2,7 @@ import { Button, Col, Flex, Menu, Modal, Row } from 'antd';
 import { useEffect, useState } from 'react';
 import { AlertOutlined, UserOutlined } from '@ant-design/icons';
 import LoginForm from './LoginForm';
-import LogoName from './LogoName';
+import LogoName from '../Layouts/LogoName';
 import { useNavigate } from "react-router-dom";
 
 function TopHeader({ onChangeLogin }) {
