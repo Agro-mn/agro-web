@@ -1,4 +1,4 @@
-import { Col, Row, Affix, Anchor, Button, Flex } from 'antd';
+import { Col, Row, Affix, Anchor, Flex } from 'antd';
 import LogoName from './Layouts/LogoName';
 import SideBar from './Layouts/SideBar';
 import { useState } from 'react';
@@ -71,7 +71,7 @@ function LandingPage() {
             }
           </Col>
           <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4}>
-            <LoginComp />
+            <LoginComp onChangeLogin={() => { setLoggedUser(localStorage.getItem('loggedUser')); }} />
           </Col>
         </Row>
       </Affix>
