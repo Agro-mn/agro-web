@@ -1,6 +1,6 @@
 import { Col, Row, Affix, Anchor, Flex } from 'antd';
-import LogoName from './Layouts/LogoName';
-import SideBar from './Layouts/SideBar';
+import LogoName from '../LogoName';
+import SideBar from './SideBar';
 import { useState } from 'react';
 import HomeImage from './HomeImage';
 import HomeDirection from './HomeDirection';
@@ -56,12 +56,6 @@ function LandingPage() {
           <Col xs={24} sm={12} md={12} lg={16} xl={16} xxl={16} >
             {!loggedUser &&
               <Flex align='center' justify='center' style={{ height: '100%' }}>
-                {/* <Menu
-              style={{ borderBottom: '0px', fontWeight: 'bold' }}
-              onClick={onClick}
-              selectedKeys={[current]}
-              mode="horizontal"
-              items={items} /> */}
                 <Anchor direction='horizontal'>
                   {items.map((item) => {
                     return <Anchor.Link title={item.label} key={item.key} href={`#${item.key}`} />

@@ -1,5 +1,5 @@
 import { Flex } from 'antd';
-import logo from '../../../assets/img/agro_logo_yellow.png';
+import logo from '../assets/img/agro_logo_yellow.png';
 
 function LogoName() {
   return (
