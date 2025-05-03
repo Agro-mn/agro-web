@@ -19,10 +19,10 @@ const LoginComp = ({ onChangeLogin }) => {
   }, []);
 
   return (
-    <Flex align='center' justify='right' gap='middle' style={{ height: '100%', marginRight: '1rem' }}>
-      {loggedUser && <Button type='text' icon={<AlertOutlined />} >Мэдэгдэл</Button>}
-      <Button type='text'  >MN</Button>
-      <Button type='text' icon={<UserOutlined />} onClick={() => { showModal(); }}>{loggedUser ?? 'Нэвтрэх'}</Button>
+    <Flex align='center' justify='right' gap='middle' style={{ height: '100%', marginRight: '1rem', }}>
+      {loggedUser && <Button type="primary" shape="round" ghost icon={<AlertOutlined />} >Мэдэгдэл</Button>}
+      <Button type="primary" shape="round" ghost ><h3>MN</h3></Button>
+      <Button type='primary' shape="round" ghost icon={<UserOutlined style={{ fontSize: 'large' }} />} onClick={() => { showModal(); }}><h3>{loggedUser ?? 'Нэвтрэх'}</h3></Button>
       <Modal
         width={'30%'}
         title="Нэвтрэх"

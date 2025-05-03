@@ -28,15 +28,17 @@ const HomeDirection = () => {
   }, []);
 
   return (
-    <Row style={{ padding: '0rem 5rem' }}>
-      {testData.map((item) => {
-        return <Col xs={24} sm={24} md={24} lg={12} xl={12} xxl={12} style={{ height: '20rem', width: '100%', padding: '1rem' }}>
-          <span style={{ zIndex: 1, fontSize: 'xxx-large', position: "absolute", color: 'rgb(216 156 87)', marginLeft: '1rem' }}
+    <Row gutter={[60]} style={{ padding: '1rem 5rem' }}>
+      <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{ fontSize: 'xx-large', fontWeight: 'bold' }}>
+        Үйл ажиллагааны чиглэл
+      </Col>
+      {testData.map((item, index) => {
+        return <Col key={index} xs={24} sm={24} md={24} lg={12} xl={12} xxl={12} style={{ paddingTop: '1rem' }}>
+          <span style={{ zIndex: 1, fontSize: 'xx-large', fontWeight: 'bold', position: "absolute", color: 'rgb(216 156 87)', marginLeft: '3rem', marginTop: '1rem' }}
           >{item.title}</span>
-          <img src={item.image} alt='logo' style={{ height: '100%', width: '100%', }} />
+          <img src={item.image} alt='logo' style={{ width: '100%' }} />
         </Col>
       })}
-
     </Row>
   );
 };
