@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Card, Row, Col, Divider, Flex } from 'antd';
-import minCloud from '../../img/minCloud.png';
-import minCloudNigth from '../../img/minCloudNigth.png';
-import testIcon from '../../img/testIcon.svg';
+import minCloud from '../../assets/img/minCloud.png';
+import minCloudNigth from '../../assets/img/minCloudNigth.png';
+import testIcon from '../../assets/img/testIcon.svg';
 
 const WeatherApp = () => {
   // const [city, setCity] = useState('Ulaanbaatar'); // Default city

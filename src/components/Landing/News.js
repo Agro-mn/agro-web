@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Card, Row, Col, List, Flex } from 'antd';
-import testIcon from '../../img/testIcon.svg';
+import testIcon from '../../assets/img/testIcon.svg';
 
 const News = () => {
   const testData = [

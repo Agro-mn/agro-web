@@ -2,6 +2,7 @@ import { Col, Row } from 'antd';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import LandingPage from './Landing/LandingPage'
+import LandingPage1 from './Landing1/LandingPage1'
 
 function MainLayout() {
   const [loggedUser, setLoggedUser] = useState();
@@ -13,11 +14,11 @@ function MainLayout() {
   return (
     <BrowserRouter>
       <Row>
-        <Col span={24} style={{ backgroundColor: 'ButtonShadow', minHeight: 'calc(100vh - 8rem)', padding: '2rem' }}>
+        <Col span={24} style={{ backgroundColor: 'ButtonShadow', minHeight: 'calc(100vh - 8rem)',}}>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-
-            <Route path="/org" element={"<WeatherPage />"} />
+            <Route path="/" element={<LandingPage/>} />
+            {/*<Route path="/" element={<LandingPage1/>} />*/}
+            <Route path="/landing1" element={<LandingPage1 />} />
             <Route path="/org/news" element={"<WeatherPage />"} />
             <Route path="/org/news1" element={"<WeatherPage />"} />
             <Route path="/org/news2" element={"<WeatherPage />"} />
