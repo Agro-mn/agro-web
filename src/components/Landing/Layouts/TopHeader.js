@@ -20,6 +20,11 @@ function TopHeader({ onChangeLogin }) {
       // icon: <AppstoreOutlined />,
     },
     {
+      label: 'Дэд систем',
+      key: 'landing1',
+      // icon: <MailOutlined />,
+    },
+    {
       label: 'Цаг агаар',
       key: 'weather',
       // icon: <MailOutlined />,

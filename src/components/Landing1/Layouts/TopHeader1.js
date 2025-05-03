@@ -57,11 +57,11 @@ function TopHeader1({ onChangeLogin }) {
       style={{
         height: '5rem',
         color: 'white',
-        backgroundColor: "#104736",
+        backgroundColor: "#ffffff",
         borderBottom: "1px solid rgb(209 205 205)", // Adds a bottom border
       }}
     >
-      <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4} >
+      <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4}  >
         <LogoName />
       </Col>
       <Col xs={24} sm={12} md={12} lg={12} xl={12} xxl={12} >
@@ -79,7 +79,7 @@ function TopHeader1({ onChangeLogin }) {
       <Col xs={24} sm={12} md={12} lg={8} xl={8} xxl={8}>
         <Flex align='center' justify='right' gap='middle' style={{ height: '100%', marginRight: '1rem' }}>
           {loggedUser && <Button type='text' icon={<AlertOutlined />} >Мэдэгдэл</Button>}
-          <Button type='text' style={{color: 'white'}}>MN</Button>
+          <Button type='text' style={{color: '#104736'}}>MN</Button>
           <Button icon={<UserOutlined />} style={{color: '#104736'}} onClick={() => { showModal(); }}>{loggedUser ?? 'Нэвтрэх'}</Button>
         </Flex>
       </Col>
