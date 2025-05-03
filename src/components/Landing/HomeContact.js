@@ -4,7 +4,7 @@ import minCloud from '../../assets/img/minCloud.png';
 import minCloudNigth from '../../assets/img/minCloudNigth.png';
 import testIcon from '../../assets/img/testIcon.svg';
 
-const WeatherApp = () => {
+const HomeContact = () => {
   // const [city, setCity] = useState('Ulaanbaatar'); // Default city
   // const [weather, setWeather] = useState([]);
 
@@ -186,4 +186,4 @@ const WeatherApp = () => {
   );
 };
 
-export default WeatherApp;
+export default HomeContact;

@@ -14,9 +14,9 @@ function MainLayout() {
   return (
     <BrowserRouter>
       <Row>
-        <Col span={24} style={{ backgroundColor: 'ButtonShadow', minHeight: 'calc(100vh - 8rem)',}}>
+        <Col span={24} style={{ minHeight: 'calc(100vh - 8rem)', }}>
           <Routes>
-            <Route path="/" element={<LandingPage/>} />
+            <Route path="/" element={<LandingPage />} />
             {/*<Route path="/" element={<LandingPage1/>} />*/}
             <Route path="/landing1" element={<LandingPage1 />} />
             <Route path="/org/news" element={"<WeatherPage />"} />
