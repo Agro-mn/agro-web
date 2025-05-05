@@ -135,6 +135,9 @@ function LandingPage() {
             </Col>
           </Row>
         </Col>
+        <Col span={24} style={{ backgroundColor: 'rgb(140 201 164)', minHeight: '4rem' }}>
+          footer
+        </Col>
       </Row>
     </ConfigProvider>
   );
