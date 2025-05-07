@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Checkbox, Typography, Flex } from "antd";
-
+import { useNavigate } from "react-router-dom";
 const { Title } = Typography;
 
-const LoginForm = ({ onChangeLogin }) => {
-
+const LoginForm = ({ onClose }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState(() => {
     return localStorage.getItem("loggedUser");
   });
@@ -12,7 +12,8 @@ const LoginForm = ({ onChangeLogin }) => {
   const onFinish = (values) => {
     localStorage.setItem("loggedUser", JSON.stringify(values.username));
     setUser(values.username);
-    onChangeLogin();
+    navigate("/dashboard")
+    onClose()
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -23,7 +24,8 @@ const LoginForm = ({ onChangeLogin }) => {
     // Clear user data from localStorage and state
     localStorage.removeItem("loggedUser");
     setUser(null);
-    onChangeLogin();
+    navigate("/")
+    onClose()
   };
 
   return (
