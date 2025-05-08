@@ -1,4 +1,4 @@
-import { AutoComplete, Button, Col, Flex, Input, Radio, Row, Tag } from 'antd';
+import { Affix, AutoComplete, Button, Col, Flex, Input, Radio, Row, Tag } from 'antd';
 import React from 'react';
 import { SettingOutlined, EditOutlined, EllipsisOutlined, EnvironmentOutlined, FlagOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import map from '../../../assets/img/map.png';
@@ -17,6 +17,9 @@ function FieldList() {
 
   return (
     <Row gutter={[16, 16]}>
+      <Col span={24}>
+      {/* <Affix offsetTop={80} style={{ zIndex: 1 }}> */}
+      <Row>
       <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
         <Row gutter={[16, 16]} >
           <Col >
@@ -43,6 +46,10 @@ function FieldList() {
       </Radio.Group>
       </Row>
       </Col>
+      </Row>
+      {/* </Affix> */}
+      </Col>
+     
       {arrayType === 'list' && data.map((item) => (
         <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} key={item.id}>
             <Row style={{borderRadius: '20px', backgroundColor: '#fff', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'}}>
@@ -52,9 +59,11 @@ function FieldList() {
                      overflow: 'hidden',
                     lineHeight: '0' }}
               >
-                <Tag color='success' style={{position:'absolute', zIndex:1, right: 1, top : 8 }}>
+                <Button size='small' type='primary' shape='round' 
+                style={{position:'absolute', zIndex:1, right: 8, top : 8 }}
+                >
                   {item.title}
-                </Tag>
+                </Button>
                 <img alt="example" src={item.image} 
                   style={{ width: '100%', height: '10rem', objectFit: 'cover' }} 
                 />
