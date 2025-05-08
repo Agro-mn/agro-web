@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Flex, Button, Modal } from 'antd';
 import { AlertOutlined, UserOutlined } from '@ant-design/icons';
 import LoginForm from './LoginForm';
+import { MainContext } from './MainContext';
 
 const LoginComp = ({ onChangeLogin }) => {
-  const [loggedUser, setLoggedUser] = useState();
+  const {loggedUser} = useContext(MainContext);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -15,7 +16,7 @@ const LoginComp = ({ onChangeLogin }) => {
   };
 
   useEffect(() => {
-    setLoggedUser(localStorage.getItem('loggedUser'));
+   
   }, []);
 
   return (
@@ -32,7 +33,6 @@ const LoginComp = ({ onChangeLogin }) => {
       >
         <LoginForm onChangeLogin={() => {
           handleCancel();
-          setLoggedUser(localStorage.getItem('loggedUser'));
           onChangeLogin();
         }} />
       </Modal>

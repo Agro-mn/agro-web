@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Checkbox, Typography, Flex } from "antd";
 import { useNavigate } from "react-router-dom";
+import { MainContext } from "./MainContext";
 const { Title } = Typography;
 
 const LoginForm = ({ onClose }) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(() => {
-    return localStorage.getItem("loggedUser");
-  });
+  const { loggedUser, setLoggedUser } = React.useContext(MainContext);
 
   const onFinish = (values) => {
     localStorage.setItem("loggedUser", JSON.stringify(values.username));
-    setUser(values.username);
+    setLoggedUser(values.username);
     navigate("/dashboard")
     onClose()
   };
@@ -23,16 +22,16 @@ const LoginForm = ({ onClose }) => {
   const handleLogout = () => {
     // Clear user data from localStorage and state
     localStorage.removeItem("loggedUser");
-    setUser(null);
+    setLoggedUser(null);
     navigate("/")
     onClose()
   };
 
   return (
     <Flex align="center" justify="center">
-      {user ? (
+      {loggedUser ? (
         <div>
-          <Title level={3}>Welcome back, {user}!</Title>
+          <Title level={3}>Welcome back, {loggedUser}!</Title>
           <Button type="primary" onClick={handleLogout}>
             Logout
           </Button>

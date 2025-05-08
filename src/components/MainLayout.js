@@ -1,6 +1,6 @@
-import { Col, Row, Affix, Flex, Menu, Button, Modal, Anchor, ConfigProvider, Card, Radio, Tag } from 'antd';
+import { Col, Row, Affix, Flex, Button, Modal, Anchor, ConfigProvider, Card } from 'antd';
 import { useContext, useEffect, useState } from 'react';
-import { AlertOutlined, FacebookFilled, InstagramFilled, TwitterOutlined, UserOutlined } from "@ant-design/icons";
+import { AlertOutlined, FacebookFilled, InstagramFilled, TwitterOutlined } from "@ant-design/icons";
 import { BrowserRouter } from "react-router-dom";
 
 import LoginForm from "./LoginForm";
@@ -10,44 +10,41 @@ import { Contents1, ThemeData1, LogoName1 } from './Landing1/Contents';
 import { Contents, ThemeData, LogoName } from './Landing/Contents';
 import MainPage from './MainPage';
 import { MainContext } from './MainContext';
-
+const landing1Style = {
+  headerPosition: { logged: {}, unLogged: { position: "absolute", zIndex: 1, width: '100vw' } },
+  headerStyle: {
+    logged: { height: '5rem', color: 'white', backgroundColor: "rgba(138, 190, 162, 0.8)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem' },
+    unLogged: {
+      height: '5rem', color: 'white', backgroundColor: "rgba(255,255,255,0.34)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem',
+      margin: "2rem", boxShadow: "0 1px 9px solid #ffffff"
+    }
+  },
+  sideBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.6)", backdropFilter: "blur(10px)", borderRadius: '20px' },
+  contentStyle: { backgroundColor: "#dee5e3", backdropFilter: "blur(10px)", borderRadius: '20px' }
+}
+const landingStyle = {
+  headerPosition: { logged: {}, unLogged: { position: "absolute", zIndex: 1, width: '100vw' } },
+  headerStyle: {
+    logged: { height: '5rem', color: 'white', backgroundColor: "rgba(138, 190, 162, 0.8)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem' },
+    unLogged: {
+      height: '5rem', color: 'white', backgroundColor: "rgba(255,255,255,0.34)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem',
+      margin: "2rem", boxShadow: "0 1px 9px solid #ffffff"
+    }
+  },
+  sideBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.6)", backdropFilter: "blur(10px)", borderRadius: '20px' },
+  contentStyle: { backgroundColor: "#dee5e3", backdropFilter: "blur(10px)", borderRadius: '20px' }
+}
 function MainLayout() {
-  const { system } = useContext(MainContext);
-
-  const [loggedUser, setLoggedUser] = useState();
+  const { system, loggedUser } = useContext(MainContext);
+  
   const [items, setItems] = useState([]);
   const [theme, setTheme] = useState({});
   const [systemStyle, setSystemStyle] = useState({});
 
-  const landing1Style = {
-    headerPosition: { logged: {}, unLogged: { position: "absolute", zIndex: 1, width: '100vw' } },
-    headerStyle: {
-      logged: { height: '5rem', color: 'white', backgroundColor: "rgba(138, 190, 162, 0.8)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem' },
-      unLogged: {
-        height: '5rem', color: 'white', backgroundColor: "rgba(255,255,255,0.34)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem',
-        margin: "2rem", boxShadow: "0 1px 9px solid #ffffff"
-      }
-    },
-    sideBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.6)", backdropFilter: "blur(10px)", borderRadius: '20px' },
-    contentStyle: { backgroundColor: "#dee5e3", backdropFilter: "blur(10px)", borderRadius: '20px' }
-  }
-  const landingStyle = {
-    headerPosition: { logged: {}, unLogged: { position: "absolute", zIndex: 1, width: '100vw' } },
-    headerStyle: {
-      logged: { height: '5rem', color: 'white', backgroundColor: "rgba(138, 190, 162, 0.8)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem' },
-      unLogged: {
-        height: '5rem', color: 'white', backgroundColor: "rgba(255,255,255,0.34)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem',
-        margin: "2rem", boxShadow: "0 1px 9px solid #ffffff"
-      }
-    },
-    sideBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.6)", backdropFilter: "blur(10px)", borderRadius: '20px' },
-    contentStyle: { backgroundColor: "#dee5e3", backdropFilter: "blur(10px)", borderRadius: '20px' }
-  }
+ 
   useEffect(() => {
-    const loggUser = localStorage.getItem('loggedUser');
-    setLoggedUser(loggUser);
     let sysStyle;
-    if (system == "portal") {
+    if (system === "portal") {
       setItems(Contents1);
       setTheme(ThemeData1);
       sysStyle = landing1Style;
@@ -58,12 +55,12 @@ function MainLayout() {
     }
 
     setSystemStyle({
-      headerPosition: loggUser ? sysStyle.headerPosition.logged : sysStyle.headerPosition.unLogged,
-      headerStyle: loggUser ? sysStyle.headerStyle.logged : sysStyle.headerStyle.unLogged,
+      headerPosition: loggedUser ? sysStyle.headerPosition.logged : sysStyle.headerPosition.unLogged,
+      headerStyle: loggedUser ? sysStyle.headerStyle.logged : sysStyle.headerStyle.unLogged,
       sideBarStyle: sysStyle.sideBarStyle,
       contentStyle: sysStyle.contentStyle
     })
-  }, [system])
+  }, [system, loggedUser])
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -113,7 +110,7 @@ function MainLayout() {
               <Row style={systemStyle.headerStyle}>
                 <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4}  >
                   <Flex align='center' style={{ height: '100%' }}>
-                    {system == "portal" ? <LogoName1 /> : <LogoName />}
+                    {system === "portal" ? <LogoName1 /> : <LogoName />}
                   </Flex>
                 </Col>
                 <Col xs={24} sm={12} md={12} lg={14} xl={14} xxl={14} >
@@ -142,7 +139,6 @@ function MainLayout() {
                   footer={null}
                 >
                   <LoginForm onClose={() => {
-                    setLoggedUser(localStorage.getItem('loggedUser'));
                     handleCancel()
                   }} />
                 </Modal>
@@ -188,7 +184,6 @@ function MainLayout() {
         </Row>
       </BrowserRouter >
     </ConfigProvider >
-
   );
 }
 
