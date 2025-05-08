@@ -2,14 +2,16 @@ import { Col, Row, Affix, Flex, Button, Modal, Anchor, ConfigProvider, Card } fr
 import { useContext, useEffect, useState } from 'react';
 import { AlertOutlined, FacebookFilled, InstagramFilled, TwitterOutlined } from "@ant-design/icons";
 import { BrowserRouter } from "react-router-dom";
+import { MainContext } from './MainContext';
 
 import LoginForm from "./LoginForm";
 import SideBar from './SideBar';
 
 import { Contents1, ThemeData1, LogoName1 } from './Landing1/Contents';
 import { Contents, ThemeData, LogoName } from './Landing/Contents';
+
 import MainPage from './MainPage';
-import { MainContext } from './MainContext';
+
 const landing1Style = {
   headerPosition: { logged: {}, unLogged: { position: "absolute", zIndex: 1, width: '100vw' } },
   headerStyle: {
