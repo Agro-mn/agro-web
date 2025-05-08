@@ -23,7 +23,7 @@ const landing1Style = {
   },
   sideBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.6)", backdropFilter: "blur(10px)", borderRadius: '20px' },
   contentStyle: { backgroundColor: "#dee5e3", backdropFilter: "blur(10px)", borderRadius: '20px' },
-  rightBarStyle: {  backgroundColor: "rgba(165, 207, 185, 0.4)", borderRadius: '20px',padding: '0.5rem', },
+  rightBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.4)", borderRadius: '20px', padding: '0.5rem', },
 }
 const landingStyle = {
   headerPosition: { logged: {}, unLogged: { position: "absolute", zIndex: 1, width: '100vw' } },
@@ -36,15 +36,15 @@ const landingStyle = {
   },
   sideBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.6)", backdropFilter: "blur(10px)", borderRadius: '20px' },
   contentStyle: { backgroundColor: "#dee5e3", backdropFilter: "blur(10px)", borderRadius: '20px' },
-  rightBarStyle: {  backgroundColor: "rgba(165, 207, 185, 0.4)", borderRadius: '20px',padding: '0.5rem', },
+  rightBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.4)", borderRadius: '20px', padding: '0.5rem', },
 }
 function MainLayout() {
   const { system, loggedUser } = useContext(MainContext);
-  
+
   const [items, setItems] = useState([]);
   const [theme, setTheme] = useState({});
   const [systemStyle, setSystemStyle] = useState({});
- 
+
   useEffect(() => {
     let sysStyle;
     if (system === "portal") {
@@ -108,6 +108,18 @@ function MainLayout() {
             colorPrimary: theme.colorPrimary,
             algorithm: theme.algorithm,
           },
+          Tabs: {
+            colorPrimary: theme.colorPrimary,
+            algorithm: theme.algorithm,
+          },
+          Segmented: {
+            colorPrimary: theme.colorPrimary,
+            algorithm: theme.algorithm,
+          },
+          Card: {
+            colorPrimary: theme.colorPrimary,
+            algorithm: theme.algorithm,
+          },
         },
       }}
     >
@@ -138,7 +150,7 @@ function MainLayout() {
                     {!loggedUser && <Button type='text' style={{ color: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}>
                       Бүртгүүлэх
                     </Button>}
-                    <Button style={{ background: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', color: '#ffffff', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }} 
+                    <Button style={{ background: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', color: '#ffffff', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}
                       onClick={() => { showModal(); }}>
                       {loggedUser ?? 'Нэвтрэх'}
                     </Button>
@@ -162,12 +174,12 @@ function MainLayout() {
             <Row>
               <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
                 <Affix offsetTop={250} >
-                  <Flex 
-                    style={{ position: 'absolute', zIndex: 1, width: '100%', right: 10}} 
+                  <Flex
+                    style={{ position: 'absolute', zIndex: 1, right: 10 }}
                     justify='right'
                   >
-                    <Flex style={systemStyle.rightBarStyle} 
-                    gap='middle' vertical align='center' >
+                    <Flex style={systemStyle.rightBarStyle}
+                      gap='middle' vertical align='center' >
                       {system !== "portal" ? <LogoName1 /> : <LogoName />}
                       <FacebookFilled style={{ fontSize: 'xx-large', color: 'blue' }} />
                       <InstagramFilled style={{ fontSize: 'xx-large', color: 'red' }} />
