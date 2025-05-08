@@ -19,6 +19,11 @@ const SideBar = ({ style }) => {
       icon: <AppstoreOutlined />,
     },
     {
+      label: 'Талбайн жагсаалт',
+      key: 'field-list',
+      icon: <MailOutlined />,
+    },
+    {
       label: 'Төлөвлөгөө',
       key: 'planning',
       icon: <MailOutlined />,
@@ -27,6 +32,11 @@ const SideBar = ({ style }) => {
     {
       label: 'Гүйцэтгэл',
       key: 'performance',
+      icon: <AppstoreOutlined />,
+    },
+    {
+      label: 'Бараа материал',
+      key: 'material',
       icon: <AppstoreOutlined />,
     },
 
@@ -40,7 +50,7 @@ const SideBar = ({ style }) => {
   return (
     <Menu
       onClick={onClick}
-      style={{ width: "100%", fontSize: 'large', height: "calc(100vh - 5rem)", ...style }}
+      style={{ width: "100%", fontSize: 'small', height: "calc(100vh - 5rem)", ...style }}
       mode="inline"
       selectedKeys={[current]}
       items={items}

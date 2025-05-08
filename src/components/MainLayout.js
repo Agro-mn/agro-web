@@ -101,6 +101,10 @@ function MainLayout() {
             colorPrimary: theme.colorPrimary,
             algorithm: theme.algorithm,
           },
+          Radio: {
+            colorPrimary: theme.colorPrimary,
+            algorithm: theme.algorithm,
+          },
         },
       }}
     >
@@ -128,8 +132,13 @@ function MainLayout() {
                 <Col xs={24} sm={12} md={12} lg={6} xl={6} xxl={6}>
                   <Flex align='center' justify='right' gap='middle' style={{ height: '100%' }}>
                     {loggedUser && <Button type='text' icon={<AlertOutlined />} >Мэдэгдэл</Button>}
-                    <Button type='text' style={{ color: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}>Бүртгүүлэх</Button>
-                    <Button style={{ background: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', color: '#ffffff', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }} onClick={() => { showModal(); }}>{loggedUser ?? 'Нэвтрэх'}</Button>
+                    {!loggedUser && <Button type='text' style={{ color: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}>
+                      Бүртгүүлэх
+                    </Button>}
+                    <Button style={{ background: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', color: '#ffffff', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }} 
+                      onClick={() => { showModal(); }}>
+                      {loggedUser ?? 'Нэвтрэх'}
+                    </Button>
                   </Flex>
                 </Col>
                 <Modal
