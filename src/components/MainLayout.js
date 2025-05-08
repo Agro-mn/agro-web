@@ -40,7 +40,6 @@ function MainLayout() {
   const [items, setItems] = useState([]);
   const [theme, setTheme] = useState({});
   const [systemStyle, setSystemStyle] = useState({});
-
  
   useEffect(() => {
     let sysStyle;
