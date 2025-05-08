@@ -143,6 +143,12 @@ function MainLayout() {
                       </Anchor>
                     </Flex>
                   }
+                  {loggedUser && <Flex gap={'middle'} align='center' justify='right' style={{ height: '100%', }} >
+                    {system !== "portal" ? <LogoName1 height={'1.5rem'} /> : <LogoName height={'1.5rem'} />}
+                    <FacebookFilled style={{ fontSize: 'large', color: 'blue' }} />
+                    <InstagramFilled style={{ fontSize: 'large', color: 'red' }} />
+                    <TwitterOutlined style={{ fontSize: 'large', color: 'blue' }} />
+                  </Flex>}
                 </Col>
                 <Col xs={24} sm={12} md={12} lg={6} xl={6} xxl={6}>
                   <Flex align='center' justify='right' gap='middle' style={{ height: '100%' }}>
@@ -172,22 +178,23 @@ function MainLayout() {
           </Col>
           <Col span={24} >
             <Row>
-              <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-                <Affix offsetTop={250} >
-                  <Flex
-                    style={{ position: 'absolute', zIndex: 1, right: 10 }}
-                    justify='right'
-                  >
-                    <Flex style={systemStyle.rightBarStyle}
-                      gap='middle' vertical align='center' >
-                      {system !== "portal" ? <LogoName1 /> : <LogoName />}
-                      <FacebookFilled style={{ fontSize: 'xx-large', color: 'blue' }} />
-                      <InstagramFilled style={{ fontSize: 'xx-large', color: 'red' }} />
-                      <TwitterOutlined style={{ fontSize: 'xx-large', color: 'blue' }} />
+              {!loggedUser &&
+                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
+                  <Affix offsetTop={250} >
+                    <Flex
+                      style={{ position: 'absolute', zIndex: 1, right: 10 }}
+                      justify='right'
+                    >
+                      <Flex style={systemStyle.rightBarStyle}
+                        gap='middle' vertical align='center' >
+                        {system !== "portal" ? <LogoName1 /> : <LogoName />}
+                        <FacebookFilled style={{ fontSize: 'xx-large', color: 'blue' }} />
+                        <InstagramFilled style={{ fontSize: 'xx-large', color: 'red' }} />
+                        <TwitterOutlined style={{ fontSize: 'xx-large', color: 'blue' }} />
+                      </Flex>
                     </Flex>
-                  </Flex>
-                </Affix>
-              </Col>
+                  </Affix>
+                </Col>}
               {!loggedUser &&
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
                   <MainPage items={items} />
