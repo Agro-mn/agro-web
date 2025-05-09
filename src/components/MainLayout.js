@@ -30,8 +30,7 @@ const landingStyle = {
   headerStyle: {
     logged: { height: '5rem', color: 'white', backgroundColor: "rgba(138, 190, 162, 0.8)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem' },
     unLogged: {
-      height: '5rem', color: 'white', backgroundColor: "rgba(255,255,255,0.34)", backdropFilter: "blur(10px)", borderRadius: '20px', padding: '0 2rem',
-      margin: "2rem", boxShadow: "0 1px 9px solid #ffffff"
+      height: '5rem', padding: '0 2rem', margin: "2rem", color: 'white', backgroundColor: "rgba(255,255,255,0.34)", backdropFilter: "blur(10px)", boxShadow: "0 1px 9px rgba(0, 0, 0, 0.3)", borderRadius: '20px'
     }
   },
   sideBarStyle: { backgroundColor: "rgba(165, 207, 185, 0.6)", backdropFilter: "blur(10px)", borderRadius: '20px' },
@@ -73,55 +72,53 @@ function MainLayout() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  const themes = {
+    components: {
+      Button: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Input: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Menu: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Checkbox: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Form: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Anchor: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Radio: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Tabs: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Segmented: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+      Card: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
+    }
+  }
   return (
     <ConfigProvider
-      theme={{
-        // token: {
-        //   colorText: theme.colorText, // Main text color added here
-        // },
-        components: {
-          Button: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Input: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Menu: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Checkbox: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Form: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Anchor: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Radio: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Tabs: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Segmented: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-          Card: {
-            colorPrimary: theme.colorPrimary,
-            algorithm: theme.algorithm,
-          },
-        },
-      }}
+      theme={themes}
     >
       <BrowserRouter>
         <Row>
