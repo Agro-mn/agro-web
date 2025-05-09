@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Col, Row, Space, Table, Tabs, Tag, Button, Select, Input, Card, Typography, Menu, Segmented, Badge, ConfigProvider } from 'antd';
-import { EyeOutlined, EditOutlined, DeleteOutlined, PlusCircleFilled, PlusCircleOutlined, PlusOutlined, SendOutlined, SearchOutlined, RadarChartOutlined, FlagOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import { Col, Row, Space, Table, Tabs, Button, Select, Card, Typography, Badge } from 'antd';
+import { EyeOutlined, EditOutlined, DeleteOutlined, PlusOutlined, SendOutlined, SearchOutlined, RadarChartOutlined, FlagOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 

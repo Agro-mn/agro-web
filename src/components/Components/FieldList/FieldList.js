@@ -1,6 +1,6 @@
-import { Affix, AutoComplete, Button, Col, Flex, Input, Radio, Row, Tag } from 'antd';
+import { AutoComplete, Button, Col, Input, Radio, Row } from 'antd';
 import React from 'react';
-import { SettingOutlined, EditOutlined, EllipsisOutlined, EnvironmentOutlined, FlagOutlined, UnorderedListOutlined } from '@ant-design/icons';
+import { SettingOutlined, EnvironmentOutlined, FlagOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import map from '../../../assets/img/map.png';
 import Tsagaannuur from '../../../assets/img/Tsagaannuur.png';
 function FieldList() {

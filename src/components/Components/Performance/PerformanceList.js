@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { Col, Row, Space, Table, Tabs, Tag, Button, Select, Input, Card, Typography, Menu, Segmented, Badge, ConfigProvider, Radio, Descriptions, Calendar } from 'antd';
-import {  LeftOutlined, RightOutlined, SunOutlined, CloudDownloadOutlined, AliwangwangOutlined, AlignLeftOutlined, CloudOutlined, CloudFilled, ThunderboltOutlined, CloudSyncOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import { Col, Row, Space, Table, Tabs, Tag, Button, Card, Typography, Badge, Radio, Descriptions, Calendar } from 'antd';
+import { LeftOutlined, RightOutlined, SunOutlined, CloudDownloadOutlined, AliwangwangOutlined, AlignLeftOutlined, CloudOutlined, CloudFilled, ThunderboltOutlined, CloudSyncOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
-
-const { Option } = Select;
 
 const PerformanceList = () => {
   const data = [
@@ -175,23 +173,23 @@ const PerformanceList = () => {
     category: 'Тарихийн өмнөх бодис цацалт',
     color: { color: '#936ee9', backgroundColor: '#ccc1f1', cardBackgroundColor: '#e1d6f1' },
     products: [
-      { 
-        name: 'УлаанБуудайн', 
+      {
+        name: 'УлаанБуудайн',
         data: [
-          {field: 'Чандагтай', balance:'100 га', performance: '50 га'},
-          {field: 'Төвийн урд', balance:'50 га', performance: '20 га'}
+          { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
+          { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
         ],
         totalBalance: '150 га',
         totalPerformance: '70 га',
       },
-      { 
-        name: 'Рапс', 
+      {
+        name: 'Рапс',
         data: [
-          {field: 'Чандагтай', balance:'100 га', performance: '50 га'},
-          {field: 'Төвийн урд', balance:'50 га', performance: '20 га'}
+          { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
+          { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
         ],
         totalBalance: '150 га',
-        totalPerformance: '70 га', 
+        totalPerformance: '70 га',
       }
     ]
   }
@@ -200,23 +198,23 @@ const PerformanceList = () => {
     category: 'Үрcэлгээ',
     color: { color: '#28a1d9', backgroundColor: '#afdaed', cardBackgroundColor: '#cde3f9' },
     products: [
-      { 
-        name: 'УлаанБуудайн', 
+      {
+        name: 'УлаанБуудайн',
         data: [
-          {field: 'Чандагтай', balance:'100 га', performance: '50 га'},
-          {field: 'Төвийн урд', balance:'50 га', performance: '20 га'}
+          { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
+          { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
         ],
         totalBalance: '150 га',
         totalPerformance: '70 га',
       },
-      { 
-        name: 'Рапс', 
+      {
+        name: 'Рапс',
         data: [
-          {field: 'Чандагтай', balance:'100 га', performance: '50 га'},
-          {field: 'Төвийн урд', balance:'50 га', performance: '20 га'}
+          { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
+          { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
         ],
         totalBalance: '150 га',
-        totalPerformance: '70 га', 
+        totalPerformance: '70 га',
       }
     ]
   }
@@ -225,23 +223,23 @@ const PerformanceList = () => {
     category: 'Арчилгаа',
     color: { color: '#ff7447', backgroundColor: '#ebc7bc', cardBackgroundColor: '#e7e1df' },
     products: [
-      { 
-        name: 'УлаанБуудайн', 
+      {
+        name: 'УлаанБуудайн',
         data: [
-          {field: 'Чандагтай', balance:'100 га', performance: '50 га'},
-          {field: 'Төвийн урд', balance:'50 га', performance: '20 га'}
+          { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
+          { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
         ],
         totalBalance: '150 га',
         totalPerformance: '70 га',
       },
-      { 
-        name: 'Рапс', 
+      {
+        name: 'Рапс',
         data: [
-          {field: 'Чандагтай', balance:'100 га', performance: '50 га'},
-          {field: 'Төвийн урд', balance:'50 га', performance: '20 га'}
+          { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
+          { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
         ],
         totalBalance: '150 га',
-        totalPerformance: '70 га', 
+        totalPerformance: '70 га',
       }
     ]
   }
@@ -250,23 +248,23 @@ const PerformanceList = () => {
     category: 'Хураалт',
     color: { color: '#cc7429', backgroundColor: '#f3decc', cardBackgroundColor: '#efebe6' },
     products: [
-      { 
-        name: 'УлаанБуудайн', 
+      {
+        name: 'УлаанБуудайн',
         data: [
-          {field: 'Чандагтай', balance:'100 га', performance: '50 га'},
-          {field: 'Төвийн урд', balance:'50 га', performance: '20 га'}
+          { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
+          { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
         ],
         totalBalance: '150 га',
         totalPerformance: '70 га',
       },
-      { 
-        name: 'Рапс', 
+      {
+        name: 'Рапс',
         data: [
-          {field: 'Чандагтай', balance:'100 га', performance: '50 га'},
-          {field: 'Төвийн урд', balance:'50 га', performance: '20 га'}
+          { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
+          { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
         ],
         totalBalance: '150 га',
-        totalPerformance: '70 га', 
+        totalPerformance: '70 га',
       }
     ]
   }
@@ -277,10 +275,10 @@ const PerformanceList = () => {
       monthAndDay: "05-01",
       temperature: "15°C",
       condition: "Нартай",
-      icon: <SunOutlined style={{fontSize: '3rem'}}/>,
+      icon: <SunOutlined style={{ fontSize: '3rem' }} />,
       windSpeed: "10 км/ц",
       humidity: "60%",
-      data:[tsatsalt, urselgee, archilgaa, huraalt]
+      data: [tsatsalt, urselgee, archilgaa, huraalt]
     },
     {
       day: "2025-05-02",
@@ -288,10 +286,10 @@ const PerformanceList = () => {
       monthAndDay: "05-02",
       temperature: "18°C",
       condition: "Хэсэгчлэн үүлэрхэг",
-      icon: <CloudOutlined style={{fontSize: '3rem'}}/>,
+      icon: <CloudOutlined style={{ fontSize: '3rem' }} />,
       windSpeed: "12 км/ц",
       humidity: "55%",
-      data:[tsatsalt, urselgee, archilgaa,]
+      data: [tsatsalt, urselgee, archilgaa,]
     },
     {
       day: "2025-05-03",
@@ -299,10 +297,10 @@ const PerformanceList = () => {
       monthAndDay: "05-03",
       temperature: "20°C",
       condition: "Үүлэрхэг",
-      icon: <CloudFilled style={{fontSize: '3rem'}}/>,
+      icon: <CloudFilled style={{ fontSize: '3rem' }} />,
       windSpeed: "8 км/ц",
       humidity: "50%",
-      data:[tsatsalt, archilgaa,]
+      data: [tsatsalt, archilgaa,]
     },
     {
       day: "2025-05-04",
@@ -310,10 +308,10 @@ const PerformanceList = () => {
       monthAndDay: "05-04",
       temperature: "22°C",
       condition: "Бороо орно",
-      icon: <CloudDownloadOutlined style={{fontSize: '3rem'}}/>,
+      icon: <CloudDownloadOutlined style={{ fontSize: '3rem' }} />,
       windSpeed: "15 км/ц",
       humidity: "70%",
-      data:[ urselgee, archilgaa, huraalt]
+      data: [urselgee, archilgaa, huraalt]
     },
     {
       day: "2025-05-05",
@@ -321,10 +319,10 @@ const PerformanceList = () => {
       monthAndDay: "05-05",
       temperature: "19°C",
       condition: "Аянга цахилгаантай",
-      icon: <ThunderboltOutlined style={{fontSize: '3rem'}}/>,
+      icon: <ThunderboltOutlined style={{ fontSize: '3rem' }} />,
       windSpeed: "20 км/ц",
       humidity: "80%",
-      data:[tsatsalt, huraalt]
+      data: [tsatsalt, huraalt]
     },
     {
       day: "2025-05-06",
@@ -332,10 +330,10 @@ const PerformanceList = () => {
       monthAndDay: "05-06",
       temperature: "16°C",
       condition: "Салхитай",
-      icon: <AlignLeftOutlined style={{fontSize: '3rem'}}/>,
+      icon: <AlignLeftOutlined style={{ fontSize: '3rem' }} />,
       windSpeed: "25 км/ц",
       humidity: "65%",
-      data:[huraalt]
+      data: [huraalt]
     },
     {
       day: "2025-05-07",
@@ -343,33 +341,33 @@ const PerformanceList = () => {
       monthAndDay: "05-07",
       temperature: "14°C",
       condition: "Цас орно",
-      icon: <CloudSyncOutlined style={{fontSize: '3rem'}}/>,
+      icon: <CloudSyncOutlined style={{ fontSize: '3rem' }} />,
       windSpeed: "10 км/ц",
       humidity: "75%",
-      data:[tsatsalt, urselgee, archilgaa]
+      data: [tsatsalt, urselgee, archilgaa]
     },
   ];
 
   const renderCards = (category) => {
     return category.data.map((item) => (
-        <Card
-          key={item.id}
-          size='small'
-          style={{
-            marginBottom: '16px',
-            backgroundColor: item.color.cardBackgroundColor,
-          }}
-        >
-          <Row gutter={[16, 16]} >
-            <Col span={24} style={{
-              textAlign: 'center', fontWeight: 'bold', padding: '8px',
-              ...item.color
-            }}>
-              {item.category}
-            </Col>
-            {item.products.map((product, index) => (
-              <Col span={24} key={index}>
-                <Table 
+      <Card
+        key={item.id}
+        size='small'
+        style={{
+          marginBottom: '16px',
+          backgroundColor: item.color.cardBackgroundColor,
+        }}
+      >
+        <Row gutter={[16, 16]} >
+          <Col span={24} style={{
+            textAlign: 'center', fontWeight: 'bold', padding: '8px',
+            ...item.color
+          }}>
+            {item.category}
+          </Col>
+          {item.products.map((product, index) => (
+            <Col span={24} key={index}>
+              <Table
                 title={() => <>{product.name}</>}
                 summary={() => (
                   <Table.Summary fixed>
@@ -381,17 +379,19 @@ const PerformanceList = () => {
                   </Table.Summary>
                 )}
                 size='small'
-                pagination={false} bordered 
-                dataSource={product.data} 
+                pagination={false} bordered
+                dataSource={product.data}
                 rowKey="field"
-                  style={{ border: `2px solid ${item.color.color}`, 
-                  borderRadius:'8px' , backgroundColor: item.color.backgroundColor}}
-                >
-                  <Table.Column width={'40%'} title="Талбай" dataIndex="field" key="field" />
-                  <Table.Column width={'30%'} title="Талб.хэмжээ" dataIndex="balance" key="balance" /> 
-                  <Table.Column width={'30%'} title="Гүйцэтгэл" dataIndex="performance" key="performance" />
-                </Table>
-                {/* <Card style={{ width: '100%', textAlign: 'left', border: `2px solid ${item.color.color}` }} size='small'
+                style={{
+                  border: `2px solid ${item.color.color}`,
+                  borderRadius: '8px', backgroundColor: item.color.backgroundColor
+                }}
+              >
+                <Table.Column width={'40%'} title="Талбай" dataIndex="field" key="field" />
+                <Table.Column width={'30%'} title="Талб.хэмжээ" dataIndex="balance" key="balance" />
+                <Table.Column width={'30%'} title="Гүйцэтгэл" dataIndex="performance" key="performance" />
+              </Table>
+              {/* <Card style={{ width: '100%', textAlign: 'left', border: `2px solid ${item.color.color}` }} size='small'
                   title={<div style={{ color: 'gray' }}> <RadarChartOutlined style={{ color: item.color.color }} />   {product.dateRange}</div>}
                 >
                   <Space size={0} style={{ width: '100%', justifyContent: 'space-between' }}>
@@ -401,12 +401,12 @@ const PerformanceList = () => {
                     </Button>
                   </Space>
                 </Card> */}
-              </Col>
-            ))}
-          </Row>
-        </Card>
+            </Col>
+          ))}
+        </Row>
+      </Card>
 
-      ));
+    ));
   };
 
   const getMonthData = (value) => {
@@ -416,13 +416,13 @@ const PerformanceList = () => {
       const itemEndMonth = dayjs(item.endDate).format('YYYY-MM');
       return month >= itemStartMonth && month <= itemEndMonth; // Check if the month falls within the range
     });
-  
+
     return monthData.map(item => ({
       type: item.status === 'Баталсан' ? 'success' : item.status === 'Цуцалсан' ? 'error' : 'default',
       content: `${item.productType} - ${item.technology}`,
     }));
   };
-  
+
   const monthCellRender = (value) => {
     const listData = getMonthData(value);
     return (
@@ -451,7 +451,7 @@ const PerformanceList = () => {
         } else if (currentDate === item.endDate) {
           dayType = 'endDay';
         }
-  
+
         // Determine the color based on the status
         let color = 'default'; // Default color
         switch (item.status) {
@@ -470,7 +470,7 @@ const PerformanceList = () => {
           default:
             color = 'warning';
         }
-  
+
         return {
           type: color, // Set the type dynamically
           content: `${item.productType} - ${item.technology}`, // Customize the content
@@ -482,9 +482,9 @@ const PerformanceList = () => {
     const listData = getListData(value);
     return (
       <div style={{ padding: 0 }}>
-        {listData.map((item,index) => (
-          <Tag key={`${item.content}${index}`} 
-            color={item.type} 
+        {listData.map((item, index) => (
+          <Tag key={`${item.content}${index}`}
+            color={item.type}
             style={{
               width: '100%',
               borderRadius: item.dayType === 'beginDay' ? '12px 0 0 12px' : item.dayType === 'endDay' ? '0 12px 12px 0' : '0', // Set borderRadius dynamically
@@ -492,15 +492,15 @@ const PerformanceList = () => {
               borderBottom: '2px solid',
               borderLeft: item.dayType === 'beginDay' ? '2px solid' : '0px solid', // Add border dynamically
               borderRight: item.dayType === 'endDay' ? '2px solid' : '0px solid', // Add border dynamically
-              
+
             }}
           >
             {item.content}
-            </Tag>
+          </Tag>
         ))}
       </div>
     );
-    
+
   };
   const cellRender = (current, info) => {
     if (info.type === 'date') return dateCellRender(current);
@@ -519,92 +519,92 @@ const PerformanceList = () => {
       <Col span={24}>
         <Row gutter={[16, 16]} align="middle">
           <Col span={6}>
-           <Button type="primary" ghost shape='round'>Өнөөдөр</Button>
+            <Button type="primary" ghost shape='round'>Өнөөдөр</Button>
           </Col>
           <Col span={12}>
-              <Row align={'center'} gutter={[16, 16]}>
-                <Col >
-                  <Button type="primary" ghost shape='round' icon={<LeftOutlined />}></Button>
-                  </Col>
-                <Col justifyContent={'center'}  >
-                  <Typography.Text style={{fontSize: 'large'}}>{"2025-05-02 -> 2025-05-07"}</Typography.Text>
-                </Col>
-                <Col >
-                  <Button type="primary" ghost  shape='round'  icon={<RightOutlined />}></Button>
-                </Col>
-              </Row>
-          </Col>
-           <Col span={6} >
-           <Row align={'end'} gutter={[16, 16]}>
+            <Row align={'center'} gutter={[16, 16]}>
               <Col >
-              <Radio.Group defaultValue="c" buttonStyle="outline">
-                <Radio.Button value="a" style={{ backgroundColor: 'transparent', borderRadius: '20px 0 0 20px' }}>Он</Radio.Button>
-                <Radio.Button value="b" style={{ backgroundColor: 'transparent', borderRadius: '0' }}>Сар</Radio.Button>
-                <Radio.Button value="c" style={{ backgroundColor: 'transparent', borderRadius: '0 20px 20px 0' }}>Өдөр</Radio.Button>
-              </Radio.Group>
+                <Button type="primary" ghost shape='round' icon={<LeftOutlined />}></Button>
               </Col>
-           </Row>
+              <Col justifyContent={'center'}  >
+                <Typography.Text style={{ fontSize: 'large' }}>{"2025-05-02 -> 2025-05-07"}</Typography.Text>
+              </Col>
+              <Col >
+                <Button type="primary" ghost shape='round' icon={<RightOutlined />}></Button>
+              </Col>
+            </Row>
+          </Col>
+          <Col span={6} >
+            <Row align={'end'} gutter={[16, 16]}>
+              <Col >
+                <Radio.Group defaultValue="c" buttonStyle="outline">
+                  <Radio.Button value="a" style={{ backgroundColor: 'transparent', borderRadius: '20px 0 0 20px' }}>Он</Radio.Button>
+                  <Radio.Button value="b" style={{ backgroundColor: 'transparent', borderRadius: '0' }}>Сар</Radio.Button>
+                  <Radio.Button value="c" style={{ backgroundColor: 'transparent', borderRadius: '0 20px 20px 0' }}>Өдөр</Radio.Button>
+                </Radio.Group>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Col>
       <Col span={24}>
         {currTab === 'performance' &&
-            <Descriptions bordered 
-            column={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 7, xxl: 7 }} 
-            size='small' layout="vertical" 
-            >
-              {categories.map((category) => (
-              <Descriptions.Item key={category.day} 
+          <Descriptions bordered
+            column={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 7, xxl: 7 }}
+            size='small' layout="vertical"
+          >
+            {categories.map((category) => (
+              <Descriptions.Item key={category.day}
                 label={
-                <Row style={{ margin: '1rem' }} >
-                  <Col span={24} style={{ fontWeight: 'bold',  }}  >
-                    {category.weekday}  {category.monthAndDay}
-                  </Col>
-                  <Col span={24} >
-                    <Row justify={'space-between'} align='middle' >
-                      <Col span={12} style={{ textAlign: 'center' }}>
-                        {category.icon}
+                  <Row style={{ margin: '1rem' }} >
+                    <Col span={24} style={{ fontWeight: 'bold', }}  >
+                      {category.weekday}  {category.monthAndDay}
                     </Col>
-                      <Col span={12}>
-                        <Row>
-                          <Col span={24} align='right'  style={{ fontWeight: 'bold' }}>
+                    <Col span={24} >
+                      <Row justify={'space-between'} align='middle' >
+                        <Col span={12} style={{ textAlign: 'center' }}>
+                          {category.icon}
+                        </Col>
+                        <Col span={12}>
+                          <Row>
+                            <Col span={24} align='right' style={{ fontWeight: 'bold' }}>
                               {category.temperature}
-                          </Col>
-                          <Col span={24} align='right' >
+                            </Col>
+                            <Col span={24} align='right' >
                               {category.windSpeed}
-                          </Col>
-                          <Col span={24} align='right' >
-                              <AliwangwangOutlined/> {category.humidity}
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                  </Col>
-                  <Col span={24} style={{ fontSize: 'small', textAlign: 'center' }}>
+                            </Col>
+                            <Col span={24} align='right' >
+                              <AliwangwangOutlined /> {category.humidity}
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col span={24} style={{ fontSize: 'small', textAlign: 'center' }}>
                       {category.condition}
-                  </Col>
-                </Row>
+                    </Col>
+                  </Row>
                 }
-                style={{alignContent:'baseline', height: '100%', padding: '0px'}}
+                style={{ alignContent: 'baseline', height: '100%', padding: '0px' }}
               >
-                  {renderCards(category)}
+                {renderCards(category)}
               </Descriptions.Item>
-              ))}
-            </Descriptions>
+            ))}
+          </Descriptions>
         }
-         {currTab === 'totalPerformance' && (
+        {currTab === 'totalPerformance' && (
           <Row gutter={[16, 16]} >
             <Col span={24}>
-            <Calendar cellRender={cellRender} className='customCalendar'/>
+              <Calendar cellRender={cellRender} className='customCalendar' />
             </Col>
-          <Col span={24}>
-          <Table
-            size="small"
-            dataSource={data}
-            columns={columns} // Use columns array here
-            pagination={{ pageSize: 10 }}
-            rowSelection={rowSelection}
-          /></Col>
+            <Col span={24}>
+              <Table
+                size="small"
+                dataSource={data}
+                columns={columns} // Use columns array here
+                pagination={{ pageSize: 10 }}
+                rowSelection={rowSelection}
+              /></Col>
           </Row>
         )}
       </Col>

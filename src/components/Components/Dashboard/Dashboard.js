@@ -1,5 +1,4 @@
 import { Col, Row } from 'antd';
-import React from 'react';
 import { Bar, Column, Pie } from '@ant-design/plots';
 function Dashboard() {
   const data = [
@@ -68,7 +67,7 @@ function Dashboard() {
       try {
         chart.on('afterrender', () => {
           chart.emit('legend:filter', {
-            data: { channel: 'color', values: ['Хураалт','Тарихийн өмнөх бодис цацалт','Үрcэлгээ'] },
+            data: { channel: 'color', values: ['Хураалт', 'Тарихийн өмнөх бодис цацалт', 'Үрcэлгээ'] },
           });
         });
       } catch (e) {
@@ -80,13 +79,13 @@ function Dashboard() {
   return (
     <Row>
       <Col span={24}>
-       <Column {...config} />;
+        <Column {...config} />;
       </Col>
       <Col span={24}>
-       <Pie {...config} />;
+        <Pie {...config} />;
       </Col>
       <Col span={24}>
-       <Bar {...config} />;
+        <Bar {...config} />;
       </Col>
     </Row>
   );
