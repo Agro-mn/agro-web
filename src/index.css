@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-
 :root {
   --main-green: #104736;
   --main-yellow: #d69953;
@@ -23,10 +22,4 @@ code {
   --primary-color: var(--blue-500); /* Set it as the primary color */
   --red-500: #d9703f; /* Change main red */
   --font-family: 'MonFnt11', sans-serif; /* Custom font */
-}
-
-.customCalendar .ant-picker-calendar-date-content {
-  
-  margin: 0px -12px; /* Custom margin */
-  
 }
