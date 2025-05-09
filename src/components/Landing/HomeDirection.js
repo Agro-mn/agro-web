@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Card, Row, Col, Divider, Flex } from 'antd';
+import { useEffect } from 'react';
+import { Row, Col } from 'antd';
 import dir1 from '../../assets/img/dir1.png';
 import dir2 from '../../assets/img/dir2.png';
 import dir3 from '../../assets/img/dir3.png';
