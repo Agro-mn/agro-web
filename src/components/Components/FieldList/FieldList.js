@@ -21,7 +21,7 @@ function FieldList() {
       <Col span={24}>
         {/* <Affix offsetTop={80} style={{ zIndex: 1 }}> */}
         <Row>
-          <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+          <Col xs={24} sm={24} md={16} lg={16} xl={16} xxl={16}>
             <Row gutter={[16, 16]} >
               <Col >
                 <AutoComplete>
@@ -35,7 +35,7 @@ function FieldList() {
               </Col>
             </Row>
           </Col>
-          <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} justify='right'>
+          <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8} justify='right'>
             <Row justify={'end'}>
               <Radio.Group value={arrayType} onChange={(e) => setArrayType(e.target.value)}>
                 <Radio.Button value="list">
