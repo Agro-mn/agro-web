@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.customCalendar .ant-picker-calendar-date-content {
+  margin: 0px -12px; /* Custom margin */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
