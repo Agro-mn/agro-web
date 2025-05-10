@@ -67,9 +67,6 @@ function LandingPage() {
   return (
       <ConfigProvider
           theme={{
-            // token: {
-            //   colorText: themeData.colorText, // Main text color added here
-            // },
             components: {
               Button: {
                 colorPrimary: themeData.colorPrimary,
