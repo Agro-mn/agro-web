@@ -1,6 +1,6 @@
-import { Col, Row, Affix, Flex, Button, Modal, Anchor, ConfigProvider, Card } from 'antd';
+import { Col, Row, Affix, Flex, Button, Modal, Anchor, ConfigProvider, Card, Dropdown, Menu, Space, Avatar } from 'antd';
 import { useContext, useEffect, useState } from 'react';
-import { AlertOutlined, FacebookFilled, InstagramFilled, TwitterOutlined } from "@ant-design/icons";
+import { AlertOutlined, BankFilled, BankOutlined, BankTwoTone, DownOutlined, FacebookFilled, IdcardOutlined, InstagramFilled, LogoutOutlined, SettingOutlined, TwitterOutlined, UserOutlined } from "@ant-design/icons";
 import { BrowserRouter } from "react-router-dom";
 import { MainContext } from './MainContext';
 
@@ -118,8 +118,13 @@ function MainLayout() {
         colorPrimary: theme.colorPrimary,
         algorithm: theme.algorithm,
       },
+      Dropdown: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
     }
   }
+
   return (
     <ConfigProvider
       theme={themes}
@@ -153,14 +158,61 @@ function MainLayout() {
                 </Col>
                 <Col xs={24} sm={12} md={12} lg={6} xl={6} xxl={6}>
                   <Flex align='center' justify='right' gap='middle' style={{ height: '100%' }}>
-                    {loggedUser && <Button type='text' icon={<AlertOutlined />} >Мэдэгдэл</Button>}
-                    {!loggedUser && <Button type='text' style={{ color: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}>
+                    {loggedUser && <Button type='primary' ghost icon={<AlertOutlined />} >Мэдэгдэл</Button>}
+                    {!loggedUser && <Button type='primary' ghost style={{ color: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}>
                       Бүртгүүлэх
                     </Button>}
-                    <Button style={{ background: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', color: '#ffffff', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}
-                      onClick={() => { showModal(); }}>
-                      {loggedUser ?? 'Нэвтрэх'}
-                    </Button>
+                    {!loggedUser &&
+                      <Button style={{ background: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', color: '#ffffff', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}
+                        onClick={() => { showModal(); }}>
+                        Нэвтрэх
+                      </Button>
+                    }
+                    {loggedUser && // dropdown user and logout and 2 organizations with dividers
+                      <Dropdown overlay={<Menu>
+                        <Menu.Item key="profile" disabled style={{ cursor: 'default', }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                              {/* User Info */}
+                              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                <Avatar size="small" icon={<UserOutlined />} />
+                                <span style={{ fontWeight: 500 }}>{loggedUser}</span>
+                              </div>
+
+                              {/* Organization Info */}
+                              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                <Avatar size="small" icon={<BankOutlined />} />
+                                <span style={{ fontSize: 12, color: '#888' }}>Organization 3</span>
+                              </div>
+
+                              {/* Role Info */}
+                              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                <Avatar size="small" icon={<IdcardOutlined />} />
+                                <span style={{ fontSize: 12, color: '#888' }}>Захирал</span>
+                              </div>
+                            </div>
+                          </div>
+                        </Menu.Item>
+                        <Menu.Divider />
+                        <Menu.Item key="org1" onClick={() => { }}>
+                          <Button type="text" size='small' icon={<BankFilled />} >Organization 1</Button>
+                        </Menu.Item>
+                        <Menu.Item key="org2" onClick={() => { }}>
+                          <Button type="text" size='small' icon={<BankFilled />} >Organization 2</Button>
+                        </Menu.Item>
+                        <Menu.Divider />
+                        <Menu.Item key="settings" icon={<SettingOutlined />} onClick={() => { }}>
+                          Хувийн тохиргоо
+                        </Menu.Item>
+                        <Menu.Item key="logout" danger onClick={() => { showModal() }} icon={<LogoutOutlined />}>
+                          Гарах
+                        </Menu.Item>
+                      </Menu>} placement="bottomRight" trigger={['click']}>
+                        <Button type='primary'>
+                          Захирал - Organization 1 <DownOutlined />
+                        </Button>
+                      </Dropdown>
+                    }
                   </Flex>
                 </Col>
                 <Modal
@@ -218,7 +270,7 @@ function MainLayout() {
             </Row>
 
           </Col>
-        </Row>
+        </Row >
       </BrowserRouter >
     </ConfigProvider >
   );
