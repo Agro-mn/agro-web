@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Col, Row, Space, Table, Tabs, Tag, Button, Card, Typography, Badge, Radio, Descriptions, Calendar } from 'antd';
-import { LeftOutlined, RightOutlined, SunOutlined, CloudDownloadOutlined, AliwangwangOutlined, AlignLeftOutlined, CloudOutlined, CloudFilled, ThunderboltOutlined, CloudSyncOutlined } from '@ant-design/icons';
+import { Col, Row, Space, Table, Tabs, Tag, Button, Card, Typography, Badge, Radio, Descriptions, Calendar, DatePicker } from 'antd';
+import { LeftOutlined, RightOutlined, SunOutlined, CloudDownloadOutlined, AliwangwangOutlined, AlignLeftOutlined, CloudOutlined, CloudFilled, ThunderboltOutlined, CloudSyncOutlined, SearchOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
+import moment from 'moment';
+import TimelinePage from './TimelinePage';
 
 const PerformanceList = () => {
   const data = [
@@ -516,39 +518,41 @@ const PerformanceList = () => {
           onChange={(value) => setCurrTab(value)}
         />
       </Col>
-      <Col span={24}>
-        <Row gutter={[16, 16]} align="middle">
-          <Col span={6}>
-            <Button type="primary" ghost shape='round'>Өнөөдөр</Button>
-          </Col>
-          <Col span={12}>
-            <Row align={'center'} gutter={[16, 16]}>
-              <Col >
-                <Button type="primary" ghost shape='round' icon={<LeftOutlined />}></Button>
-              </Col>
-              <Col justifyContent={'center'}  >
-                <Typography.Text style={{ fontSize: 'large' }}>{"2025-05-02 -> 2025-05-07"}</Typography.Text>
-              </Col>
-              <Col >
-                <Button type="primary" ghost shape='round' icon={<RightOutlined />}></Button>
-              </Col>
-            </Row>
-          </Col>
-          <Col span={6} >
-            <Row align={'end'} gutter={[16, 16]}>
-              <Col >
-                <Radio.Group defaultValue="c" buttonStyle="outline">
-                  <Radio.Button value="a" style={{ backgroundColor: 'transparent', borderRadius: '20px 0 0 20px' }}>Он</Radio.Button>
-                  <Radio.Button value="b" style={{ backgroundColor: 'transparent', borderRadius: '0' }}>Сар</Radio.Button>
-                  <Radio.Button value="c" style={{ backgroundColor: 'transparent', borderRadius: '0 20px 20px 0' }}>Өдөр</Radio.Button>
-                </Radio.Group>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Col>
-      <Col span={24}>
-        {currTab === 'performance' &&
+      {currTab === 'performance' &&
+        <Col span={24}>
+          <Row gutter={[16, 16]} align="middle">
+            <Col span={6}>
+              <Button type="primary" ghost shape='round'>Өнөөдөр</Button>
+            </Col>
+            <Col span={12}>
+              <Row align={'center'} gutter={[16, 16]}>
+                <Col >
+                  <Button type="primary" ghost shape='round' icon={<LeftOutlined />}></Button>
+                </Col>
+                <Col justifyContent={'center'}  >
+                  <Typography.Text style={{ fontSize: 'large' }}>{"2025-05-02 -> 2025-05-07"}</Typography.Text>
+                </Col>
+                <Col >
+                  <Button type="primary" ghost shape='round' icon={<RightOutlined />}></Button>
+                </Col>
+              </Row>
+            </Col>
+            <Col span={6} >
+              <Row align={'end'} gutter={[16, 16]}>
+                <Col >
+                  <Radio.Group defaultValue="c" buttonStyle="outline">
+                    <Radio.Button value="a" style={{ backgroundColor: 'transparent', borderRadius: '20px 0 0 20px' }}>Он</Radio.Button>
+                    <Radio.Button value="b" style={{ backgroundColor: 'transparent', borderRadius: '0' }}>Сар</Radio.Button>
+                    <Radio.Button value="c" style={{ backgroundColor: 'transparent', borderRadius: '0 20px 20px 0' }}>Өдөр</Radio.Button>
+                  </Radio.Group>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+      }
+      {currTab === 'performance' &&
+        <Col span={24}>
           <Descriptions bordered
             column={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 7, xxl: 7 }}
             size='small' layout="vertical"
@@ -591,23 +595,29 @@ const PerformanceList = () => {
               </Descriptions.Item>
             ))}
           </Descriptions>
-        }
-        {currTab === 'totalPerformance' && (
-          <Row gutter={[16, 16]} >
-            <Col span={24}>
-              <Calendar cellRender={cellRender} className='customCalendar' />
+        </Col>
+      }
+      {currTab === 'totalPerformance' && (
+        <Col span={24}>
+          <Row gutter={[16, 0]} align="middle" justify={'end'}>
+            <Col>
+              <DatePicker.RangePicker
+                size='large'
+                picker="month"
+                defaultValue={[moment().month(1), moment().month(12)]}
+                style={{ width: 300 }}
+              />
             </Col>
-            <Col span={24}>
-              <Table
-                size="small"
-                dataSource={data}
-                columns={columns} // Use columns array here
-                pagination={{ pageSize: 10 }}
-                rowSelection={rowSelection}
-              /></Col>
+            <Col>
+              <Button type='primary' size='large' icon={<SearchOutlined />} />
+            </Col>
           </Row>
-        )}
-      </Col>
+        </Col>)}
+      {currTab === 'totalPerformance' && (
+        <Col span={24}>
+          <TimelinePage />
+        </Col>)}
+
     </Row>
   );
 };

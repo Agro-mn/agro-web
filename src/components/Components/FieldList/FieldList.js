@@ -1,8 +1,9 @@
 import { AutoComplete, Button, Col, Input, Radio, Row } from 'antd';
 import React from 'react';
 import { SettingOutlined, EnvironmentOutlined, FlagOutlined, UnorderedListOutlined } from '@ant-design/icons';
-import map from '../../../assets/img/map.png';
+import map from '../../../assets/img/zurag.png';
 import Tsagaannuur from '../../../assets/img/Tsagaannuur.png';
+import AreaSelector from './AreaSelector';
 function FieldList() {
 
   const [arrayType, setArrayType] = React.useState('list');
@@ -99,9 +100,12 @@ function FieldList() {
         </Col>
       ))}
       {arrayType === 'map' &&
-        <img src={map} alt='map'
-          style={{ width: '100%', height: '100%' }}
-        />
+        <Col span={24}>
+          <AreaSelector />
+          <img src={map} alt='map'
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Col>
       }
     </Row>
   );
