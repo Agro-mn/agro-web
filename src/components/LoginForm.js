@@ -31,7 +31,7 @@ const LoginForm = ({ onClose }) => {
     <Flex align="center" justify="center">
       {loggedUser ? (
         <div>
-          <Title level={3}>Welcome back, {loggedUser}!</Title>
+          <Title level={3}>Гарахдаа итгэлтэй байна уу?</Title>
           <Button type="primary" onClick={handleLogout}>
             Logout
           </Button>
@@ -47,17 +47,17 @@ const LoginForm = ({ onClose }) => {
           autoComplete="off"
         >
           <Form.Item
-            label="Username"
+            label="Нэвтрэх нэр"
             name="username"
-            rules={[{ required: true, message: "Please input your username!" }]}
+            rules={[{ required: true, message: "Нэвтрэх нэрийг оруулна уу!" }]}
           >
             <Input />
           </Form.Item>
 
           <Form.Item
-            label="Password"
+            label="Нууц үг"
             name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[{ required: true, message: "Нууц үгийг оруулна уу!" }]}
           >
             <Input.Password />
           </Form.Item>
@@ -67,12 +67,12 @@ const LoginForm = ({ onClose }) => {
             valuePropName="checked"
             wrapperCol={{ offset: 8, span: 16 }}
           >
-            <Checkbox>Remember me</Checkbox>
+            <Checkbox>Сануулах</Checkbox>
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <Button type="primary" htmlType="submit">
-              Login
+              Нэвтрэх
             </Button>
           </Form.Item>
         </Form>
