@@ -128,7 +128,7 @@ function LandingPage1() {
                               <Flex align='center' justify='right' gap='middle' style={{ height: '100%', marginRight: '1rem' }}>
                                   {loggedUser && <Button type='text' icon={<AlertOutlined />} >Мэдэгдэл</Button>}
                                   <Button type='text' style={{color: `#272826`,fontFamily: "var(--main-font)", padding: '1.2rem 1.5rem', border: `3px solid ${themeData.colorPrimary}`, borderRadius: '10px'}}>Бүртгүүлэх</Button>
-                                  <Button style={{background: `${themeData.colorPrimary}`,fontFamily: "var(--main-font)", padding: '1.2rem 1.5rem',color: '#ffffff', border: `3px solid ${themeData.colorPrimary}`, borderRadius: '10px'}} onClick={() => { showModal(); }}>{loggedUser ?? 'Нэвтрэх'}</Button>
+                                  <Button style={{background: `${themeData.colorPrimary}`,fontFamily: "var(--main-font)", padding: '1.2rem 1.5rem',color: '#f0fff2', border: `3px solid ${themeData.colorPrimary}`, borderRadius: '10px'}} onClick={() => { showModal(); }}>{loggedUser ?? 'Нэвтрэх'}</Button>
                               </Flex>
                           </Col>
                           <Modal

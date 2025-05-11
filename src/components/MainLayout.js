@@ -1,6 +1,6 @@
-import { Col, Row, Affix, Flex, Button, Modal, Anchor, ConfigProvider, Card } from 'antd';
+import {Col, Row, Affix, Flex, Button, Modal, Anchor, ConfigProvider, Card, Dropdown, Select} from 'antd';
 import { useContext, useEffect, useState } from 'react';
-import {AlertOutlined, FacebookFilled, InstagramFilled, TwitterOutlined, UserOutlined} from "@ant-design/icons";
+import {AlertOutlined, FacebookFilled, InstagramFilled, TwitterOutlined} from "@ant-design/icons";
 import {BrowserRouter} from "react-router-dom";
 import { MainContext } from './MainContext';
 import LoginForm from "./LoginForm";
@@ -10,20 +10,38 @@ import { Contents, ThemeData, LogoName } from './Landing/Contents';
 import MainPage from './MainPage';
 import logo from "../assets/img/agro_logo_yellow.png";
 import logo1 from "../assets/img/agro_logo_gradient.png";
+import bell from "../assets/icons/menu/bell.png";
+import user from "../assets/icons/menu/user.png";
+import exit from "../assets/icons/menu/exit.png";
+import info from "../assets/icons/menu/member-list.png";
 
-const landingStyle = {
-  sideBarStyle: { backgroundColor: "rgba(0, 0, 0, 0.0)", backdropFilter: "blur(10px)"},
-  contentStyle: { backgroundColor: "#ffffff", backdropFilter: "blur(10px)" },
-  rightBarStyle: { backgroundColor: "rgba(0, 0, 0, 0.0)", padding: '0.5rem', },
-}
 function MainLayout() {
+  const menus = [
+    {
+      key: '1',
+      label: (
+          <a target="_blank" rel="noopener noreferrer">
+            Миний мэдээлэл
+          </a>
+      ),
+      icon: <img src={info} alt='out' style={{width: '1px'}}/>
+    },
+    {
+      key: '2',
+      label: (
+          <a target="_blank" rel="noopener noreferrer" onClick={() => { showModal(); }}>
+            Гарах
+          </a>
+      ),
+      icon: <img src={exit} alt='out' style={{width: '1px'}}/>
+    },
+  ];
   const { system, loggedUser } = useContext(MainContext);
 
   const [items, setItems] = useState([]);
   const [theme, setTheme] = useState({});
   const [systemStyle, setSystemStyle] = useState({});
   useEffect(() => {
-    let sysStyle = landingStyle;
     if (system === "portal") {
       setItems(Contents1);
       setTheme(ThemeData1);
@@ -32,10 +50,11 @@ function MainLayout() {
       setTheme(ThemeData);
     }
     setSystemStyle({
-      sideBarStyle: sysStyle.sideBarStyle,
-      contentStyle: sysStyle.contentStyle,
-      rightBarStyle: sysStyle.rightBarStyle,
-      themeData: sysStyle.themeData,
+      sideBarStyle: {
+        backgroundColor: "rgba(0, 0, 0, 0.0)",
+        backdropFilter: "blur(10px)",},
+      contentStyle: { backgroundColor: "#f1f1f1", padding: '10px', backdropFilter: "blur(10px)" },
+      rightBarStyle: { backgroundColor: "rgba(0, 0, 0, 0.0)", padding: '0.5rem', },
     })
   }, [system, loggedUser])
 
@@ -50,6 +69,7 @@ function MainLayout() {
     components: {
       Button: {
         colorPrimary: theme.colorPrimary,
+        textTextColor: "#000000",
         algorithm: theme.algorithm,
       },
       Input: {
@@ -90,6 +110,10 @@ function MainLayout() {
       },
     }
   }
+  const handleChange = value => {
+    setCompanyId(value);
+  };
+  const [companyId, setCompanyId] = useState('1');
 
   return (
       <ConfigProvider
@@ -99,7 +123,7 @@ function MainLayout() {
           <Row>
             {!loggedUser && system !== "portal" &&
                 <Col span={24} style={{position: "absolute", zIndex: 1, width: '100vw'}}>
-                  <Affix style={{ width: '100%' }}>
+                  <Affix style={{ width: '100%'}}>
                     <Flex align='center' justify='center'>
                       <Row style={{
                         backgroundColor: 'rgba(39,40,38,0.82)',
@@ -166,7 +190,7 @@ function MainLayout() {
                         <Flex align='center' justify='right' gap='middle' style={{ height: '100%', marginRight: '1rem' }}>
                           {loggedUser && <Button type='text' icon={<AlertOutlined />} >Мэдэгдэл</Button>}
                           <Button type='text' style={{color: `#272826`,fontFamily: "var(--main-font)", padding: '1.2rem 1.5rem', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px'}}>Бүртгүүлэх</Button>
-                          <Button style={{background: `${theme.colorPrimary}`,fontFamily: "var(--main-font)", padding: '1.2rem 1.5rem',color: '#ffffff', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px'}}
+                          <Button style={{background: `${theme.colorPrimary}`,fontFamily: "var(--main-font)", padding: '1.2rem 1.5rem',color: '#f0fff2', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px'}}
                                   onClick={() => { showModal(); }}>{loggedUser ?? 'Нэвтрэх'}
                           </Button>
                         </Flex>
@@ -183,7 +207,9 @@ function MainLayout() {
                         height: '5rem',
                         width: '100vw',
                         padding: '0 2rem',
-                        borderBottom: `2px solid ${theme.colorPrimary}`
+                        marginTop: '0px',
+                        borderTop: `2px solid ${theme.colorPrimary}`,
+                        background:"#ffffff", boxShadow: "0 1px 9px rgba(0, 0, 0, 0.3)"
                       }}>
                         <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4}  >
                           <Flex align='center' style={{ height: '100%' }}>
@@ -191,35 +217,48 @@ function MainLayout() {
                                  style={{ height: '2.5rem' }} alt='logo'/>
                           </Flex>
                         </Col>
-                        <Col xs={24} sm={12} md={12} lg={14} xl={14} xxl={14} >
-                          <Flex gap={'middle'} align='center' justify='right' style={{ height: '100%', }} >
-                            {system !== "portal" ? <LogoName1 height={'1.5rem'} /> : <LogoName height={'1.5rem'} />}
-                            <FacebookFilled style={{ fontSize: 'large', color: 'blue' }} />
-                            <InstagramFilled style={{ fontSize: 'large', color: 'red' }} />
-                            <TwitterOutlined style={{ fontSize: 'large', color: 'blue' }} />
-                          </Flex>
-                        </Col>
-                        <Col xs={24} sm={12} md={12} lg={6} xl={6} xxl={6}>
+                        <Col xs={24} sm={12} md={12} lg={20} xl={20} xxl={20}>
                           <Flex align='center' justify='right' gap='middle' style={{ height: '100%' }}>
-                            <Button type='text'
+
+                            <Select
+                                className="custom-select"
+                                value={companyId}
+                                onChange={handleChange}
+                                placement="bottomRight"
+                                style={{
+                                  backgroundColor: 'white',
+                                  borderRadius: '10px',
+                                  border: `none`
+                                }}
+                                options={[
+                                  { value: '1', label: 'Сэлэнгэ Тариа ХХК' },
+                                  { value: '2', label: 'Оргил Тариа ХХК' },
+                                  { value: '3', label: 'Алтан Тариа ХХК' },
+                                  { value: '4', label: 'Таван Тариа ХХК' },
+                                ]}
+                            />
+                            <Button type='text' color="danger"
                                     style={{
                                       background: `${theme.colorBackground}`,
-                                      padding: '1.3rem',
-
+                                      padding: '1.5rem',
+                                      borderRadius: '10px',
+                                      border: `unset`
                             }}
                                     icon={
-                              <AlertOutlined style={{fontSize: '20px', color: `${theme.colorPrimary}` }} />
+                                      <img src={bell} alt='plan' height={20}/>
                             }></Button>
+                            <Dropdown menu={{ items: menus }} placement="bottomRight" trigger={['click']}>
+                              <Button
+                                      style={{
+                                        background: `${theme.colorBackground}`,
+                                        padding: '1.5rem',
+                                        borderRadius: '10px',
+                                        border: `unset`
 
-                            {!loggedUser && <Button style={{ background: `${theme.colorPrimary}`, padding: '1.2rem 1.5rem', color: '#ffffff', border: `3px solid ${theme.colorPrimary}`, borderRadius: '10px' }}
-                                    onClick={() => { showModal(); }}>
-                              Нэвтрэх
-                            </Button>}
-                            {
-                              loggedUser
-                                &&
-                                <UserOutlined style={{ fontSize: '25px', color: `${theme.colorPrimary}` }} onClick={() => { showModal(); }}/>
-                            }
+                                      }}
+                                      icon={<img src={user} alt='plan' height={20}/>
+                                      }></Button>
+                            </Dropdown>
                           </Flex>
                         </Col>
                       </Row>
@@ -275,7 +314,9 @@ function MainLayout() {
                 {loggedUser &&
                     <Col xs={14} sm={14} md={14} lg={20} xl={20} xxl={20} >
                       <Card size='small' style={{ minHeight: 'calc(100vh - 5rem)', marginTop: '5rem', ...systemStyle.contentStyle }}>
-                        <MainPage items={items} />
+                        <div style={{background: '#fff', padding: '25px', borderRadius: '10px'}}>
+                          <MainPage items={items} />
+                        </div>
                       </Card>
                     </Col>
                 }

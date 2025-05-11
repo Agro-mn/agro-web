@@ -54,7 +54,7 @@ function FieldList() {
 
       {arrayType === 'list' && data.map((item) => (
         <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} key={item.id}>
-          <Row style={{ borderRadius: '20px', backgroundColor: '#fff', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+          <Row style={{ borderRadius: '20px', backgroundColor: '#f0fff2', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
             <Col span={12}
               style={{
                 borderTopLeftRadius: '20px',

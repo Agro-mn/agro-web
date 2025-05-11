@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body::-webkit-scrollbar{
+  display: none;
+}
 
 code {
   font-family: "Montserrat", sans-serif !important;
@@ -21,4 +24,16 @@ code {
   --primary-color: var(--blue-500); /* Set it as the primary color */
   --red-500: #d9703f; /* Change main red */
   --font-family: 'MonFnt11', sans-serif; /* Custom font */
+}/* global.css or CompanySelect.module.css */
+
+.custom-select .ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.custom-select:hover .ant-select-selector,
+.custom-select.ant-select-focused .ant-select-selector {
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
