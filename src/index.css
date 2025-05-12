@@ -1,17 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar{
+  display: none;
 }
 
+code {
+  font-family: "Montserrat", sans-serif !important;
+}
 
 :root {
   --main-green: #104736;
@@ -23,10 +24,16 @@ code {
   --primary-color: var(--blue-500); /* Set it as the primary color */
   --red-500: #d9703f; /* Change main red */
   --font-family: 'MonFnt11', sans-serif; /* Custom font */
+}/* global.css or CompanySelect.module.css */
+
+.custom-select .ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none;
 }
 
-.customCalendar .ant-picker-calendar-date-content {
-  
-  margin: 0px -12px; /* Custom margin */
-  
+.custom-select:hover .ant-select-selector,
+.custom-select.ant-select-focused .ant-select-selector {
+  border-color: transparent !important;
+  box-shadow: none !important;
 }

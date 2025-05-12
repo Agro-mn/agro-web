@@ -1,8 +1,9 @@
 import { AutoComplete, Button, Col, Input, Radio, Row } from 'antd';
 import React from 'react';
 import { SettingOutlined, EnvironmentOutlined, FlagOutlined, UnorderedListOutlined } from '@ant-design/icons';
-import map from '../../../assets/img/map.png';
+import map from '../../../assets/img/zurag.png';
 import Tsagaannuur from '../../../assets/img/Tsagaannuur.png';
+import AreaSelector from './AreaSelector';
 function FieldList() {
 
   const [arrayType, setArrayType] = React.useState('list');
@@ -53,7 +54,7 @@ function FieldList() {
 
       {arrayType === 'list' && data.map((item) => (
         <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12} key={item.id}>
-          <Row style={{ borderRadius: '20px', backgroundColor: '#fff', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
+          <Row style={{ borderRadius: '20px', backgroundColor: '#f0fff2', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)' }}>
             <Col span={12}
               style={{
                 borderTopLeftRadius: '20px',
@@ -99,9 +100,12 @@ function FieldList() {
         </Col>
       ))}
       {arrayType === 'map' &&
-        <img src={map} alt='map'
-          style={{ width: '100%', height: '100%' }}
-        />
+        <Col span={24}>
+          <AreaSelector />
+          <img src={map} alt='map'
+            style={{ width: '100%', height: '100%' }}
+          />
+        </Col>
       }
     </Row>
   );

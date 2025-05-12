@@ -41,8 +41,9 @@ const Contents1 = [
 
 const ThemeData1 = {
   colorPrimary: '#4C6B45',
+  colorBackground: 'rgb(238,253,248)',
   colorText: '#4C6B45',
-  algorithm: true, // Enable algorithm
+  algorithm: true
 };
 
 

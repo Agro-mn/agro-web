@@ -34,9 +34,9 @@ const Contents = [
 ];
 
 const ThemeData = {
-  colorPrimary: 'rgb(216 156 87)',
-  colorText: 'rgb(216 156 87)',
-  algorithm: true, // Enable algorithm
+  colorPrimary: '#efd643',
+  colorText: '#efd643',
+  algorithm: true
 };
 
 

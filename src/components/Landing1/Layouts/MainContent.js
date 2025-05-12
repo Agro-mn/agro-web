@@ -12,7 +12,10 @@ function MainContent() {
     <Row>
       <Col span={24} style={{ backgroundColor: 'ButtonShadow', minHeight: 'calc(100vh - 8rem)', padding: '2rem' }}>
         <Routes>
-          <Route path="/" element={<LandingPage1 />} />
+          <Route path="/landing1" element={<LandingPage1 />} />
+
+          sys1/dashboard
+          sys2/dashboard
           <Route path="/org" element={<WeatherPage />} />
           <Route path="/org/news" element={<WeatherPage />} />
           <Route path="/org/news1" element={<WeatherPage />} />
