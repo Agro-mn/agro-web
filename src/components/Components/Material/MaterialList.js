@@ -1,4 +1,4 @@
-import { Table, Tag, Button, Dropdown, Menu, Pagination, Col, Row, Tabs, Radio } from 'antd';
+import { Table, Tag, Button, Col, Row, Tabs, Radio } from 'antd';
 import { EyeOutlined, EditOutlined, DeleteOutlined, PlusOutlined, FileExcelOutlined, FilePdfOutlined } from '@ant-design/icons';
 import buudai from '../../../assets/img/buudai.png';
 import { useState } from 'react';

@@ -1,7 +1,5 @@
 import { Card, Col, Divider, Row } from 'antd';
 import background from "../../../assets/img/landing1/pivot-family-9l-LASwTeWQ-unsplash.jpg";
-import testIcon from "../../../assets/img/testIcon.svg";
-import minCloudNigth from "../../../assets/img/minCloudNigth.png";
 import React from "react";
 
 function MainPage() {

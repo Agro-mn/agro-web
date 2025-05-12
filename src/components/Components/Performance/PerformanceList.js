@@ -1,104 +1,11 @@
 import { useState } from 'react';
-import { Col, Row, Space, Table, Tabs, Tag, Button, Card, Typography, Badge, Radio, Descriptions, Calendar, DatePicker } from 'antd';
+import { Col, Row, Table, Tabs, Button, Card, Typography, Radio, Descriptions, DatePicker } from 'antd';
 import { LeftOutlined, RightOutlined, SunOutlined, CloudDownloadOutlined, AliwangwangOutlined, AlignLeftOutlined, CloudOutlined, CloudFilled, ThunderboltOutlined, CloudSyncOutlined, SearchOutlined } from '@ant-design/icons';
-import dayjs from 'dayjs';
 import moment from 'moment';
 import TimelinePage from './TimelinePage';
 
 const PerformanceList = () => {
-  const data = [
-    {
-      key: '1',
-      productType: 'УлаанБуудайн',
-      technology: 'Тарианы эмнэл бодис цацалт',
-      area: '100га',
-      startDate: '2025-01-01',
-      endDate: '2025-01-01',
-      status: 'Бүртгсэн',
-    },
-    {
-      key: '2',
-      productType: 'Panc',
-      technology: 'Үрcэлгээ',
-      area: '100га',
-      startDate: '2025-01-01',
-      endDate: '2025-01-01',
-      status: 'Баталсан',
-    },
-    {
-      key: '3',
-      productType: 'Corn',
-      technology: 'Planting',
-      area: '200га',
-      startDate: '2025-02-01',
-      endDate: '2025-02-15',
-      status: 'Хянасан',
-    },
-    {
-      key: '4',
-      productType: 'Rice',
-      technology: 'Irrigation',
-      area: '150га',
-      startDate: '2025-03-01',
-      endDate: '2025-03-10',
-      status: 'Цуцалсан',
-    },
-    {
-      key: '5',
-      productType: 'Soybean',
-      technology: 'Harvesting',
-      area: '300га',
-      startDate: '2025-04-01',
-      endDate: '2025-04-20',
-      status: 'Баталсан',
-    },
-    {
-      key: '6',
-      productType: 'Barley',
-      technology: 'Fertilizing',
-      area: '120га',
-      startDate: '2025-05-01',
-      endDate: '2025-05-10',
-      status: 'Бүртгсэн',
-    },
-    {
-      key: '7',
-      productType: 'Wheat',
-      technology: 'Weeding',
-      area: '180га',
-      startDate: '2025-06-01',
-      endDate: '2025-06-15',
-      status: 'Хянасан',
-    },
-    {
-      key: '8',
-      productType: 'Potato',
-      technology: 'Spraying',
-      area: '250га',
-      startDate: '2025-07-01',
-      endDate: '2025-07-20',
-      status: 'Цуцалсан',
-    },
-    {
-      key: '9',
-      productType: 'Tomato',
-      technology: 'Pruning',
-      area: '80га',
-      startDate: '2025-08-01',
-      endDate: '2025-08-10',
-      status: 'Баталсан',
-    },
-    {
-      key: '10',
-      productType: 'Cucumber',
-      technology: 'Harvesting',
-      area: '60га',
-      startDate: '2025-09-01',
-      endDate: '2025-09-10',
-      status: 'Бүртгсэн',
-    },
-  ];
-
+  
   const [currTab, setCurrTab] = useState('performance');
 
   const tabItems = [
@@ -112,63 +19,63 @@ const PerformanceList = () => {
     },
   ];
 
-  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-  const onSelectChange = newSelectedRowKeys => {
-    setSelectedRowKeys(newSelectedRowKeys);
-  };
-  const rowSelection = {
-    selectedRowKeys,
-    onChange: onSelectChange,
-  };
-  const columns = [
-    {
-      title: 'Бүтээгдэхүүн',
-      dataIndex: 'productType',
-      key: 'productType',
-    },
-    {
-      title: 'Технологит ажил',
-      dataIndex: 'technology',
-      key: 'technology',
-    },
-    {
-      title: 'Талбайн хэмжээ',
-      dataIndex: 'area',
-      key: 'area',
-    },
-    {
-      title: 'Эхлэх огноо',
-      dataIndex: 'startDate',
-      key: 'startDate',
-    },
-    {
-      title: 'Дуусах огноо',
-      dataIndex: 'endDate',
-      key: 'endDate',
-    },
-    {
-      title: 'Төлөв',
-      dataIndex: 'status',
-      key: 'status',
-      render: (status) => {
-        let color = 'green';
-        if (status === 'Хянасан') color = 'blue';
-        if (status === 'Цуцалсан') color = 'red';
-        return <Badge color={color} text={status} />;
-      },
-    },
-    {
-      title: 'Үйлдэл',
-      key: 'action',
-      render: (_, record) => (
-        <Space size="middle">
-          {/* <Button icon={<EyeOutlined />} />
-          <Button icon={<EditOutlined />} />
-          <Button icon={<DeleteOutlined />} danger /> */}
-        </Space>
-      ),
-    },
-  ];
+  // const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  // const onSelectChange = newSelectedRowKeys => {
+  //   setSelectedRowKeys(newSelectedRowKeys);
+  // };
+  // // const rowSelection = {
+  //   selectedRowKeys,
+  //   onChange: onSelectChange,
+  // };
+  // const columns = [
+  //   {
+  //     title: 'Бүтээгдэхүүн',
+  //     dataIndex: 'productType',
+  //     key: 'productType',
+  //   },
+  //   {
+  //     title: 'Технологит ажил',
+  //     dataIndex: 'technology',
+  //     key: 'technology',
+  //   },
+  //   {
+  //     title: 'Талбайн хэмжээ',
+  //     dataIndex: 'area',
+  //     key: 'area',
+  //   },
+  //   {
+  //     title: 'Эхлэх огноо',
+  //     dataIndex: 'startDate',
+  //     key: 'startDate',
+  //   },
+  //   {
+  //     title: 'Дуусах огноо',
+  //     dataIndex: 'endDate',
+  //     key: 'endDate',
+  //   },
+  //   {
+  //     title: 'Төлөв',
+  //     dataIndex: 'status',
+  //     key: 'status',
+  //     render: (status) => {
+  //       let color = 'green';
+  //       if (status === 'Хянасан') color = 'blue';
+  //       if (status === 'Цуцалсан') color = 'red';
+  //       return <Badge color={color} text={status} />;
+  //     },
+  //   },
+  //   {
+  //     title: 'Үйлдэл',
+  //     key: 'action',
+  //     render: (_, record) => (
+  //       <Space size="middle">
+  //         {/* <Button icon={<EyeOutlined />} />
+  //         <Button icon={<EditOutlined />} />
+  //         <Button icon={<DeleteOutlined />} danger /> */}
+  //       </Space>
+  //     ),
+  //   },
+  // ];
 
   const tsatsalt = {
     id: 1,
@@ -411,104 +318,6 @@ const PerformanceList = () => {
     ));
   };
 
-  const getMonthData = (value) => {
-    const month = value.format('YYYY-MM'); // Format the month to match the data format
-    const monthData = data.filter(item => {
-      const itemStartMonth = dayjs(item.startDate).format('YYYY-MM');
-      const itemEndMonth = dayjs(item.endDate).format('YYYY-MM');
-      return month >= itemStartMonth && month <= itemEndMonth; // Check if the month falls within the range
-    });
-
-    return monthData.map(item => ({
-      type: item.status === 'Баталсан' ? 'success' : item.status === 'Цуцалсан' ? 'error' : 'default',
-      content: `${item.productType} - ${item.technology}`,
-    }));
-  };
-
-  const monthCellRender = (value) => {
-    const listData = getMonthData(value);
-    return (
-      <div style={{ padding: '4px' }}>
-        {listData.map((item, index) => (
-          <Tag
-            key={`${item.content}${index}`}
-            color={item.type === 'success' ? 'green' : item.type === 'error' ? 'red' : 'blue'}
-            style={{ marginBottom: '4px' }}
-          >
-            {item.content}
-          </Tag>
-        ))}
-      </div>
-    );
-  };
-  const getListData = (value) => {
-    const currentDate = value.format('YYYY-MM-DD'); // Format the date to match the data format
-    return data
-      .filter(item => currentDate >= item.startDate && currentDate <= item.endDate) // Filter items within the date range
-      .map(item => {
-        // Determine the day type
-        let dayType = 'betweenDay'; // Default to betweenDay
-        if (currentDate === item.startDate) {
-          dayType = 'beginDay';
-        } else if (currentDate === item.endDate) {
-          dayType = 'endDay';
-        }
-
-        // Determine the color based on the status
-        let color = 'default'; // Default color
-        switch (item.status) {
-          case 'Бүртгсэн':
-            color = 'primary';
-            break;
-          case 'Баталсан':
-            color = 'success';
-            break;
-          case 'Хянасан':
-            color = 'processing';
-            break;
-          case 'Цуцалсан':
-            color = 'error';
-            break;
-          default:
-            color = 'warning';
-        }
-
-        return {
-          type: color, // Set the type dynamically
-          content: `${item.productType} - ${item.technology}`, // Customize the content
-          dayType, // Add the day type (beginDay, betweenDay, or endDay)
-        };
-      });
-  };
-  const dateCellRender = value => {
-    const listData = getListData(value);
-    return (
-      <div style={{ padding: 0 }}>
-        {listData.map((item, index) => (
-          <Tag key={`${item.content}${index}`}
-            color={item.type}
-            style={{
-              width: '100%',
-              borderRadius: item.dayType === 'beginDay' ? '12px 0 0 12px' : item.dayType === 'endDay' ? '0 12px 12px 0' : '0', // Set borderRadius dynamically
-              borderTop: '2px solid',
-              borderBottom: '2px solid',
-              borderLeft: item.dayType === 'beginDay' ? '2px solid' : '0px solid', // Add border dynamically
-              borderRight: item.dayType === 'endDay' ? '2px solid' : '0px solid', // Add border dynamically
-
-            }}
-          >
-            {item.content}
-          </Tag>
-        ))}
-      </div>
-    );
-
-  };
-  const cellRender = (current, info) => {
-    if (info.type === 'date') return dateCellRender(current);
-    if (info.type === 'month') return monthCellRender(current);
-    return info.originNode;
-  };
   return (
     <Row gutter={[16, 16]}>
       <Col span={24}>

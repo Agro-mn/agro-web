@@ -1,8 +1,5 @@
-import React, { useEffect } from 'react';
-import { Card, Row, Col, Divider, Flex } from 'antd';
-import minCloud from '../../assets/img/minCloud.png';
-import minCloudNigth from '../../assets/img/minCloudNigth.png';
-import testIcon from '../../assets/img/testIcon.svg';
+import React from 'react';
+import { Row, Col } from 'antd';
 
 const HomeContact = () => {
   const style = {
