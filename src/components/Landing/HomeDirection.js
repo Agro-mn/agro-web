@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import { Row, Col, Flex } from 'antd';
 import dir1 from '../../assets/img/cows.jpg';
 import dir2 from '../../assets/img/wheat-background.jpg';
@@ -10,7 +10,7 @@ const HomeDirection = () => {
 
     const containerStyle = {
         width: '80vw',
-        height: 'calc(100vh - 6rem)',
+        // height: 'calc(100vh - 6rem)',
         fontFamily: "var(--main-font)",
         marginTop: '6rem'
     };
@@ -24,17 +24,17 @@ const HomeDirection = () => {
     };
 
     const testData = [
-        { title: "Үр тариа",           image: dir2 },
+        { title: "Үр тариа", image: dir2 },
         { title: "Хүлэмжийн аж ахуй", image: dir3 },
-        { title: "Хүнсний ногоо",      image: dir4 },
-        { title: "Мал аж ахуй",       image: dir1 }
+        { title: "Хүнсний ногоо", image: dir4 },
+        { title: "Мал аж ахуй", image: dir1 }
     ];
 
     return (
         <div style={containerStyle}>
             <Row gutter={[10, 40]}>
                 <Col span={24} style={headerStyle}>
-                    <span style={{borderBottom: '3px solid #efd643'}}>Үйл ажиллагааны чиглэл</span>
+                    <span style={{ borderBottom: '3px solid #efd643' }}>Үйл ажиллагааны чиглэл</span>
                 </Col>
 
                 {testData.map((item, index) => {
@@ -77,7 +77,7 @@ const HomeDirection = () => {
                                     <div
                                         style={headerStyle}
                                     >
-                                        <span style={{borderBottom: '3px solid #efd643', fontSize: '14px'}}>{item.title}</span>
+                                        <span style={{ borderBottom: '3px solid #efd643', fontSize: '14px' }}>{item.title}</span>
                                     </div>
                                 </Flex>
                                 <img
