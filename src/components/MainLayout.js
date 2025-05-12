@@ -20,7 +20,8 @@ function MainLayout() {
     {
       key: '1',
       label: (
-          <a target="_blank" rel="noopener noreferrer">
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
+          <a href="#" target="_blank" rel="noopener noreferrer">
             Миний мэдээлэл
           </a>
       ),
@@ -29,6 +30,7 @@ function MainLayout() {
     {
       key: '2',
       label: (
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a target="_blank" rel="noopener noreferrer" onClick={() => { showModal(); }}>
             Гарах
           </a>
@@ -145,6 +147,7 @@ function MainLayout() {
                               <Flex align='center' justify='center' style={{ height: '100%', }}>
                                 <Anchor direction='horizontal'   >
                                   {items.map((item) => {
+                                    // eslint-disable-next-line jsx-a11y/anchor-is-valid
                                     return <Anchor.Link title={<a  style={{color: `white`,
                                       fontFamily: "var(--main-font)", fontSize: '14px', margin: '0px 10px'}}>{item.label}</a>} key={item.key} href={`#${item.key}`} />
                                   })}

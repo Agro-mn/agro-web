@@ -1,11 +1,8 @@
 import React from "react";
-import { Progress, Table, DatePicker, Tag } from "antd";
+import { Progress, Table, DatePicker } from "antd";
 import moment from "moment";
 import CircleStatusCard from "./CircleStatusCard";
-import TaskBar from "./TaskBar";
 import GanttChart from "./GanttChart";
-
-const { RangePicker } = DatePicker;
 
 const columns = [
     { title: "Бүтээгдэхүүн", dataIndex: "product" },

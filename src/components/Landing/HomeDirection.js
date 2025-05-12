@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { Row, Col, Flex } from 'antd';
 import dir1 from '../../assets/img/cows.jpg';
 import dir2 from '../../assets/img/wheat-background.jpg';

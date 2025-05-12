@@ -1,12 +1,7 @@
 import React, { useEffect } from 'react';
-import { Button, Carousel, Col, Flex, Row } from 'antd';
+import { Flex } from 'antd';
 import aut1 from '../../assets/img/james-baltz-_pBBkarmFTs-unsplash.jpg';
-import aut2 from '../../assets/img/aut2.png';
-import aut3 from '../../assets/img/aut3.png';
-import sum1 from '../../assets/img/sum1.png';
-import sum2 from '../../assets/img/sum2.png';
-import sum3 from '../../assets/img/sum3.png';
-import background from "../../assets/img/landing1/wheat.png";
+
 
 const HomeImage = () => {
 
@@ -23,29 +18,6 @@ const HomeImage = () => {
   };
   useEffect(() => {
   }, []);
-
-  const items = [
-    {
-      title: "Хавар",
-      key: "spring",
-      images: [aut1, aut2, aut3]
-    },
-    {
-      title: "Зун",
-      key: "summer",
-      images: [sum1, sum2, sum3]
-    },
-    {
-      title: "Намар",
-      key: "fall",
-      images: [aut1, aut2, aut3]
-    },
-    {
-      title: "Өвөл",
-      key: "winter",
-      images: [sum1, sum2, sum3]
-    },
-  ]
 
   return (
       <div style={style}>
