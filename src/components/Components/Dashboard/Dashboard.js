@@ -1,5 +1,34 @@
 import { Col, Row } from 'antd';
-// import { Bar, Column, Pie } from '@ant-design/plots';
+
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  PointElement,
+  LineElement,
+  Filler,
+} from 'chart.js';
+import { Bar, Line, Pie, PolarArea } from 'react-chartjs-2';
+
+ChartJS.register(
+  RadialLinearScale,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  PointElement,
+  LineElement,
+  Filler
+);
 function Dashboard() {
   // const data = [
   //   {
@@ -53,40 +82,65 @@ function Dashboard() {
   //     performance: 68, // Converted to percentage
   //   },
   // ];
+ const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top' ,
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Bar Chart',
+      },
+    },
+  };
 
-  // const config = {
-  //   data: data,
-  //   xField: 'month',
-  //   yField: 'performance',
-  //   colorField: 'name',
-  //   group: true,
-  //   style: {
-  //     inset: 5,
-  //   },
-  //   onReady: ({ chart }) => {
-  //     try {
-  //       chart.on('afterrender', () => {
-  //         chart.emit('legend:filter', {
-  //           data: { channel: 'color', values: ['Хураалт', 'Тарихийн өмнөх бодис цацалт', 'Үрcэлгээ'] },
-  //         });
-  //       });
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-  //   },
-  // };
-
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  
+ const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: [100, 200, 300, 400, 500, 600, 700], // Replace with your static or dynamic data
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+        ],
+      },
+      {
+        label: 'Dataset 2',
+        data: [150, 250, 350, 450, 550, 650, 750], // Replace with your static or dynamic data
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+    ],
+  };
+  
   return (
     <Row>
-      <Col span={24}>
-        Dashboard
-        {/* <Column {...config} />; */}
+      <Col span={12}>
+      <Bar options={options} data={data} />
       </Col>
-      <Col span={24}>
-        {/* <Pie {...config} />; */}
+      <Col span={12}>
+      <Line options={options} data={data} />
       </Col>
-      <Col span={24}>
-        {/* <Bar {...config} />; */}
+      <Col span={12}>
+      <Pie data={data} />
+      </Col>
+      <Col span={12}>
+      <PolarArea data={data} />
       </Col>
     </Row>
   );
