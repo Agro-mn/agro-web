@@ -50,25 +50,13 @@ const SideBar = ({ style }) => {
 
   const items: MenuProps['items'] = [
     { label: 'Дашбоард',    key: 'dashboard', icon: <img src={menu} style={{marginRight: '5px'}} alt='menu' height={20}/>},
-    { label: 'Талбайн жагсаалт', key: 'field-listMenu',icon: <img src={arealist}  style={{marginRight: '5px'}} alt='list' height={20}/>,
-      children: [
-        {
-          label: 'Талбайн жагсаалт1', key: 'field-list',
-        }
-      ] },
-    { label: 'Төлөвлөгөө', key: 'planningMenu',   icon: <img src={plan} style={{marginRight: '5px'}} alt='plan' height={20}/>,
-      children: [
-        {
-          label: 'Төлөвлөгөө1', key: 'planning',
-        }
-      ]
+    { label: 'Талбайн жагсаалт', key: 'field-list',icon: <img src={arealist}  style={{marginRight: '5px'}} alt='list' height={20}/>,
+     },
+    { label: 'Төлөвлөгөө', key: 'planning',   icon: <img src={plan} style={{marginRight: '5px'}} alt='plan' height={20}/>,
+     
     },
-    { label: 'Гүйцэтгэл',   key: 'performanceMenu',icon: <img src={performance} style={{marginRight: '5px'}} alt='chart' height={20}/>,
-      children: [
-        {
-          label: 'Гүйцэтгэл1', key: 'performance',
-        }
-      ] },
+    { label: 'Гүйцэтгэл',   key: 'performance',icon: <img src={performance} style={{marginRight: '5px'}} alt='chart' height={20}/>,
+       },
     { label: 'Бараа материал', key: 'material',   icon: <img src={inventory} style={{marginRight: '5px'}}  alt='box'  height={20}/> },
     { label: 'Тайлан',      key: 'report',     icon: <img src={report}   style={{marginRight: '5px'}}   alt='news' height={20}/> },
   ];

@@ -111,6 +111,10 @@ function MainLayout() {
         colorPrimary: theme.colorPrimary,
         algorithm: theme.algorithm,
       },
+      DatePicker: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
     }
   }
   const handleChange = value => {
