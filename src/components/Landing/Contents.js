@@ -3,6 +3,7 @@ import HomeDirection from './HomeDirection';
 import HomeSubSystem from './HomeSubSystem';
 import HomeContact from './HomeContact';
 
+import ShortLogo from "./ShortLogo";
 import LogoName from "./LogoName";
 import FakeLogo from "./FakeLogo";
 
@@ -56,4 +57,4 @@ const Contents = [
 ];
 
 
-export { Contents, ThemeData, LogoName , ThemeDataPlatform, ThemeDataLoan, FakeLogo };
+export { Contents, ThemeData, LogoName, ShortLogo , ThemeDataPlatform, ThemeDataLoan, FakeLogo };
