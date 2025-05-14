@@ -33,7 +33,7 @@ const LoginForm = ({ onClose }) => {
         <div>
           <Title level={3}>Гарахдаа итгэлтэй байна уу?</Title>
           <Button type="primary" onClick={handleLogout}>
-            Logout
+            Тийм
           </Button>
         </div>
       ) : (
