@@ -33,7 +33,8 @@ const AreaSelector = () => {
     );
 
     return (
-        <div style={{ width: 300, padding: 10, position: "absolute", top: 20, left: 20 }}>
+        <div style={{ width: 300, padding: 10, position: "absolute", 
+        top: 20, left: 20, zIndex:1000 }}>
             <Input.Search
                 placeholder="Хайх үгэз оруулна уу"
                 value={search}
@@ -42,11 +43,12 @@ const AreaSelector = () => {
             // style={{ marginBottom: 10 }}
             />
 
-            <Collapse defaultActiveKey={["1"]} style={{ backgroundColor: "#f0f0f0" }}>
+            <Collapse size="small" defaultActiveKey={["1"]} style={{ backgroundColor: "#f0f0f0" }}>
                 <Panel header="Чандгатай" key="1">
-                    <Collapse defaultActiveKey={["1-1"]} ghost>
+                    <Collapse size="small" defaultActiveKey={["1-1"]} ghost>
                         <Panel header="Төвийн урд" key="1-1">
                             <List
+                            size="small" 
                                 dataSource={paginatedData}
                                 renderItem={item => <List.Item>{item}</List.Item>}
                             />
