@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Flex } from 'antd';
+import { Col, Flex, Row } from 'antd';
 import aut1 from '../../assets/img/james-baltz-_pBBkarmFTs-unsplash.jpg';
 
 
@@ -21,6 +21,13 @@ const HomeImage = () => {
 
   return (
       <div style={style}>
+         <Row justify="center" align="middle" style={{ height: 'calc(75vh - 6rem)', marginTop: '6rem'}}>
+                <Col>
+                    <h1  style={{ margin: 0, fontSize: '3rem', textAlign: 'center', width: '55vw', fontFamily: "var(--main-font)"}}>
+                        Тариаланг таны гарт
+                    </h1>
+                </Col>
+            </Row>
         <Flex align='center' justify='center' style={{height: '100vh'}}>
           {/*<Row>*/}
           {/*  <Col span={24} style={{ position: 'absolute', bottom: 20, left: 10 }}>*/}

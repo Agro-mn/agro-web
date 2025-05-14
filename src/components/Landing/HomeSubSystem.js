@@ -29,17 +29,19 @@ const HomeSubSystem = () => {
     // setWeather(testData);
   }, []);
   const ThemeDataPlatform = {
-    colorPrimary: 'red',
-    colorBackground: 'pink',
-    colorText: 'red',
+    colorPrimary: '#2A5DAA',               // Цэнхэр өнгө — технологийн/платформ төрх
+    colorBackground: '#F0F6FF',            // Цайвар цэнхэр фон
+    colorText: '#2A5DAA',                  // Нэг төрлийн өнгө
     algorithm: true
   };
+  
   const ThemeDataLoan = {
-    colorPrimary: 'blue',
-    colorBackground: 'aliceblue',
-    colorText: 'blue',
+    colorPrimary: '#9D3B3B',               // Улаан хүрэн өнгө — банк, зээлд тохиромжтой
+    colorBackground: '#FFF3F3',            // Зөөлөн ягаан фон
+    colorText: '#9D3B3B',
     algorithm: true
   };
+  
   return (
     <div style={style}>
       <Row gutter={[20, 20]}>
