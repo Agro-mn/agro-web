@@ -1,12 +1,12 @@
 import { Col, Row, Affix, Flex, Button, Modal, Anchor, ConfigProvider, Card, Dropdown, Select } from 'antd';
 import { useContext, useEffect, useState } from 'react';
-import { AlertOutlined, FacebookFilled, InstagramFilled, TwitterOutlined } from "@ant-design/icons";
+import { AlertOutlined } from "@ant-design/icons";
 import { BrowserRouter } from "react-router-dom";
 import { MainContext } from './MainContext';
 import LoginForm from "./LoginForm";
 import SideBar from './SideBar';
 import { Contents1, ThemeData1, LogoName1 } from './Landing1/Contents';
-import { Contents, ThemeData, LogoName } from './Landing/Contents';
+import { Contents, ThemeData, LogoName, ThemeDataLoan, ThemeDataPlatform, FakeLogo } from './Landing/Contents';
 import MainPage from './MainPage';
 import logo from "../assets/img/agro_logo_yellow.png";
 import logo1 from "../assets/img/agro_logo_gradient.png";
@@ -297,15 +297,23 @@ function MainLayout() {
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
                   <Affix offsetTop={250} >
                     <Flex
-                      style={{ position: 'absolute', zIndex: 1, right: 10 }}
-                      justify='right'
+                      style={{ position: 'absolute', zIndex: 1, left: 10 }}
+                      justify='left'
                     >
                       <Flex style={systemStyle.rightBarStyle}
                         gap='middle' vertical align='center' >
-                        {system !== "portal" ? <LogoName1 height={'2rem'} /> : <LogoName />}
+                          <Button type='default' ghost icon={<LogoName height={'2rem'}/>} 
+                          style={{ height:'3rem', width: '3rem', borderColor : ThemeData.colorPrimary}} ></Button>
+                          <Button type='default' ghost icon={ <LogoName1 height={'2rem'} />} 
+                          style={{ height:'3rem', width: '3rem', borderColor : ThemeData1.colorPrimary}} ></Button>
+                         <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataPlatform} />} 
+                          style={{ height:'3rem', width: '3rem', borderColor : ThemeDataPlatform.colorPrimary}} ></Button>
+                          <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataLoan} />} 
+                          style={{ height:'3rem', width: '3rem', borderColor : ThemeDataLoan.colorPrimary}} ></Button>
+                        {/* {system !== "portal" ? <LogoName1 height={'2rem'} /> : <LogoName />}
                         <FacebookFilled style={{ fontSize: 'xx-large', color: 'blue' }} />
                         <InstagramFilled style={{ fontSize: 'xx-large', color: 'red' }} />
-                        <TwitterOutlined style={{ fontSize: 'xx-large', color: 'blue' }} />
+                        <TwitterOutlined style={{ fontSize: 'xx-large', color: 'blue' }} /> */}
                       </Flex>
                     </Flex>
                   </Affix>

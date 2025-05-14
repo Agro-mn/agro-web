@@ -4,7 +4,7 @@ import app from '../../assets/img/system.png';
 import {LogoName1 , ThemeData1 } from '../Landing1/Contents';
 import SystemCard from './SystemCard';
 
-const HomeSubSystem = () => {
+const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
 
   const headerStyle = {
     fontSize: 'x-large',
@@ -28,19 +28,7 @@ const HomeSubSystem = () => {
     // fetchWeather();
     // setWeather(testData);
   }, []);
-  const ThemeDataPlatform = {
-    colorPrimary: '#2A5DAA',               // Цэнхэр өнгө — технологийн/платформ төрх
-    colorBackground: '#F0F6FF',            // Цайвар цэнхэр фон
-    colorText: '#2A5DAA',                  // Нэг төрлийн өнгө
-    algorithm: true
-  };
   
-  const ThemeDataLoan = {
-    colorPrimary: '#9D3B3B',               // Улаан хүрэн өнгө — банк, зээлд тохиромжтой
-    colorBackground: '#FFF3F3',            // Зөөлөн ягаан фон
-    colorText: '#9D3B3B',
-    algorithm: true
-  };
   
   return (
     <div style={style}>

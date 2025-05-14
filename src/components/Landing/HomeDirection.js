@@ -24,11 +24,28 @@ const HomeDirection = () => {
     };
 
     const testData = [
-        { title: "Үр тариа", image: dir2 },
-        { title: "Хүлэмжийн аж ахуй", image: dir3 },
-        { title: "Хүнсний ногоо", image: dir4 },
-        { title: "Мал аж ахуй", image: dir1 }
+        {
+            title: "Үр тариа",
+            image: dir2,
+            descriptions: "Хөрс боловсруулахаас ургац хураалт хүртэл зардлаа харьцуулан гүйцэтгэлээ хяна."
+        },
+        {
+            title: "Хүлэмжийн аж ахуй",
+            image: dir3,
+            descriptions: "Хүлэмжийн нөхцөлд ургах ургамал бүрийн зардал, гүйцэтгэлийг нарийвчлан хөтөлж, улирлын ашигт ажиллагааг тооцоолоорой. Усалгаанаас үрийн зардал хүртэл бүх мэдээллийг нэг дор."
+        },
+        {
+            title: "Хүнсний ногоо",
+            image: dir4,
+            descriptions: "Сорт тус бүрийн үр, бордоо, хөрс, усалгааны зардлыг ялган бүртгэж, нийт өртөг болон ургацын ашигт ажиллагааг хялбархан гарга."
+        },
+        {
+            title: "Мал аж ахуй",
+            image: dir1,
+            descriptions: "Мал бүрээр тэжээл, вакцин, үржил, борлуулалтын зардлыг хөтлөн, ашиг шимийг тоогоор хянаж, сүргийн өсөлт хөгжлийг нарийвчлан шинжил."
+        }
     ];
+    
 
     return (
         <div style={containerStyle}>
@@ -91,6 +108,23 @@ const HomeDirection = () => {
 
                                     }}
                                 />
+                                <div
+                    style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.6)', // Semi-transparent background
+                        color: '#fff',
+                        padding: '0px 0px 10px 0px',
+                        fontSize: '14px',
+                        textAlign: 'center',
+                        transition: 'opacity 0.3s ease',
+                        opacity: isHovered ? 1 : 0, // Show only on hover
+                    }}
+                >
+                    {item.descriptions}
+                </div>
                             </div>
                         </Col>
                     );
