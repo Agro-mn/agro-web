@@ -2,6 +2,7 @@ import { Col, Row } from 'antd';
 import PerformancePie from './PerformancePie';
 import Costbar from './Costbar';
 import RadialStackedChart from './RadialStackedChart';
+import PerformanceMap from './PerformanceMap';
 
 function Dashboard() {
 
@@ -17,7 +18,7 @@ function Dashboard() {
       <RadialStackedChart/>
       </Col>
       <Col span={24}>
-        MAP
+        <PerformanceMap/>
       </Col>
     </Row>
   );
