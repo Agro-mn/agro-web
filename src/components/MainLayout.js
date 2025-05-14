@@ -75,6 +75,10 @@ function MainLayout() {
         textTextColor: "#000000",
         algorithm: theme.algorithm,
       },
+      Select: {
+        colorPrimary: theme.colorPrimary,
+        algorithm: theme.algorithm,
+      },
       Input: {
         colorPrimary: theme.colorPrimary,
         algorithm: theme.algorithm,

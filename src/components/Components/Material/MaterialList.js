@@ -1,7 +1,8 @@
-import { Table, Tag, Button, Col, Row, Tabs, Radio } from 'antd';
-import { EyeOutlined, EditOutlined, DeleteOutlined, PlusOutlined, FileExcelOutlined, FilePdfOutlined } from '@ant-design/icons';
+import { Table, Tag, Button, Col, Row, Tabs } from 'antd';
+import { EyeOutlined, EditOutlined, DeleteOutlined, PlusOutlined, FileExcelOutlined, FilePdfOutlined, SearchOutlined } from '@ant-design/icons';
 import buudai from '../../../assets/img/buudai.png';
 import { useState } from 'react';
+import CategorySelector from './CategorySelector';
 
 function MaterialList() {
   const columns = [
@@ -65,50 +66,81 @@ function MaterialList() {
     unitCost: 'Paid',
   }));
 
-
-  const [currTab, setCurrTab] = useState('products');
+  const [currTab, setCurrTab] = useState('itemEntry');
 
   const tabItems = [
     {
+      key: 'itemEntry',
+      label: 'Бараа материалын бүртгэл',
+      // icon: <ProductIcon width={24} />,
+    },
+    {
+      key: 'itemConsumption',
+      label: 'Бараа материалын зарцуулалт',
+      // icon: <FuelIcon width={24} />,
+    },
+    {
+      key: 'totalConsumption',
+      label: 'Нийт зарцуулалт',
+      // icon: <FertilizerIcon width={24} />,
+    },
+  ];
+  const groupItems = [
+    {
       key: 'products',
+      value: 'blue', // for <Tag color="blue" />
       label: 'Бүтээгдэхүүн',
       // icon: <ProductIcon width={24} />,
     },
     {
       key: 'fuel',
+      value: 'volcano',
       label: 'Шатах тослох материал',
       // icon: <FuelIcon width={24} />,
     },
     {
       key: 'fertilizer',
+      value: 'green',
       label: 'Ургамал хамгаалах бодис, бордоо',
       // icon: <FertilizerIcon width={24} />,
     },
   ];
+  
+
+  const categories = [
+    { label: 'Улаанбуудай', value: 'wheat' },
+    { label: 'Рапс', value: 'purple' },
+    { label: 'Ногоон тэжээл', value: 'green' },
+    { label: 'Арвай', value: 'volcano' },
+  ];
   return (
     <Row>
       <Col span={24}>
-        <Tabs items={tabItems} activeKey={currTab} onChange={(key) => setCurrTab(key)} />
+        <Tabs size='large' items={tabItems} activeKey={currTab} onChange={(key) => setCurrTab(key)} />
       </Col>
-      <Col span={24}>
+      <Col span={14}><div style={{ display: 'flex', justifyContent: 'left', marginBottom: 16 }}>
+       <CategorySelector datasource={groupItems} />
+      <CategorySelector datasource={categories} />
+      </div>
+      </Col>
+      <Col span={10}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-          <Radio.Group defaultValue="a" buttonStyle="solid">
-            <Radio.Button value="a">УлаанБуудай</Radio.Button>
-            <Radio.Button value="b">Рапс</Radio.Button>
-            <Radio.Button value="c">Ногоон тэжээл</Radio.Button>
-            <Radio.Button value="d">Арвай</Radio.Button>
-          </Radio.Group>
-          <div style={{ display: 'flex', gap: 8 }}>
+        <div style={{ display: 'flex', justifyContent: 'left', marginBottom: 16 }}>
+            <Button type="primary" icon={<SearchOutlined />} onClick={() => console.log('Add new material')}>
+              
+            </Button>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'right', marginBottom: 16 }}>
             <Button type="primary" icon={<PlusOutlined />} onClick={() => console.log('Add new material')}>
-              Бараа материал нэмэх
+              Нэмэх
             </Button>
             <Button type="primary" ghost icon={<FileExcelOutlined />} onClick={() => console.log('Export to Excel')}>
-              Excel татах
+              Excel
             </Button>
             <Button type="primary" ghost icon={<FilePdfOutlined />} onClick={() => console.log('Export to PDF')}>
-              PDF татах
+              PDF
             </Button>
-          </div>
+        </div>
         </div>
       </Col>
       <Col span={24}>

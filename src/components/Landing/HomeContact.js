@@ -8,8 +8,8 @@ import {
   MailOutlined,
   PhoneOutlined,
   EnvironmentOutlined,
-  QrcodeOutlined,
-  AppstoreOutlined
+  
+  
 } from '@ant-design/icons';
 
 const HomeContact = ({ themeData }) => {
