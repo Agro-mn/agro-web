@@ -6,7 +6,7 @@ import { MainContext } from './MainContext';
 import LoginForm from "./LoginForm";
 import SideBar from './SideBar';
 import { Contents1, ThemeData1, LogoName1 } from './Landing1/Contents';
-import { Contents, ThemeData, LogoName, ThemeDataLoan, ThemeDataPlatform, FakeLogo } from './Landing/Contents';
+import { Contents, ThemeData, LogoName, ThemeDataLoan, ThemeDataPlatform, FakeLogo, ShortLogo } from './Landing/Contents';
 import MainPage from './MainPage';
 import logo from "../assets/img/agro_logo_yellow.png";
 import logo1 from "../assets/img/agro_logo_gradient.png";
@@ -148,7 +148,7 @@ function MainLayout() {
                   }}>
                     <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4}  >
                       <Flex align='center' style={{ height: '100%' }}>
-                        <LogoName />
+                        <ShortLogo />
                       </Flex>
                     </Col>
                     <Col xs={24} sm={12} md={12} lg={16} xl={16} xxl={16} >
