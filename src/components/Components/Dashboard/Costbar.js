@@ -14,8 +14,9 @@ import {
   LineElement,
   Filler,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import moment from 'moment';
+import { useState } from 'react';
 
 ChartJS.register(
   RadialLinearScale,
@@ -41,35 +42,33 @@ function Costbar() {
     },
   };
 
-  const labels = ['Үрэлгээ', 'Арчилгаа','Хураалт','Уринш'];
-  
- const data = {
-    labels,
-    datasets: [
-      {
-        label: '2024 он',
-        data: [100, 200, 300, 400], // Replace with your static or dynamic data
-        backgroundColor: [
-          '#4DB3D3',
-          
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-        ],
-      },
-      {
-        label: '2025 он',
-        data: [150, 250, 350, 450], // Replace with your static or dynamic data
-        backgroundColor: '#F4A942',
-      },
-    ],
-  };
-  
+ 
+  const [dateRange, setDateRange] = useState([moment().subtract(5, 'years'), moment()]);
+const labels = Array.from(
+  { length: dateRange[1].year() - dateRange[0].year() + 1 },
+  (_, i) => (dateRange[0].year() + i).toString()
+);
+const categories = [
+  { name: 'Үрэлгээ', costs: [300, 235, 545, 235, 656, 332, 112, 49, 45] },
+  { name: 'Арчилгаа', costs: [200, 150, 400, 300, 500, 250, 100, 60, 50] },
+  { name: 'Хураалт', costs: [400, 300, 600, 500, 700, 350, 200, 80, 70] },
+  { name: 'Уринш', costs: [250, 180, 450, 320, 600, 280, 150, 70, 60] },
+];
+const baseColors = [
+  "#F4A942", "#fbcc8b", // Рапс
+  "#EB69BC", "#e99fce", // Арвай
+  "#4DB3D3", "#8cc3d4", // Улаан буудай
+  "#9984DB", "#bdb2dd", // Ногоон тэжээл
+];
+const data = {
+  labels: labels,
+  datasets: categories.map((cat) => ({
+    label: cat.name,
+    data: labels.map((_, index) => cat.costs[index]),
+    backgroundColor: ['#4DB3D3'],
+    borderColor: baseColors,
+  }))
+};
   return (
     <Row gutter={[36, 16]} >
       <Col span={24} >
@@ -77,15 +76,15 @@ function Costbar() {
         <Button type="primary" size="large" ghost style={{ border: 0, fontWeight:'bold' }}>
         Нэгж талбайд гарсан зардлын харьцуулалт
         </Button>
-        <DatePicker
+        <DatePicker.RangePicker
           picker="year"
-          size="large"
-          value={moment()} // Defaults to current year
+          value={dateRange}
+          onChange={(dates) => setDateRange(dates)}
         />
         </Row>
       </Col>
       <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-        <Bar options={options} data={data} />
+          <Line options={options} data={data} />;
       </Col>
     </Row>
   );

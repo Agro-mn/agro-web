@@ -8,7 +8,7 @@ import performance from "../assets/icons/menu/chart-simple-horizontal.png";
 import plan from "../assets/icons/menu/file-edit.png";
 import report from "../assets/icons/menu/newspaper.png";
 import arealist from "../assets/icons/menu/land-layers.png";
-import {MenuProps} from "antd";
+import { MenuProps } from "antd";
 
 // 1) Extract your tokens under components.Menu
 const customTheme = {
@@ -49,37 +49,48 @@ const SideBar = ({ style }) => {
   };
 
   const items: MenuProps['items'] = [
-    { label: 'Дашбоард',    key: 'dashboard', icon: <img src={menu} style={{marginRight: '5px'}} alt='menu' height={20}/>},
-    { label: 'Талбайн жагсаалт', key: 'field-list',icon: <img src={arealist}  style={{marginRight: '5px'}} alt='list' height={20}/>,
-     },
-    { label: 'Төлөвлөгөө', key: 'planning',   icon: <img src={plan} style={{marginRight: '5px'}} alt='plan' height={20}/>,
-     
+    { label: 'Дашбоард', key: 'dashboard', icon: <img src={menu} style={{ marginRight: '5px' }} alt='menu' height={20} /> },
+    {
+      label: 'Талбайн жагсаалт', key: 'field-list', icon: <img src={arealist} style={{ marginRight: '5px' }} alt='list' height={20} />,
     },
-    { label: 'Гүйцэтгэл',   key: 'performance',icon: <img src={performance} style={{marginRight: '5px'}} alt='chart' height={20}/>,
-       },
-    { label: 'Бараа материал', key: 'material',   icon: <img src={inventory} style={{marginRight: '5px'}}  alt='box'  height={20}/> },
-    { label: 'Тайлан',      key: 'report',     icon: <img src={report}   style={{marginRight: '5px'}}   alt='news' height={20}/> },
+    {
+      label: 'Төлөвлөгөө', key: 'planning', icon: <img src={plan} style={{ marginRight: '5px' }} alt='plan' height={20} />,
+
+    },
+    {
+      label: 'Гүйцэтгэл', key: 'performance', icon: <img src={performance} style={{ marginRight: '5px' }} alt='chart' height={20} />,
+    },
+    { label: 'Бараа материал', key: 'material', icon: <img src={inventory} style={{ marginRight: '5px' }} alt='box' height={20} /> },
+    {
+      label: 'Тайлан', key: 'report', icon: <img src={report} style={{ marginRight: '5px' }} alt='news' height={20} />,
+      // children: [
+      //   { label: 'Тариалалт /Нийт/', key: 'report-planting-overview' },
+      //   { label: 'Тариалалт /Талбайгаар/', key: 'report-planting-by-field' },
+      //   { label: 'Талбайн журнал', key: 'report-field-journal' },
+      //   { label: 'Уриншийн нэгдсэн', key: 'report-fallow-summary' },
+      // ]
+    },
   ];
 
   return (
-      // 2) Wrap with ConfigProvider
-      <ConfigProvider theme={customTheme}>
-        <Menu
-            onClick={onClick}
-            selectedKeys={[current]}
-            mode="inline"
-            items={items}
-            theme="light"
-            style={{
-              width: '100%',
-              fontSize: '14px',
-              fontFamily: 'var(--main-font)',
-              fontWeight: '600',
-              height: 'calc(100vh - 5rem)',
-              ...style
-            }}
-        />
-      </ConfigProvider>
+    // 2) Wrap with ConfigProvider
+    <ConfigProvider theme={customTheme}>
+      <Menu
+        onClick={onClick}
+        selectedKeys={[current]}
+        mode="inline"
+        items={items}
+        theme="light"
+        style={{
+          width: '100%',
+          fontSize: '14px',
+          fontFamily: 'var(--main-font)',
+          fontWeight: '600',
+          height: 'calc(100vh - 5rem)',
+          ...style
+        }}
+      />
+    </ConfigProvider>
   );
 };
 
