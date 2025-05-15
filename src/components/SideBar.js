@@ -63,9 +63,12 @@ const SideBar = ({ style }) => {
     { label: 'Бараа материал', key: 'material', icon: <img src={inventory} style={{ marginRight: '5px' }} alt='box' height={20} /> },
     {
       label: 'Тайлан', key: 'report', icon: <img src={report} style={{ marginRight: '5px' }} alt='news' height={20} />,
-      children: [
-        { label: 'ddd', key: 'report1' }
-      ]
+      // children: [
+      //   { label: 'Тариалалт /Нийт/', key: 'report-planting-overview' },
+      //   { label: 'Тариалалт /Талбайгаар/', key: 'report-planting-by-field' },
+      //   { label: 'Талбайн журнал', key: 'report-field-journal' },
+      //   { label: 'Уриншийн нэгдсэн', key: 'report-fallow-summary' },
+      // ]
     },
   ];
 
