@@ -59,6 +59,7 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
             description='AgroMongolia - Хөдөө аж ахуйн бүх хэрэгцээг нэг дор. Ашигтай зар, амжилттай арилжаа энд эхэлнэ.'
             logo={<LogoName1 height={'1rem'}/>}
             siteUrl='www.platform.agro.mn'
+            systemName='platform'
           />
           <SystemCard
             headerStyle={headerStyle}

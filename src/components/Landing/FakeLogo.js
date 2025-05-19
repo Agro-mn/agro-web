@@ -1,5 +1,5 @@
 import { Flex, notification } from 'antd';
-function FakeLogo({ height, themeData }) {
+function FakeLogo({ height, themeData, systemName }) {
   const [api, contextHolder] = notification.useNotification();
   const openNotificationWithIcon = (type, title, description) => {
     api[type]({
@@ -15,7 +15,10 @@ function FakeLogo({ height, themeData }) {
       fontSize:'xx-large',
       fontWeight: 'bold',
     }} alt='logo' onClick={() => {
-        openNotificationWithIcon('success','Систем олдсонгүй','Тун удахгүй ...');
+      if(systemName === 'platform'){
+        window.open('https://6827b2321d8a1092a7fc4a3a--agroads.netlify.app/', '_blank');
+    }
+    else openNotificationWithIcon('success','Систем олдсонгүй','Тун удахгүй ...');
       }} >A</span>
     </Flex>
   );
