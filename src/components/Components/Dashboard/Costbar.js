@@ -60,14 +60,27 @@ const baseColors = [
   "#4DB3D3", "#8cc3d4", // Улаан буудай
   "#9984DB", "#bdb2dd", // Ногоон тэжээл
 ];
+const totalCosts = labels.map((_, index) =>
+  categories.reduce((sum, category) => sum + (category.costs[index] || 0), 0)
+);
 const data = {
   labels: labels,
-  datasets: categories.map((cat) => ({
-    label: cat.name,
-    data: labels.map((_, index) => cat.costs[index]),
-    backgroundColor: ['#4DB3D3'],
-    borderColor: baseColors,
-  }))
+  datasets: [
+    ...categories.map((cat) => ({
+      label: cat.name,
+      data: labels.map((_, index) => cat.costs[index]),
+      backgroundColor: ['#4DB3D3'],
+      borderColor: baseColors,
+    })),
+    {
+      label: 'Нийт', // Total dataset
+      data: totalCosts,
+      backgroundColor: 'rgba(255, 99, 132, 0.5)', // Distinct color for total
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 2,
+      type: 'line', // Display as a line chart
+    },
+  ],
 };
   return (
     <Row gutter={[36, 16]} >
