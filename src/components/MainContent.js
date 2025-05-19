@@ -5,7 +5,7 @@ function MainContent({ items }) {
   useEffect(() => {
   }, [items])
   return (
-    <Row>
+    <Row gutter={[16,40]}>
       {items.length === 0 && <p>No items to display</p>}
       {items.map((item) => (
         <Col key={item.key} id={item.key} xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
@@ -15,7 +15,6 @@ function MainContent({ items }) {
         </Col>
       ))}
     </Row>
-
   );
 }
 

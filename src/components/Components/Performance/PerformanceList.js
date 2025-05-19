@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Col, Row, Table, Tabs, Button, Card, Typography, Radio, Descriptions, DatePicker } from 'antd';
-import { LeftOutlined, RightOutlined, SunOutlined, CloudDownloadOutlined, AliwangwangOutlined, AlignLeftOutlined, CloudOutlined, CloudFilled, ThunderboltOutlined, CloudSyncOutlined, SearchOutlined } from '@ant-design/icons';
+import { Col, Row, Tabs, Button, Card, Typography, Radio, Descriptions, DatePicker, Space, Popover } from 'antd';
+import { LeftOutlined, RightOutlined, SunOutlined, CloudDownloadOutlined, AliwangwangOutlined, AlignLeftOutlined, CloudOutlined, CloudFilled, ThunderboltOutlined, CloudSyncOutlined, SearchOutlined, RadarChartOutlined, FlagOutlined, UserOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import TimelinePage from './TimelinePage';
+import FarmInfo from './FarmInfo';
 
 const PerformanceList = () => {
   
@@ -83,7 +84,7 @@ const PerformanceList = () => {
     color: { color: '#936ee9', backgroundColor: '#ccc1f1', cardBackgroundColor: '#e1d6f1' },
     products: [
       {
-        name: 'УлаанБуудайн',
+        name: 'УлаанБуудай',
         data: [
           { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
           { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
@@ -104,11 +105,11 @@ const PerformanceList = () => {
   }
   const urselgee = {
     id: 2,
-    category: 'Үрcэлгээ',
+    category: 'Үрэлгээ',
     color: { color: '#28a1d9', backgroundColor: '#afdaed', cardBackgroundColor: '#cde3f9' },
     products: [
       {
-        name: 'УлаанБуудайн',
+        name: 'УлаанБуудай',
         data: [
           { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
           { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
@@ -133,7 +134,7 @@ const PerformanceList = () => {
     color: { color: '#ff7447', backgroundColor: '#ebc7bc', cardBackgroundColor: '#e7e1df' },
     products: [
       {
-        name: 'УлаанБуудайн',
+        name: 'УлаанБуудай',
         data: [
           { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
           { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
@@ -158,7 +159,7 @@ const PerformanceList = () => {
     color: { color: '#cc7429', backgroundColor: '#f3decc', cardBackgroundColor: '#efebe6' },
     products: [
       {
-        name: 'УлаанБуудайн',
+        name: 'УлаанБуудай',
         data: [
           { field: 'Чандагтай', balance: '100 га', performance: '50 га' },
           { field: 'Төвийн урд', balance: '50 га', performance: '20 га' }
@@ -257,6 +258,7 @@ const PerformanceList = () => {
     },
   ];
 
+
   const renderCards = (category) => {
     return category.data.map((item) => (
       <Card
@@ -276,41 +278,23 @@ const PerformanceList = () => {
           </Col>
           {item.products.map((product, index) => (
             <Col span={24} key={index}>
-              <Table
-                title={() => <>{product.name}</>}
-                summary={() => (
-                  <Table.Summary fixed>
-                    <Table.Summary.Row>
-                      <Table.Summary.Cell index={0}></Table.Summary.Cell>
-                      <Table.Summary.Cell index={1}>{product.totalBalance}</Table.Summary.Cell>
-                      <Table.Summary.Cell index={2}>{product.totalPerformance}</Table.Summary.Cell>
-                    </Table.Summary.Row>
-                  </Table.Summary>
-                )}
-                size='small'
-                pagination={false} bordered
-                dataSource={product.data}
-                rowKey="field"
-                style={{
-                  border: `2px solid ${item.color.color}`,
-                  borderRadius: '8px', backgroundColor: item.color.backgroundColor
-                }}
-              >
-                <Table.Column width={'40%'} title="Талбай" dataIndex="field" key="field" />
-                <Table.Column width={'30%'} title="Талб.хэмжээ" dataIndex="balance" key="balance" />
-                <Table.Column width={'30%'} title="Гүйцэтгэл" dataIndex="performance" key="performance" />
-              </Table>
-              {/* <Card style={{ width: '100%', textAlign: 'left', border: `2px solid ${item.color.color}` }} size='small'
-                  title={<div style={{ color: 'gray' }}> <RadarChartOutlined style={{ color: item.color.color }} />   {product.dateRange}</div>}
-                >
-                  <Space size={0} style={{ width: '100%', justifyContent: 'space-between' }}>
-                    <Typography.Text strong>{product.name}</Typography.Text>
-                    <Button type="text" icon={<FlagOutlined />} size='small'>
-                      {product.area}
-                    </Button>
-                  </Space>
-                </Card> */}
-            </Col>
+              <Popover content={<FarmInfo item={item} product={product}/>} >
+              <Card style={{ width: '100%', textAlign: 'left', border: `2px solid ${item.color.color}` }} size='small'
+              title={<div style={{ color: 'gray' }}> <RadarChartOutlined style={{ color: item.color.color }} />   {product.name}</div>}
+            >
+              <Space size={0} style={{ width: '100%', justifyContent: 'space-between' }}>
+                <Button type="text" icon={<FlagOutlined />} size='small'>
+                  {product.totalBalance} / {product.totalPerformance}
+                </Button>
+              </Space>
+              <Space size={0} style={{ width: '100%', marginTop : 16, justifyContent: 'left' }}>
+                <Button type="primary" ghost shape='round' icon={<UserOutlined />} size='small'>
+                  Бат-Эрдэнэ
+                </Button>
+              </Space>
+            </Card>
+          </Popover>
+          </Col>
           ))}
         </Row>
       </Card>

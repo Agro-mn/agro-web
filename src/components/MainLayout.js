@@ -310,7 +310,7 @@ function MainLayout() {
                           style={{ height:'3rem', width: '3rem', borderColor : ThemeData.colorPrimary}} ></Button>
                           <Button type='default' ghost icon={ <LogoName1 height={'2rem'} />} 
                           style={{ height:'3rem', width: '3rem', borderColor : ThemeData1.colorPrimary}} ></Button>
-                         <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataPlatform} />} 
+                         <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataPlatform} systemName={'platform'} />} 
                           style={{ height:'3rem', width: '3rem', borderColor : ThemeDataPlatform.colorPrimary}} ></Button>
                           <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataLoan} />} 
                           style={{ height:'3rem', width: '3rem', borderColor : ThemeDataLoan.colorPrimary}} ></Button>

@@ -23,7 +23,19 @@ ChartJS.register(
 
 export const options = {
   plugins: {
-   
+    tooltip: {
+      callbacks: {
+        label: function (tooltipItem) {
+          const ds = dataSource.find((ds) => ds.product === tooltipItem.label) 
+          const dset = dataSet.find((ds) => ds.value === tooltipItem.dataset.stack) 
+          return `${tooltipItem.dataset?.label  ?? ''}: ${ds.planned + dset.extra + dset.extra} / ${ds.executed + dset.extra} `; // Customize the label template
+        },
+      },
+    },
+    legend: {
+      display: true,
+      position: 'top',
+    },
   },
   responsive: true,
   interaction: {

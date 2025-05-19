@@ -33,10 +33,13 @@ const SystemCard = ({headerStyle, textStyle, image, themeData, title, descriptio
                 width: '100%',
               }}
               onClick={() => {
-                if(systemName){
-                localStorage.setItem("system", systemName);
-                setSystem(systemName);
-                navigate(localStorage.getItem("loggedUser") ? "/dashboard" : "/");
+                if(systemName === 'platform'){
+                    window.open('https://6827b2321d8a1092a7fc4a3a--agroads.netlify.app/', '_blank');
+                }
+                else if(systemName){
+                  localStorage.setItem("system", systemName);
+                  setSystem(systemName);
+                  navigate(localStorage.getItem("loggedUser") ? "/dashboard" : "/");
                 }
                 else{
                   openNotificationWithIcon('success','Систем олдсонгүй','Тун удахгүй ...');

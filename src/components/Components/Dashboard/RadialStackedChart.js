@@ -43,8 +43,8 @@ const RadialStackedChart = () => {
         data={{ datasets }}
         options={{
           plugins: {
-            tooltip: { enabled: false },
-            legend: { display: false },
+            tooltip: { enabled: true },
+            legend: { display: true },
           },
         }}
       />

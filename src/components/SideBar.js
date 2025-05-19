@@ -70,6 +70,8 @@ const SideBar = ({ style }) => {
       //   { label: 'Уриншийн нэгдсэн', key: 'report-fallow-summary' },
       // ]
     },
+    { label: 'Техникийн дата', key: 'technicalData', icon: <img src={inventory} style={{ marginRight: '5px' }} alt='box' height={20} /> },
+    { label: 'Хөрсний дата', key: 'hursData', icon: <img src={inventory} style={{ marginRight: '5px' }} alt='box' height={20} /> },
   ];
 
   return (

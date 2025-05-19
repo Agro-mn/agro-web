@@ -8,7 +8,7 @@ const PlanList = () => {
   const data = [
     {
       key: '1',
-      productType: 'УлаанБуудайн',
+      productType: 'УлаанБуудай',
       technology: 'Тарианы эмнэл бодис цацалт',
       area: '100га',
       startDate: '2025-01-01',
@@ -18,7 +18,7 @@ const PlanList = () => {
     {
       key: '2',
       productType: 'Panc',
-      technology: 'Үрcэлгээ',
+      technology: 'Үрэлгээ',
       area: '100га',
       startDate: '2025-01-01',
       endDate: '2025-01-01',
@@ -172,22 +172,22 @@ const PlanList = () => {
   const dataKanban = [
     {
       id: 1,
-      category: 'Үрcэлгээ',
+      category: 'Үрэлгээ',
       title: 'Тарихийн өмнөх бодис цацалт',
       color: { color: '#ff7447', backgroundColor: '#ebc7bc', cardBackgroundColor: '#e7e1df' },
       products: [
-        { name: 'УлаанБуудайн', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
+        { name: 'УлаанБуудай', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
         { name: 'Рапс', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
         { name: 'Ногоон тэжээл', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
       ]
     },
     {
       id: 2,
-      category: 'Үрcэлгээ',
-      title: 'Үрcэлгээ',
+      category: 'Үрэлгээ',
+      title: 'Үрэлгээ',
       color: { color: '#ff7447', backgroundColor: '#ebc7bc', cardBackgroundColor: '#e7e1df' },
       products: [
-        { name: 'УлаанБуудайн', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
+        { name: 'УлаанБуудай', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
         { name: 'Рапс', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
       ]
     },
@@ -197,7 +197,7 @@ const PlanList = () => {
       title: 'Ургамал хамгаалах бодис цацалт',
       color: { color: '#28a1d9', backgroundColor: '#afdaed', cardBackgroundColor: '#cde3f9' },
       products: [
-        { name: 'УлаанБуудайн', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
+        { name: 'УлаанБуудай', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
         { name: 'Рапс', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
       ]
     },
@@ -207,7 +207,7 @@ const PlanList = () => {
       category: 'Хураалт',
       color: { color: '#cc7429', backgroundColor: '#f3decc', cardBackgroundColor: '#efebe6' },
       products: [
-        { name: 'УлаанБуудайн', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
+        { name: 'УлаанБуудай', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
         { name: 'Рапс', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
       ]
     },
@@ -217,12 +217,12 @@ const PlanList = () => {
       category: 'Уринш',
       color: { color: '#936ee9', backgroundColor: '#ccc1f1', cardBackgroundColor: '#e1d6f1' },
       products: [
-        { name: 'УлаанБуудайн', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
+        { name: 'УлаанБуудай', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
         { name: 'Рапс', area: '360 га', dateRange: '2025-01-01 - 2025-12-31' },
       ]
     },
   ];
-  const categories = ['Үрcэлгээ', 'Арчилгаа', 'Хураалт', 'Уринш'];
+  const categories = ['Үрэлгээ', 'Арчилгаа', 'Хураалт', 'Уринш'];
 
   const renderCards = (category) => {
     return dataKanban

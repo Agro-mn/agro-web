@@ -22,7 +22,7 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
   const style = {
     width: '80vw',
     // height: `calc(100vh - 6rem)`,
-    marginTop: '6rem'
+    // marginTop: '6rem'
   };
   useEffect(() => {
     // fetchWeather();
@@ -38,14 +38,15 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
         </Col>
       </Row>
       <Flex align='center' justify='center'>
-        <Row gutter={[20, 20]} style={{ width: '60vw', marginTop: '50px' }}>
+        <Row gutter={[20, 20]} style={{ width: '60vw', marginTop: '20px' }}>
           <SystemCard
             headerStyle={headerStyle}
             textStyle={textStyle}
             image={app}
             themeData={ThemeData1}
             title='Хөдөө аж ажуйн үйлдвэрлэгчдийн нэгдсэн систем'
-            description='AgroMongolia – Хөдөө аж ахуйн үйлдвэрлэлээ технологитой хослуул. Төлөвлө, хяна, ашиг шимээ өсгө.'
+            description={<span>AgroMongolia – Хөдөө аж ахуйн үйлдвэрлэлээ технологитой хослуул. 
+              <br/><br/>Төлөвлө, хяна, ашиг шимээ өсгө.</span>}
             logo={<LogoName1 height={'1rem'}/>}
             siteUrl='www.portal.agro.mn'
             systemName='portal'
@@ -56,9 +57,11 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
             image={app}
             themeData={ThemeDataPlatform}
             title='Хөдөө аж ажуйн зарын нэгдсэн платформ'
-            description='AgroMongolia - Хөдөө аж ахуйн бүх хэрэгцээг нэг дор. Ашигтай зар, амжилттай арилжаа энд эхэлнэ.'
+            description={<span>AgroMongolia - Хөдөө аж ахуйн бүх хэрэгцээг нэг дор. 
+              <br/><br/>Ашигтай зар, амжилттай арилжаа энд эхэлнэ.</span>}
             logo={<LogoName1 height={'1rem'}/>}
             siteUrl='www.platform.agro.mn'
+            systemName='platform'
           />
           <SystemCard
             headerStyle={headerStyle}
@@ -66,7 +69,8 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
             image={app}
             themeData={ThemeDataLoan}
             title='Хөдөө аж ахуйн зээлийн үйлчилгээ'
-            description='Тариаланч таны онцлогт зориулсан хөдөө аж ахуйн уян хатан зээлийн үйлчилгээ. Таны хөдөлмөрийг дэмжих санхүүгийн шийдэл.'
+            description={<span>Тариаланч таны онцлогт зориулсан хөдөө аж ахуйн уян хатан зээлийн үйлчилгээ. 
+              <br/><br/>Таны хөдөлмөрийг дэмжих санхүүгийн шийдэл.</span>}
             logo={<LogoName1 height={'1rem'}/>}
             siteUrl='www.loan.agro.mn'
           />
