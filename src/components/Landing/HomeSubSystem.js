@@ -22,7 +22,7 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
   const style = {
     width: '80vw',
     // height: `calc(100vh - 6rem)`,
-    marginTop: '6rem'
+    // marginTop: '6rem'
   };
   useEffect(() => {
     // fetchWeather();
@@ -38,7 +38,7 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
         </Col>
       </Row>
       <Flex align='center' justify='center'>
-        <Row gutter={[20, 20]} style={{ width: '60vw', marginTop: '50px' }}>
+        <Row gutter={[20, 20]} style={{ width: '60vw', marginTop: '20px' }}>
           <SystemCard
             headerStyle={headerStyle}
             textStyle={textStyle}

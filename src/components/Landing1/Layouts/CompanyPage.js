@@ -7,17 +7,17 @@ import gradient from "../../../assets/img/chrome.svg";
 
 export default function CompanyPage() {
     const testData = [
-        { name: "Agro 1", img: white   },
-        { name: "Agro 2", img: yellow   },
-        { name: "Agro 3", img: green    },
-        { name: "Agro 4", img: gradient },
-        { name: "Agro 5", img: white },
-        { name: "Agro 6", img: yellow   },
-        { name: "Agro 7", img: green    },
-        { name: "Agro 8", img: gradient },
+        { name: "Сэлэнгэ тариа ХХК", img: white   },
+        { name: "Эг тариа ХХК", img: yellow   },
+        { name: "Орхон тариа ХХК", img: green    },
+        { name: "Товхон хан ХХК", img: gradient },
+        // { name: "Agro 5", img: white },
+        // { name: "Agro 6", img: yellow   },
+        // { name: "Agro 7", img: green    },
+        // { name: "Agro 8", img: gradient },
     ];
 
-    const slideHeight     = 50;         
+    const slideHeight     = 130;         
     const origCount       = testData.length;
     const totalSlides     = origCount * 2;  
     const durationSeconds = origCount * 2;  
@@ -27,7 +27,7 @@ export default function CompanyPage() {
       .slider {
         position: relative;
         width: 100%;
-        height: 60px;
+        height: 150px;
         overflow: hidden;
         display: grid;
         place-items: center;
@@ -95,8 +95,8 @@ export default function CompanyPage() {
     };
     const containerStyle = {
         width: '80vw',
-        height: 'calc(100vh - 10rem)',
-        marginTop: '10rem',
+        // height: 'calc(100vh - 10rem)',
+        // marginTop: '10rem',
     };
 
     return (
@@ -135,6 +135,7 @@ export default function CompanyPage() {
                                 alt={item.name}
                                 height={slideHeight}
                             />
+                            {item.name}
                         </div>
                     ))}
                 </div>

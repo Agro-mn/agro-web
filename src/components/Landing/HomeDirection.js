@@ -12,7 +12,7 @@ const HomeDirection = () => {
         width: '80vw',
         // height: 'calc(100vh - 6rem)',
         fontFamily: "var(--main-font)",
-        marginTop: '6rem'
+        // marginTop: '6rem'
     };
 
     const headerStyle = {
@@ -27,7 +27,7 @@ const HomeDirection = () => {
         {
             title: "Үр тариа",
             image: dir2,
-            descriptions: "Хөрс боловсруулахаас ургац хураалт хүртэл зардлаа харьцуулан гүйцэтгэлээ хяна."
+            descriptions: "Хөрс боловсруулалтаас ургац хураалт хүртэл зардлаа хар, гүйцэтгэлээ хяна."
         },
         {
             title: "Хүлэмжийн аж ахуй",
@@ -49,7 +49,7 @@ const HomeDirection = () => {
 
     return (
         <div style={containerStyle}>
-            <Row gutter={[10, 40]}>
+            <Row gutter={[10, 16]}>
                 <Col span={24} style={headerStyle}>
                     <span style={{ borderBottom: '3px solid #efd643' }}>Үйл ажиллагааны чиглэл</span>
                 </Col>
