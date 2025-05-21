@@ -7,6 +7,11 @@ import CategorySelector from './CategorySelector';
 function MaterialEntry() {
   const columns = [
     {
+      title: 'Бүлэг', // Name column
+      dataIndex: 'group',
+      key: 'group',
+    },
+    {
       title: 'Зураг', // Image column
       dataIndex: 'image',
       key: 'image',
@@ -25,7 +30,11 @@ function MaterialEntry() {
       dataIndex: 'name',
       key: 'name',
     },
-  
+    {
+      title: 'Хэмжих нэгж', // Name column
+      dataIndex: 'unit',
+      key: 'unit',
+    },
     {
       title: 'Үйлдэл',
       dataIndex: 'actions',
@@ -40,16 +49,79 @@ function MaterialEntry() {
     },
   ];
 
-  const data = new Array(8).fill(null).map((_, i) => ({
-    key: i,
-    code: '021231',
-    name: 'Kanky Kitadakate (Green)',
-    operator: 'Leslie Alexander',
-    area: '$21.78',
-    date: '04/17/23',
-    totalCost: 'Paid',
-    unitCost: 'Paid',
-  }));
+  const data = [
+    {
+      key: 0,
+      group: 'Бүтээгдэхүүн',
+      code: '102152012',
+      name: 'Улаанбуудай',
+      unit: 'килограмм'
+    },
+    {
+      key: 1,
+      group: 'Шатах, тослох материал',
+      code: '215320352',
+      name: 'Дизель түлш',
+      unit: 'литр'
+    },
+    {
+      key: 2,
+      group: 'Ургамал хамгаалах бодис, бордоо',
+      code: '356415741',
+      name: 'Азотын бордоо',
+      unit: 'килограмм'
+    },
+    {
+      key: 3,
+      group: 'Ургамал хамгаалах бодис, бордоо',
+      code: '368412542',
+      name: 'Раунд-Ап',
+      unit: 'литр'
+    },
+    {
+      key: 4,
+      group: 'Бүтээгдэхүүн',
+      code: '021231',
+      name: 'Kanky Kitadakate (Green)',
+      unit: 'шил'
+    },
+    {
+      key: 5,
+      group: 'Бүтээгдэхүүн',
+      code: '198764321',
+      name: 'Саальны машин',
+      unit: 'ширхэг'
+    },
+    {
+      key: 6,
+      group: 'Шатах, тослох материал',
+      code: '274839102',
+      name: 'Моторын тос',
+      unit: 'литр'
+    },
+    {
+      key: 7,
+      group: 'Бүтээгдэхүүн',
+      code: '928374652',
+      name: 'Арвай',
+      unit: 'килограмм'
+    },
+    {
+      key: 8,
+      group: 'Ургамал хамгаалах бодис, бордоо',
+      code: '758392010',
+      name: 'Фосфорын бордоо',
+      unit: 'килограмм'
+    },
+    {
+      key: 9,
+      group: 'Шатах, тослох материал',
+      code: '183746251',
+      name: 'Бензин А-92',
+      unit: 'литр'
+    }
+  ];
+  
 
   const groupItems = [
     {

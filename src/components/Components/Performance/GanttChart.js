@@ -23,6 +23,18 @@ const GanttChart = () => {
                 </div>
             ))}
 
+ {/* Vertical line */}
+            <div
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: `${45}%`, // Adjust this percentage to place the line at the desired month
+                    height: '100%',
+                    width: '3px',
+                    backgroundColor: 'orange',
+                    zIndex: 1,
+                }}
+            ></div>
             {/* Task bars */}
             <TaskBar
                 top={80}
@@ -63,6 +75,7 @@ const GanttChart = () => {
                 area="0га/360 га"
                 percent={0}
             />
+
         </div>
     );
 };

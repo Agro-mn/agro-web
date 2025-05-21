@@ -8,7 +8,7 @@ function ShortLogo({ height }) {
   const navigate = useNavigate();
   return (
     <Flex justify="" align='center'>
-      <img src={mainShortLogo} style={{ height: height ?? '3rem' }} alt='logo' onClick={() => {
+      <img src={mainShortLogo} style={{ height: height ?? '2rem' }} alt='logo' onClick={() => {
         localStorage.setItem("system", "main");
         setSystem("main");
         navigate(localStorage.getItem("loggedUser") ? "/dashboard" : "/");

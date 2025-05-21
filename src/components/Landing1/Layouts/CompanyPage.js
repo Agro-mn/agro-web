@@ -1,91 +1,83 @@
 import React, { useEffect } from "react";
 import { Row, Col } from "antd";
-import white    from "../../../assets/img/kubernetes.svg";
-import yellow   from "../../../assets/img/apple-dark.svg";
-import green    from "../../../assets/img/chatgpt.svg";
-import gradient from "../../../assets/img/chrome.svg";
+import altan_taria from "../../../assets/logos/altan_taria.png";
+import arvinkhur from "../../../assets/logos/arvinkhur.png";
+import butliin_undarga from "../../../assets/logos/butliin_undarga.png";
+import ensada from "../../../assets/logos/ensada.png";
+import gatsuurt from "../../../assets/logos/gatsuurt.png";
+import haa_corp from "../../../assets/logos/haa_corp.jpg";
+import hhaau_yam from "../../../assets/logos/hhaau_yam.png";
+import mindtech from "../../../assets/logos/mindtech.png";
+import msm from "../../../assets/logos/msm.png";
+import mts_agro from "../../../assets/logos/mts_agro.jpg";
+import mts_group from "../../../assets/logos/mts_group.jpg";
+import new_holland_logo from "../../../assets/logos/new_holland_logo.png";
 
 export default function CompanyPage() {
-    const testData = [
-        { name: "Сэлэнгэ тариа ХХК", img: white   },
-        { name: "Эг тариа ХХК", img: yellow   },
-        { name: "Орхон тариа ХХК", img: green    },
-        { name: "Товхон хан ХХК", img: gradient },
-        // { name: "Agro 5", img: white },
-        // { name: "Agro 6", img: yellow   },
-        // { name: "Agro 7", img: green    },
-        // { name: "Agro 8", img: gradient },
+    const data = [
+        { name: "MTS Групп", img: mts_group },
+        { name: "MTS Агро", img: mts_agro },
+        { name: "Хөдөө аж ахуйн корпораци", img: haa_corp },
+        { name: "MSM", img: msm },
+        { name: "Mindtech", img: mindtech },
+        { name: "Хүнс, Хөдөө аж ахуй, хөнгөн үйлдвэрийн яам", img: hhaau_yam },
+        { name: "Гацуурт", img: gatsuurt },
+        { name: "Ensada", img: ensada },
+        { name: "Бүтлийн ундарга", img: butliin_undarga },
+        { name: "Арвин хур", img: arvinkhur },
+        { name: "Алтан тариа", img: altan_taria },
+        { name: "New Holland", img: new_holland_logo },
     ];
-
-    const slideHeight     = 130;         
-    const origCount       = testData.length;
-    const totalSlides     = origCount * 2;  
-    const durationSeconds = origCount * 2;  
 
     useEffect(() => {
         const css = `
-      .slider {
-        position: relative;
-        width: 100%;
-        height: 150px;
-        overflow: hidden;
-        display: grid;
-        place-items: center;
-      }
-      .slider::before,
-      .slider::after {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 25%;
-        z-index: 2;
-        pointer-events: none;
-      }
-      .slider::before { left: 0; }
-      .slider::after  { right: 0; transform: rotateZ(180deg); }
-
-      .slide-track {
-        display: flex;
-        justify-content: space-between;
-        animation-name: scroll;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-      }
-      .slide {
-        flex-shrink: 0;
-        display: grid;
-        place-items: center;
-        transition: 0.5s;
-        cursor: pointer;
-    margin-right: 80px
-      }
-.slide img{
-    filter: grayscale(1);
-    transition: 0.3s;
-}
-.slide img:hover {
-    filter: grayscale(0);
-}
-      @keyframes scroll {
-        0%   { transform: translateX(0); }
-        100% {
-          transform: translateX(calc(
-            -1 * var(--slide-width, 0px)
-               * var(--orig-count, 1)
-          ));
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 120px;
+            background: white;
         }
-      }
-      @media (max-width: 768px) {
-        .slider { height: 40px; }
-      }
-    `;
+
+        .slide-track {
+            display: flex;
+            width: calc(300px * ${data.length * 2});
+            animation: scroll ${data.length * 4}s linear infinite;
+        }
+
+        .slide {
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            height: 80px;
+            min-width: 80px;
+            max-width: 200px;
+            object-fit: contain;
+            filter: grayscale(0.9);
+            transition: filter 0.3s ease;
+        }
+
+        .slide img:hover {
+            filter: grayscale(0);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        `;
         const styleTag = document.createElement("style");
         styleTag.textContent = css;
         document.head.appendChild(styleTag);
         return () => document.head.removeChild(styleTag);
     }, []);
 
-    // header styles
     const headerStyle = {
         fontSize: 'x-large',
         fontWeight: 'bold',
@@ -94,48 +86,28 @@ export default function CompanyPage() {
         marginBottom: '1rem',
     };
     const containerStyle = {
-        width: '80vw',
-        // height: 'calc(100vh - 10rem)',
-        // marginTop: '10rem',
+        width: '90vw',
+        margin: '0 auto',
     };
 
     return (
         <div style={containerStyle}>
             <Row gutter={[20, 20]}>
                 <Col span={24} style={headerStyle}>
-          <span style={{ borderBottom: '3px solid #4C6B45' }}>
-            Хамтрагч байгууллагууд
-          </span>
+                    <span style={{ borderBottom: '3px solid #4C6B45' }}>
+                        Хамтрагч байгууллагууд
+                    </span>
                 </Col>
             </Row>
 
-            <div
-                className="slider"
-                style={{
-                    '--slide-width': `${slideHeight}px`,
-                    '--orig-count':  `${origCount}`,
-                    marginTop: '50px'
-                }}
-            >
-                <div
-                    className="slide-track"
-                    style={{
-                        height:             `${slideHeight* totalSlides}px`,
-                        animationDuration: `${durationSeconds}s`,
-                    }}
-                >
-                    {[...testData, ...testData].map((item, idx) => (
-                        <div
-                            key={idx}
-                            className="slide"
-                            style={{ height: `${slideHeight}px` }}
-                        >
-                            <img
-                                src={item.img}
-                                alt={item.name}
-                                height={slideHeight}
-                            />
-                            {item.name}
+            <div className="slider" style={{ marginTop: '40px' }}>
+                <div className="slide-track">
+                    {[...data, ...data].map((item, idx) => (
+                        <div className="slide" key={idx}>
+                            <img src={item.img} alt={item.name} />
+                            {/* <div style={{ fontSize: 'small', textAlign: 'center' }}>    
+                                {item.name}
+                                </div> */}
                         </div>
                     ))}
                 </div>

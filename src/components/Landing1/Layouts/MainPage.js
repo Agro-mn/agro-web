@@ -1,5 +1,5 @@
 import { Card, Col, Divider, Row } from 'antd';
-import background from "../../../assets/img/landing1/pivot-family-9l-LASwTeWQ-unsplash.jpg";
+import background from "../../../assets/img/back.jpg";
 import React from "react";
 
 function MainPage() {

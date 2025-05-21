@@ -113,14 +113,15 @@ const HomeDirection = () => {
                         position: 'absolute',
                         bottom: 0,
                         left: 0,
-                        width: '100%',
+                        width: 'calc(100% - 40px)',
                         backgroundColor: 'rgba(0, 0, 0, 0.6)', // Semi-transparent background
                         color: '#fff',
-                        padding: '0px 0px 10px 0px',
+                        padding: '20px',
                         fontSize: '14px',
                         textAlign: 'center',
                         transition: 'opacity 0.3s ease',
                         opacity: isHovered ? 1 : 0, // Show only on hover
+                        fontFamily: "var(--main-font)",
                     }}
                 >
                     {item.descriptions}
