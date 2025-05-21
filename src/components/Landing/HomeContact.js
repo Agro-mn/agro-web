@@ -59,7 +59,6 @@ const HomeContact = ({ themeData }) => {
     flexDirection: 'row',
     alignItems: 'center',
     gap: '2rem',
-    fontFamily: 'var(--main-font)',
   };
 
   const qrImageStyle = {
