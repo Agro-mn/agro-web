@@ -410,7 +410,6 @@ const PerformanceList = () => {
         <Col span={24}>
           <TimelinePage />
         </Col>)}
-
     </Row>
   );
 };

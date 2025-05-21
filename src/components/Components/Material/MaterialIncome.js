@@ -1,29 +1,34 @@
 import { Table, Tag, Button, Col, Row, Space, Image } from 'antd';
 import { EyeOutlined, EditOutlined, DeleteOutlined, PlusOutlined, FileExcelOutlined, FilePdfOutlined, SearchOutlined } from '@ant-design/icons';
-import buudai from '../../../assets/img/buudai.png'; // Adjust if needed
+import buudai from '../../../assets/img/buudai.png'; // Make sure this path is correct
+
 import CategorySelector from './CategorySelector';
 
-function MaterialCost() {
+function MaterialIncome() {
   const columns = [
     {
-      title: 'Материалын код',
-      dataIndex: 'code',
-      key: 'code',
+      title: 'Бараа материал',
+      dataIndex: 'product',
+      key: 'product',
+      render: (_, record) => (
+        <Space>
+          <Image
+            src={record.image}
+            alt="product"
+            width={32}
+            preview={false}
+          />
+          <div>
+            <div>{record.code}</div>
+            <div>{record.name}</div>
+          </div>
+        </Space>
+      ),
     },
     {
-      title: 'Материалын нэр',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Зарцуулалтын төрөл',
-      dataIndex: 'usageType',
-      key: 'usageType',
-    },
-    {
-      title: 'Огноо',
-      dataIndex: 'date',
-      key: 'date',
+      title: 'Материалын бүлэг',
+      dataIndex: 'group',
+      key: 'group',
     },
     {
       title: 'Хэмжих нэгж',
@@ -31,7 +36,12 @@ function MaterialCost() {
       key: 'unit',
     },
     {
-      title: 'Зарцуулсан хэмжээ',
+      title: 'Огноо',
+      dataIndex: 'date',
+      key: 'date',
+    },
+    {
+      title: 'Орлогын хэмжээ',
       dataIndex: 'quantity',
       key: 'quantity',
     },
@@ -45,16 +55,6 @@ function MaterialCost() {
       dataIndex: 'total',
       key: 'total',
       render: (text) => <Tag color="green">{text}</Tag>,
-    },
-    {
-      title: 'Нийт талбайн хэмжээ',
-      dataIndex: 'totalArea',
-      key: 'totalArea',
-    },
-    {
-      title: 'Нэгж талбайд',
-      dataIndex: 'areaPerUnit',
-      key: 'areaPerUnit',
     },
     {
       title: 'Үйлдэл',
@@ -75,14 +75,11 @@ function MaterialCost() {
       group: 'Бүтээгдэхүүн',
       code: '102152012',
       name: 'Улаанбуудай',
-      usageType: 'Үрсэлгээ',
-      date: '5/15/25',
       unit: 'килограмм',
-      quantity: 120000,
+      date: '4/2/25',
+      quantity: 300000,
       unitPrice: 1200,
-      total: 144000000,
-      totalArea: 800,
-      areaPerUnit: 150,
+      total: 360000000,
       image: buudai,
     },
     {
@@ -90,14 +87,11 @@ function MaterialCost() {
       group: 'Шатах, тослох материал',
       code: '215320352',
       name: 'Дизель түлш',
-      usageType: 'Тарихын өмнөх хор цацалт',
-      date: '4/30/25',
       unit: 'литр',
-      quantity: 500,
+      date: '4/30/25',
+      quantity: 32000,
       unitPrice: 2980,
-      total: 1490000,
-      totalArea: 500,
-      areaPerUnit: 1,
+      total: 95360000,
       image: buudai,
     },
     {
@@ -105,14 +99,11 @@ function MaterialCost() {
       group: 'Ургамал хамгаалах бодис, бордоо',
       code: '356415741',
       name: 'Азотын бордоо',
-      usageType: 'Үрсэлгээ',
-      date: '5/15/25',
       unit: 'килограмм',
-      quantity: 30000,
+      date: '4/5/25',
+      quantity: 80000,
       unitPrice: 650,
-      total: 19500000,
-      totalArea: 300,
-      areaPerUnit: 100,
+      total: 52000000,
       image: buudai,
     },
     {
@@ -120,47 +111,135 @@ function MaterialCost() {
       group: 'Ургамал хамгаалах бодис, бордоо',
       code: '368412542',
       name: 'Раунд-Ап',
-      usageType: 'Тарималын арчилгаа',
-      date: '7/9/25',
       unit: 'литр',
-      quantity: 2100,
+      date: '5/3/25',
+      quantity: 6000,
       unitPrice: 12000,
-      total: 25200000,
-      totalArea: 700,
-      areaPerUnit: 3,
+      total: 72000000,
       image: buudai,
     },
     {
       key: 5,
-      group: 'Бүтээгдэхүүн',
-      code: '102152015',
-      name: 'Арвай',
-      usageType: 'Малын тэжээлд',
-      date: '5/16/25',
-      unit: 'килограмм',
-      quantity: 1000,
-      unitPrice: 900,
-      total: 900000,
-      totalArea: '300',
-      areaPerUnit: '5',
+      group: 'Шатах, тослох материал',
+      code: '711224342',
+      name: 'Моторын тос',
+      unit: 'литр',
+      date: '4/30/25',
+      quantity: 34595,
+      unitPrice: 5000,
+      total: 172975000,
       image: buudai,
     },
     {
       key: 6,
       group: 'Шатах, тослох материал',
-      code: '215320352',
-      name: 'Дизель түлш',
-      usageType: 'Удирдлага',
-      date: '5/1/25',
+      code: '480444945',
+      name: 'Бензин А-92',
       unit: 'литр',
-      quantity: 60,
-      unitPrice: 2980,
-      total: 178800,
-      totalArea: '700',
-      areaPerUnit: '20',
+      date: '5/4/25',
+      quantity: 42943,
+      unitPrice: 3200,
+      total: 137417600,
+      image: buudai,
+    },
+    {
+      key: 7,
+      group: 'Ургамал хамгаалах бодис, бордоо',
+      code: '201421916',
+      name: 'Фосфорын бордоо',
+      unit: 'килограмм',
+      date: '5/7/25',
+      quantity: 36806,
+      unitPrice: 700,
+      total: 25764200,
+      image: buudai,
+    },
+    {
+      key: 8,
+      group: 'Бүтээгдэхүүн',
+      code: '778684623',
+      name: 'Арвай',
+      unit: 'килограмм',
+      date: '4/3/25',
+      quantity: 99160,
+      unitPrice: 950,
+      total: 94202000,
+      image: buudai,
+    },
+    {
+      key: 9,
+      group: 'Шатах, тослох материал',
+      code: '304488115',
+      name: 'Бензин А-92',
+      unit: 'литр',
+      date: '5/11/25',
+      quantity: 155466,
+      unitPrice: 3200,
+      total: 497491200,
+      image: buudai,
+    },
+    {
+      key: 10,
+      group: 'Бүтээгдэхүүн',
+      code: '998387181',
+      name: 'Рапс',
+      unit: 'килограмм',
+      date: '4/27/25',
+      quantity: 36944,
+      unitPrice: 1300,
+      total: 48027200,
+      image: buudai,
+    },
+    {
+      key: 11,
+      group: 'Шатах, тослох материал',
+      code: '750212294',
+      name: 'Моторын тос',
+      unit: 'литр',
+      date: '4/8/25',
+      quantity: 184712,
+      unitPrice: 5000,
+      total: 923560000,
+      image: buudai,
+    },
+    {
+      key: 12,
+      group: 'Шатах, тослох материал',
+      code: '659288464',
+      name: 'Бензин А-92',
+      unit: 'литр',
+      date: '4/26/25',
+      quantity: 155004,
+      unitPrice: 3200,
+      total: 496012800,
+      image: buudai,
+    },
+    {
+      key: 13,
+      group: 'Бүтээгдэхүүн',
+      code: '993379178',
+      name: 'Рапс',
+      unit: 'килограмм',
+      date: '4/16/25',
+      quantity: 106635,
+      unitPrice: 1300,
+      total: 138625500,
+      image: buudai,
+    },
+    {
+      key: 14,
+      group: 'Бүтээгдэхүүн',
+      code: '944920489',
+      name: 'Арвай',
+      unit: 'килограмм',
+      date: '4/21/25',
+      quantity: 162236,
+      unitPrice: 950,
+      total: 154124200,
       image: buudai,
     },
   ];
+
   const groupItems = [
     { key: 'products', value: 'blue', label: 'Бүтээгдэхүүн' },
     { key: 'fuel', value: 'volcano', label: 'Шатах тослох материал' },
@@ -173,6 +252,7 @@ function MaterialCost() {
     { label: 'Ногоон тэжээл', value: 'green' },
     { label: 'Арвай', value: 'volcano' },
   ];
+
   return (
     <Row>
       <Col span={14}>
@@ -212,4 +292,4 @@ function MaterialCost() {
   );
 }
 
-export default MaterialCost;
+export default MaterialIncome;

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import MaterialEntry from './MaterialEntry';
 import MaterialCost from './MaterialCost';
 import MaterialTotalCost from './MaterialTotalCost';
+import MaterialIncome from './MaterialIncome';
 
 function MaterialList() {
  
@@ -16,13 +17,18 @@ function MaterialList() {
       // icon: <ProductIcon width={24} />,
     },
     {
-      key: 'itemConsumption',
-      label: 'Бараа материалын зарцуулалт',
+      key: 'itemIncome',
+      label: 'Бараа материалын орлого',
       // icon: <FuelIcon width={24} />,
     },
     {
-      key: 'totalConsumption',
-      label: 'Нийт зарцуулалт',
+      key: 'itemOutcome',
+      label: 'Бараа материалын зарлага',
+      // icon: <FuelIcon width={24} />,
+    },
+    {
+      key: 'totalBalance',
+      label: 'Бараа материалын үлдэгдэл',
       // icon: <FertilizerIcon width={24} />,
     },
   ];
@@ -34,8 +40,9 @@ function MaterialList() {
       </Col>
       <Col span={24}>
       {currTab=== 'itemEntry' && <MaterialEntry/>}
-      {currTab === 'itemConsumption' && <MaterialCost />}
-      {currTab === 'totalConsumption' && <MaterialTotalCost />}
+      {currTab === 'itemIncome' && <MaterialIncome />}
+      {currTab === 'itemOutcome' && <MaterialCost />}
+      {currTab === 'totalBalance' && <MaterialTotalCost />}
       </Col>
     </Row>
   );
