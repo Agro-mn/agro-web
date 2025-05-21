@@ -1,5 +1,4 @@
 import { Col, Divider, Flex, Row } from "antd";
-import app from "../../../assets/img/system.png";
 import laptop from "../../../assets/img/Laptop_002 [Converted].png";
 import web from "../../../assets/img/7475605.png";
 import React from "react";
