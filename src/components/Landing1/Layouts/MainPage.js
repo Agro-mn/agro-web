@@ -1,5 +1,6 @@
 import { Card, Col, Divider, Row } from 'antd';
 import background from "../../../assets/img/back.jpg";
+import mainLongLogoGreen from "../../../assets/img/mainLongLogoGreen.png";
 import React from "react";
 
 function MainPage() {
@@ -106,9 +107,10 @@ function MainPage() {
     return (
         <div style={style}>
             {/* Header */}
-            <Row justify="center" align="middle" style={{ height: 'calc(75vh - 6rem)', marginTop: '6rem'}}>
-                <Col>
-                    <h1  style={{ margin: 0, fontSize: '3rem', textAlign: 'center', width: '55vw', fontFamily: "var(--main-font)"}}>
+            <Row justify="center" align="middle" style={{ height: 'calc(75vh - 6rem)', marginTop: '6rem' }}>
+                <Col style={{ textAlign: 'center' }} >
+                    <img src={mainLongLogoGreen} alt="logo" style={{ width: '70vh', height: '100%', objectFit: 'cover' }} />
+                    <h1 style={{ margin: 0, fontSize: '3rem', textAlign: 'center', width: '55vw', fontFamily: "var(--main-font)" }}>
                         Хөдөө аж ахуйн үйлдвэрлэгчдийн нэгдсэн систем
                     </h1>
                 </Col>
@@ -125,8 +127,8 @@ function MainPage() {
                         msOverflowStyle: "none",      // IE & Edge
                         scrollbarWidth: "none"        // Firefox
                     }}
-                    // you can't hide webkit scrollbar inline—add this to your global CSS:
-                    // .your-container::-webkit-scrollbar { display: none; }
+                // you can't hide webkit scrollbar inline—add this to your global CSS:
+                // .your-container::-webkit-scrollbar { display: none; }
                 >
                     {testData.map((item, index) => (
                         <Card
@@ -141,13 +143,17 @@ function MainPage() {
                             <Row gutter={[20, 20]} align='center'>
                                 <Col span={7} style={{ borderRight: '3px solid white' }}>
                                     <div style={{ textAlign: 'center' }}>
-                                        <div style={{ fontSize: 'xx-large',
-                                            fontFamily: "var(--main-font)", fontWeight: 'bold' }}>
+                                        <div style={{
+                                            fontSize: 'xx-large',
+                                            fontFamily: "var(--main-font)", fontWeight: 'bold'
+                                        }}>
                                             {item.day.Temperature}°
                                         </div>
                                         <Divider style={{ margin: '0' }} />
-                                        <div style={{ fontSize: 'medium',
-                                            fontFamily: "var(--main-font)", fontWeight: 'bold' }}>
+                                        <div style={{
+                                            fontSize: 'medium',
+                                            fontFamily: "var(--main-font)", fontWeight: 'bold'
+                                        }}>
                                             {item.day.WindSpeed} м/с
                                         </div>
                                     </div>
@@ -160,8 +166,10 @@ function MainPage() {
                                         justifyContent: 'center',
                                         height: '100%'
                                     }}>
-                                        <div style={{ fontSize: 'large',
-                                            fontFamily: "var(--main-font)", fontWeight: 'bold' }}>
+                                        <div style={{
+                                            fontSize: 'large',
+                                            fontFamily: "var(--main-font)", fontWeight: 'bold'
+                                        }}>
                                             {item.city}
                                         </div>
                                     </div>

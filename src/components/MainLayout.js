@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { MainContext } from './MainContext';
 import LoginForm from "./LoginForm";
 import SideBar from './SideBar';
-import { Contents1, ThemeData1, LogoName1 } from './Landing1/Contents';
+import { Contents1, ThemeData1, LogoName1, ShortLogo1 } from './Landing1/Contents';
 import { Contents, ThemeData, LogoName, ThemeDataLoan, ThemeDataPlatform, FakeLogo, ShortLogo } from './Landing/Contents';
 import MainPage from './MainPage';
 import logo from "../assets/img/agro_logo_yellow.png";
@@ -190,7 +190,7 @@ function MainLayout() {
                 <Row style={{ height: '5rem', padding: '0 2rem', margin: "2rem", color: 'white', backgroundColor: "rgba(255,255,255,0.34)", backdropFilter: "blur(10px)", boxShadow: "0 1px 9px rgba(0, 0, 0, 0.3)", borderRadius: '20px' }}>
                   <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4}  >
                     <Flex align='center' style={{ height: '100%' }}>
-                      <LogoName1 />
+                      <ShortLogo1 />
                     </Flex>
                   </Col>
                   <Col xs={24} sm={12} md={12} lg={14} xl={14} xxl={14} >
@@ -306,14 +306,14 @@ function MainLayout() {
                     >
                       <Flex style={systemStyle.rightBarStyle}
                         gap='middle' vertical align='center' >
-                          <Button type='default' ghost icon={<LogoName height={'2rem'}/>} 
-                          style={{ height:'3rem', width: '3rem', borderColor : ThemeData.colorPrimary}} ></Button>
-                          <Button type='default' ghost icon={ <LogoName1 height={'2rem'} />} 
-                          style={{ height:'3rem', width: '3rem', borderColor : ThemeData1.colorPrimary}} ></Button>
-                         <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataPlatform} systemName={'platform'} />} 
-                          style={{ height:'3rem', width: '3rem', borderColor : ThemeDataPlatform.colorPrimary}} ></Button>
-                          <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataLoan} />} 
-                          style={{ height:'3rem', width: '3rem', borderColor : ThemeDataLoan.colorPrimary}} ></Button>
+                        <Button type='default' ghost icon={<LogoName height={'2rem'} />}
+                          style={{ height: '3rem', width: '3rem', borderColor: ThemeData.colorPrimary }} ></Button>
+                        <Button type='default' ghost icon={<LogoName1 height={'2rem'} />}
+                          style={{ height: '3rem', width: '3rem', borderColor: ThemeData1.colorPrimary }} ></Button>
+                        <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataPlatform} systemName={'platform'} />}
+                          style={{ height: '3rem', width: '3rem', borderColor: ThemeDataPlatform.colorPrimary }} ></Button>
+                        <Button type='default' ghost icon={<FakeLogo themeData={ThemeDataLoan} />}
+                          style={{ height: '3rem', width: '3rem', borderColor: ThemeDataLoan.colorPrimary }} ></Button>
                         {/* {system !== "portal" ? <LogoName1 height={'2rem'} /> : <LogoName />}
                         <FacebookFilled style={{ fontSize: 'xx-large', color: 'blue' }} />
                         <InstagramFilled style={{ fontSize: 'xx-large', color: 'red' }} />
