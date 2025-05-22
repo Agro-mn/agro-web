@@ -8,8 +8,6 @@ import SideBar from './SideBar';
 import { Contents1, ThemeData1, LogoName1, ShortLogo1 } from './Landing1/Contents';
 import { Contents, ThemeData, LogoName, ThemeDataLoan, ThemeDataPlatform, FakeLogo, ShortLogo } from './Landing/Contents';
 import MainPage from './MainPage';
-import logo from "../assets/img/agro_logo_yellow.png";
-import logo1 from "../assets/img/agro_logo_gradient.png";
 import bell from "../assets/icons/menu/bell.png";
 import user from "../assets/icons/menu/user.png";
 import exit from "../assets/icons/menu/exit.png";
@@ -231,8 +229,9 @@ function MainLayout() {
                   }}>
                     <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4}  >
                       <Flex align='center' style={{ height: '100%' }}>
-                        <img src={system === "portal" ? logo1 : logo}
-                          style={{ height: '2.5rem' }} alt='logo' />
+                        {system === "portal" ? <ShortLogo1 /> : <ShortLogo />}
+                        {/* <img src={system === "portal" ? logo1 : logo}
+                          style={{ height: '2.5rem' }} alt='logo' /> */}
                       </Flex>
                     </Col>
                     <Col xs={24} sm={12} md={12} lg={20} xl={20} xxl={20}>
