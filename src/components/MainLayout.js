@@ -231,8 +231,9 @@ function MainLayout() {
                   }}>
                     <Col xs={24} sm={12} md={12} lg={4} xl={4} xxl={4}  >
                       <Flex align='center' style={{ height: '100%' }}>
-                        <img src={system === "portal" ? logo1 : logo}
-                          style={{ height: '2.5rem' }} alt='logo' />
+                        {system === "portal" ? <ShortLogo1 /> : <ShortLogo />}
+                        {/* <img src={system === "portal" ? logo1 : logo}
+                          style={{ height: '2.5rem' }} alt='logo' /> */}
                       </Flex>
                     </Col>
                     <Col xs={24} sm={12} md={12} lg={20} xl={20} xxl={20}>
