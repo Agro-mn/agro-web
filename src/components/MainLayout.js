@@ -8,8 +8,6 @@ import SideBar from './SideBar';
 import { Contents1, ThemeData1, LogoName1, ShortLogo1 } from './Landing1/Contents';
 import { Contents, ThemeData, LogoName, ThemeDataLoan, ThemeDataPlatform, FakeLogo, ShortLogo } from './Landing/Contents';
 import MainPage from './MainPage';
-import logo from "../assets/img/agro_logo_yellow.png";
-import logo1 from "../assets/img/agro_logo_gradient.png";
 import bell from "../assets/icons/menu/bell.png";
 import user from "../assets/icons/menu/user.png";
 import exit from "../assets/icons/menu/exit.png";
