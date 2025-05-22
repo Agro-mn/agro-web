@@ -1,5 +1,6 @@
 import { Col, Divider, Flex, Row } from "antd";
-import app from "../../../assets/img/system.png";
+import laptop from "../../../assets/img/Laptop_002 [Converted].png";
+import web from "../../../assets/img/7475605.png";
 import React from "react";
 
 function SystemPage() {
@@ -33,7 +34,7 @@ function SystemPage() {
                 <Row gutter={[20, 20]} style={{ width: '70vw', marginTop: '20px' }}>
                 <Col span={24}><Divider/></Col>
                     <Col span={12}>
-                        <img src={app} alt='' style={{ height: '60vh' }} />
+                        <img src={web} alt='' style={{ height: '40vh' }} />
                     </Col>
                     <Col span={12}>
                         <div style={{ padding: '0px' }}>
@@ -74,7 +75,7 @@ function SystemPage() {
                         </div>
                     </Col>
                     <Col span={12}>
-                        <img src={app} alt='' style={{ height: '60vh' }} />
+                        <img src={laptop} alt='' style={{ height: '40vh' }} />
                     </Col>
                     <Col span={24}><Divider/></Col>
                 </Row>

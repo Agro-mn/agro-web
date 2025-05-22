@@ -16,7 +16,7 @@ const SystemCard = ({headerStyle, textStyle, image, themeData, title, descriptio
   return (<>
   {contextHolder}
     <Col span={12}>
-            <img src={image} alt='' style={{ height: '40vh' }} />
+            <img src={image} alt='' style={{ height: '300px', padding: '30px', marginRight: '50px' }} />
           </Col>
           <Col span={12}>
             <div style={{ padding: '20px' }}>

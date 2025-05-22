@@ -19,7 +19,7 @@ const HomeContact = ({ themeData }) => {
     padding: '2rem 3rem',
     fontFamily: 'var(--main-font)',
     marginBottom: '2rem',
-    fontFamily: 'var(--main-font)',
+    
   };
 
   const headerStyle = {
@@ -59,7 +59,6 @@ const HomeContact = ({ themeData }) => {
     flexDirection: 'row',
     alignItems: 'center',
     gap: '2rem',
-    fontFamily: 'var(--main-font)',
   };
 
   const qrImageStyle = {

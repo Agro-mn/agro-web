@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Row, Col, Flex } from 'antd';
 import app from '../../assets/img/system.png';
+import web from '../../assets/img/7475605.png';
+import laptop from '../../assets/img/Laptop_002 [Converted].png';
 import {LogoName1 , ThemeData1 } from '../Landing1/Contents';
 import SystemCard from './SystemCard';
 
@@ -42,7 +44,7 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
           <SystemCard
             headerStyle={headerStyle}
             textStyle={textStyle}
-            image={app}
+            image={web}
             themeData={ThemeData1}
             title='Хөдөө аж ажуйн үйлдвэрлэгчдийн нэгдсэн систем'
             description={<span>AgroMongolia – Хөдөө аж ахуйн үйлдвэрлэлээ технологитой хослуул. 
@@ -54,7 +56,7 @@ const HomeSubSystem = ({ ThemeDataLoan, ThemeDataPlatform}) => {
          <SystemCard
             headerStyle={headerStyle}
             textStyle={textStyle}
-            image={app}
+            image={laptop}
             themeData={ThemeDataPlatform}
             title='Хөдөө аж ажуйн зарын нэгдсэн платформ'
             description={<span>AgroMongolia - Хөдөө аж ахуйн бүх хэрэгцээг нэг дор. 

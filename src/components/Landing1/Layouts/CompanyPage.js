@@ -41,8 +41,8 @@ export default function CompanyPage() {
 
         .slide-track {
             display: flex;
-            width: calc(300px * ${data.length * 2});
-            animation: scroll ${data.length * 4}s linear infinite;
+            width: calc(300px * 24 );
+            animation: scroll 48s linear infinite;
         }
 
         .slide {
@@ -59,7 +59,7 @@ export default function CompanyPage() {
             min-width: 80px;
             max-width: 200px;
             object-fit: contain;
-            filter: grayscale(0.9);
+            filter: grayscale(1);
             transition: filter 0.3s ease;
         }
 
@@ -76,7 +76,7 @@ export default function CompanyPage() {
         styleTag.textContent = css;
         document.head.appendChild(styleTag);
         return () => document.head.removeChild(styleTag);
-    }, []);
+    });
 
     const headerStyle = {
         fontSize: 'x-large',
