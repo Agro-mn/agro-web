@@ -5,6 +5,7 @@ import CompanyPage from "./Layouts/CompanyPage";
 import ContactPage from "./Layouts/ContactPage";
 
 import LogoName from "./Layouts/LogoName";
+import ShortLogo from "./Layouts/ShortLogo";
 
 const Contents1 = [
   {
@@ -47,4 +48,4 @@ const ThemeData1 = {
 };
 
 
-export { Contents1, ThemeData1, LogoName as LogoName1 };
+export { Contents1, ThemeData1, LogoName as LogoName1, ShortLogo as ShortLogo1 };
