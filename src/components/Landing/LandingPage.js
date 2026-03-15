@@ -7,6 +7,7 @@ import dir1 from '../../assets/img/cows.jpg';
 import dir2 from '../../assets/img/wheat-background.jpg';
 import dir3 from '../../assets/img/dir3.png';
 import dir4 from '../../assets/img/carrot.jpg';
+import logo from '../../assets/img/logo.png';
 
 // ─── COLORS ──────────────────────────────────────────────────────────────────
 
@@ -96,7 +97,7 @@ function Header({ onLoginClick }) {
             <nav style={{ backgroundColor: '#ffffff', borderBottom: `3px solid ${AMBER}`, boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }}>
                 <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', height: '4rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
-                        <img src={mainShortLogo} alt='logo' style={{ height: '2rem', cursor: 'pointer' }} onClick={() => scrollTo('hero')} />
+                        <img src={logo} alt='logo' style={{ height: '2rem', cursor: 'pointer' }} onClick={() => scrollTo('hero')} />
                         <div style={{ display: 'flex', gap: '1.75rem' }}>
                             {navItems.map((item) => (
                                 <HoverNavBtn key={item.id} label={item.label} onClick={() => scrollTo(item.id)} />
